@@ -1,7 +1,6 @@
 \section{Users}
 
-How users act over time (by cohort)
-Question: how active are users over time?
+\subsection{Users' Activity}
 
 One common metric of interest of a social network is the average number of posts that active users make in a determined time frame. For reddit, in particular, the overall evolution of monthly average posts per user is as follows.
 
@@ -38,7 +37,7 @@ The second pitfall that one should be careful with is that users are being creat
 
 It is unclear if in the initial year of existence of the users there are significant cohort effects in the average number of posts. However, we can observe that different cohorts apparently stabilize in different levels of behavior, with a general tendency for older cohorts leveling at lower values, eg. people from 2008 and 2009 level at higher posting frequencies than 2010. Some possible explanations for this would be that users that get most of the utility from the network are more likely to find it earlier, and this accounts for the higher activity for earlier cohorts. Also, earlier users could hold more status in the network, since they joined in an earlier stage of the network and therefore present a higher activity. Yet another explanation would be that earlier users demographics were different in terms of age and interests, for example, and these correlate to the fact that they present a higher activity.
 
-Question: How ``good/hard'' do users work?
+\subsection{Users' Effort}
 
 In addition to the raw number of posts, comments length can also be considered as a proxy for user effort in the network. Users that type more put more of their time in the network, contribute with more content and might create stronger ties with the community. The Figure N shows the evolution of the monthly average comment length in reddit.
 
@@ -69,7 +68,7 @@ Yet another hypothesis that we might consider is that users are lowering their a
 \label{fig:fig_label}
 \end{figure}
 
-Question: what kinds of things do users do over time?
+\subsection{Activity Nature}
 
 One common question from the literature is what sorts of activities users engage in; this can be used as a metric of community health (cites) or to categorize users into roles they play in the community (cite).  In reddit, we do not have per-user voting behavior, but we do have the number of comments and submissions, and a naive view of this would look at the ratio of comments to submissions over time.
 
@@ -91,7 +90,6 @@ Table 1: Number of distinct users that authored comments and submissions segment
 Table 2: Number of distinct subreddits segmented by the year of the first post of the user. The Total numbers are based on posting data from 2007 until 2014, corresponding to our full dataset. The Oct 1st, 2014 onwards numbers are based on the last 3 months of data we have, and we consider this as the current, active reddit.
 
 Table indicates that reddit grew significantly from 2007 until 2012, practically doubling the number of new users per year for each of these years, with similarly significant growth in subreddits. Although the most expansive growth happened in the first years, more than half of the registered users are from the last 2 years, and their behavior is significantly different than previous users, impacting in the overall behavior of the community. For instance, users from the 2014 cohort have a higher tendency to make submissions instead of comments, in contrast with all the previous cohorts.
-
 
 Looking at the user time referential, the evolution of the number of comments per submission shows a decreasing trend for the older cohorts. One explanation for this is that, as the community grew, more content from an absolute point of view was present in the social network, and therefore users had more reason to make contributions commenting instead of submitting new content that was likely to already exist.
 
@@ -144,7 +142,7 @@ Looking at the user time referential, the evolution of the number of comments pe
 \label{fig:comments_per_submissions_for_surviving_year_for_2013}
 \end{figure}
 
-User survival
+\subsection{Users' Survival}
 
 The simplest definition of an active user in reddit is to set a threshold date and define that every user that posted after that date is an active user and users that do not show any kind of behavior are ``dead''. This, however, is a limited interpretation of how users decide to stay or leave the network, specially if we want to analyse how this behavior changed over time. Also, since our users might always come back to the network at a later time, they might be ``reborn'', that means we have right censored data.
 
@@ -153,15 +151,11 @@ To account for these, we look at a one year window of time for each user. This w
 \begin{figure}[!tb]
 \centering
 \includegraphics[scale=0.4]{./images/kaplan_meier_users.eps}
-\caption{Caption}
+\caption{Kaplan-Meier estimator for one year of posting behavior for each user. Users for which the last posting day was in the first nine months of the one year window are considered ``dead''. This graph shows the percentage of surviving users per number of days since it first posted segmented by the cohort year the user joined the network.}
 \label{fig:kaplan_meier_users}
 \end{figure}
-
-Kaplan-Meier estimator for one year of posting behavior for each user. Users for which the last posting day was in the first nine months of the one year window are considered ``dead''. This graph shows the percentage of surviving users per number of days since it first posted segmented by the cohort year the user joined the network.
 
 As previously mentioned, reddit shows a significant number of ``single time users'' that only post once in their existence. This can be seen in the initial drop in the first day. An interesting thing to see is that, although different cohorts level in different survival values, the ``user decay'' is similar throughout all of them. Not only that, but there is a general trend for older cohorts to die faster than younger ones. One possible explanation for that is that early reddit still lacked in content, with few subreddits to submit and few submissions to comment. This could lead to a higher number of users that did not stayed around after their initial impressions. 
 
 Another way to interpret user survival is to look at the percentage of distinct users that created a post after a date in a reverse time axis, shown in Figure N. 
-
-Percentage of users that created a post after the date by time in the reverse direction per cohort. This shows the percentage of users from each cohort that were active after a point in time.
 

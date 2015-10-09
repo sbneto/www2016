@@ -129,28 +129,28 @@ Samuel Barbosa\\
        \affaddr{University of S\~ao Paulo}\\
        \affaddr{S\~ao Paulo, Brazil}\\
        \email{sam@ime.usp.br}
- %%2nd. author
-%\alignauthor
-%Dan Cosley\\
-       %\affaddr{Department of Information Science}\\
-       %\affaddr{Cornell University}\\
-       %\affaddr{Ithaca, NY 14853 USA}\\
-       %\email{danco@cs.cornell.edu}
- %%3rd. author
-%\alignauthor
-%Amit Sharma\\
-       %\affaddr{Department of Information Science}\\
-       %\affaddr{Cornell University}\\
-       %\affaddr{Ithaca, NY 14853 USA}\\
-       %\email{danco@cs.cornell.edu}
- %%4th. author
-%\and
-%\alignauthor
-%Roberto M. Cesar-Jr\\
-       %\affaddr{Institute of Mathematics and Statistics}\\
-       %\affaddr{University of S\~ao Paulo}\\
-       %\affaddr{S\~ao Paulo, Brazil}\\
-       %\email{cesar@ime.usp.br}
+ %2nd. author
+\alignauthor
+Dan Cosley\\
+       \affaddr{Department of Information Science}\\
+       \affaddr{Cornell University}\\
+       \affaddr{Ithaca, NY 14853 USA}\\
+       \email{danco@cs.cornell.edu}
+ %3rd. author
+\alignauthor
+Amit Sharma\\
+       \affaddr{Department of Information Science}\\
+       \affaddr{Cornell University}\\
+       \affaddr{Ithaca, NY 14853 USA}\\
+       \email{danco@cs.cornell.edu}
+ %4th. author
+\and
+\alignauthor
+Roberto M. Cesar-Jr\\
+       \affaddr{Institute of Mathematics and Statistics}\\
+       \affaddr{University of S\~ao Paulo}\\
+       \affaddr{S\~ao Paulo, Brazil}\\
+       \email{cesar@ime.usp.br}
 }
 % There's nothing stopping you putting the seventh, eighth, etc.
 % author on the opening page (as the 'third row') but we ask,
@@ -167,8 +167,7 @@ Samuel Barbosa\\
 
 \maketitle
 \begin{abstract}
-Online social networks evolve over time, and as new users join a network, they might find very different environments in comparison with the early adopters. As new users come in and change the network, the users in the network change and set a new context for the future users.
-This work presents evidence of how the evolution of users in reddit unfolds based on cohorted data by the year of user creation. We analyze measures of activity, effort and survival and we compare with the averages over the network. In many cases, these measures not only reveal significant differences in behavior, but also conclusions as in the Simpson's paradox, as when we see an overall decreasing tendency on comments length over the years while comment length in cohorted curves increase. We also analyze the evolution of independent sub-communities known as subreddits, and we observe a consolidation of the core of reddit happening at an early stage in the network evolution.
+Online communities provide a fertile ground for analyzing people's behavior and improving our understanding of social processes. However, like any complex social system, the key part is detail in identifying and accounting for underlying heterogeneity among people in these communities. Using Reddit as an example, we study the evolution of users as the community based on data comments and submissions data from 2007 to 2014, creating a cohort of users who join each year. Even with one of the simplest sources of differentiation between users --- their age in the community --- we find wide differences in people's behavior, including comment activity, effort and survival, both within cohorts and with the averages over the whole community. Not controlling for these variations may not only dilute the overall effects that we observe, but in some cases, it can lead us to the wrong conclusions (Simpson's paradox).  These observations can be puzzling: for instance, we observe that average comment length decreases over any fixed period of time, but comment length in each cohort of users steadily increases during the same period. Finally, we analyze subcommunities on Reddit through the same lens of age and we find an enormous first-mover advantage: subreddits created early in the community's history are orders of magnitude more active than even successful subreddits created later.
 \end{abstract}
 
 % A category with the (minimum) three required fields
@@ -183,6 +182,7 @@ This work presents evidence of how the evolution of users in reddit unfolds base
 \input{overview}
 \input{users}
 \input{subreddits}
+\input{joint_cohorts}
 \input{conclusions}
 \input{future_work}
 \input{acknowledgments}
