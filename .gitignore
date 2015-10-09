@@ -1,8 +1,8 @@
-.tps
-.log
-.synctex
-.ps
-.blg
-.dvi
-.bbl
-.aux
+*.tps
+*.log
+*.synctex
+*.ps
+*.blg
+*.dvi
+*.bbl
+*.aux
