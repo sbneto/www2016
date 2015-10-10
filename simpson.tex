@@ -6,9 +6,12 @@ Let us consider Figure x, which shows the average comment size on Reddit over ti
 However, in Figure 7, we saw that average comment size increases over time for different cohorts. While later cohorts start at smaller comment sizes, all of the cohorts show a positive trend towards writing bigger comments as time goes on. This is puzzling: when each of the cohorts exhibit a steady increase in their average comment size, how can the overall mean comment size decrease? This anomaly is an instance of the Simpson's paradox, and occurs because we fail to properly condition on different cohorts when computing mean comment length. 
 
 %Sam 9: Still unclear if we should calculate the proportion above and bellow the median of the previous year to have a ``percentage like'' number just as in the wikipedia example. I would like to have this set up as similar as possible as the easiest reference people can find about the subject. A little bit going up by the end, although for some analysis including 2014 and 2007 is a problem, I don't necessarily think it gets in the way here, should we get rid of them?
-\begin{table}
+\begin{table}[htbp]
 \centering
-\begin{tabular}{|c|c|}
+\tabcolsep=0.11cm
+\singlespacing
+\fontsize{7pt}{8pt}\selectfont
+\begin{tabular}{|>{\raggedright\centering\arraybackslash}m{1.5cm}|c|}
 \hline
 Year & Median \\ \hline
 2007 & 114 \\ \hline
@@ -23,9 +26,13 @@ Year & Median \\ \hline
 \caption{Evolution of the median throughout the years for the whole reddit dataset.}
 \end{table}
 
-\begin{table}
+
+\begin{table}[htbp]
 \centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\tabcolsep=0.11cm
+\singlespacing
+\fontsize{7pt}{8pt}\selectfont
+\begin{tabular}{|>{\raggedright\centering\arraybackslash}m{1.5cm}|c|c|c|c|c|c|c|c|}
 \hline
 Year & 2007 & 2008 & 2009 & 2010 & 2011 & 2012 & 2013 & 2014 \\ \hline
 2007 & 114 & - & - & - & - & - & - & - \\ \hline
