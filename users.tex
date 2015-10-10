@@ -1,8 +1,9 @@
+%% DC 10: The first analysis has to be longer, and walk us through in more detail, than the other analyses.  I think it's a full section in its own right.
 \section{Cohorts matter: Variation in activity, effort, survival}
 
-\subsection{Users' Activity}
+In this section, we will use a common metric of user activity in online communities, the number of posts per user, to show how two main time-aware approaches to analyzing behavior provide additional insights beyond simple chronological aggregation.  The first approach uses a notion of time relative to an event of interest (such as a user's first post); the second focuses on cohort effects.
 
-One common metric of interest of a social network is the average number of posts that active users make in a determined time frame. For reddit, in particular, the overall evolution of monthly average posts per user is as follows.
+\subsection{The Aggregate View of Users' Activity}
 
 \begin{figure}[!tb]
 \centering
@@ -11,7 +12,20 @@ One common metric of interest of a social network is the average number of posts
 \label{fig:avr_posts_per_user_over_time_total}
 \end{figure}
 
-This is the first and most naive approach one can make to analyze the evolution of posting behavior for the users. This figure, however, averages over all active users in each evaluated time step. This hides cohort effects due to the user behavior evolution over the years of existence of the network. A first attempt to improve this would be to evaluate this posting average according to the users cohorts, as shown in Figure N.
+Figure~\ref{avr_posts_per_user_over_time_total} shows the average number of posts (submissions plus comments) per month by users who were active in that month.  Taken at face value, this suggests that over the first few years of Reddit, users became more active in posting and that per-user activity has remained more or less steady since mid-2011.  
+
+\subsection{Activity relative to a user's lifespan}
+
+%% DC 10: This is the new figure, the one that's adjusted to be relative to user creation date like Figure 5 but aggreated over all users rather than separated by cohort.
+
+%% DC 10: This is my best guess as to what the aggregate version of the avr_posts_per_user_cohorts figure looks like
+This average view hides several important aspects of users' activity dynamics.  In Figure~\ref{fig:NEEDED_avr_monthly_active_posts_relative}, we show a different view that emphasizes the trajectory over a user's lifespan.  Here, we scale the x-axis not by clock time, as in the prior figure, but by time since the user's first post: ``1'' on the x-axis refers to one year since the user's account creation, and so on.  
+One caution about interpreting the graphs that are relative to the user's start time is that the amount of data available rapidly decreases over time, meaning that values toward the right side of an individual data series are more subject to individual variation.  
+%% DC 10: The way to really handle this would probably be confidence intervals, but we should at least note it somewhere and this is the best way I could think of for now.
+
+This figure shows that a user's tenure matters: the longer a user survives, the more posts they make over time.  Interestingly, we see that the curve rises much higher than it does in Figure~\ref{avr_posts_per_user_over_time_total}: users who survive over five years have almost 50\% more posts per year than average. 
+
+\subsection{Cohort-based views of posting activity}
 
 \begin{figure}[!tb]
 \centering
@@ -20,22 +34,40 @@ This is the first and most naive approach one can make to analyze the evolution 
 \label{fig:avr_posts_per_user_over_time_cohorts}
 \end{figure}
 
-Here we notice already a significant cohort effect: users from latter cohorts have a significantly lower posting average than users from earlier cohorts.
+Implicitly, the prior figure suggests that older (in the sense of first account activity) users are more active than newer ones, raising the question of whether newer users
+are likely to eventually follow in older users' footsteps.  Analyzing users' behavior by cohort, grouping them by account creation year, is one reasonable way to address this question.  Figure~\ref{fig:avr_posts_per_user_over_time_cohorts} shows our first attempt at this analysis.  This figure already shows a significant cohort effect: users from latter cohorts appear to level off at a significantly lower posting average than users from earlier cohorts.  
 
-There are, however, two possible pitfalls in this analysis. The first is the fact that we are always considering the surviving users, that is, we count the users that presented some activity on the said month. Based on this, users from older cohorts could be posting more on average in 2014 because they are the ones that survived the longest and possibly are the ones that are most interested and get the most value out of the network, which would justify the increasing activity over.
+However, the figure also has an awkward anomaly, the sharp increase in the average number of posts at the end of each cohort's first calendar year in Figure N.  Since we segmented our users by cohorts, by the end of each year onwards, we do not have users joining the network any more and the number of active users does not increase because of new users anymore. This fact, along with the observation that young users tend to post less from Figure~\ref{fig:NEEDED_avr_monthly_active_posts_relative}, drags the average down during the first year, since young users are always coming into the network.  
+%% DC 10: A little redundant.  
+% This is particularly true for the first month, specially considering that there are many user accounts that are created and only show activity for a single day in reddit, which likely brings the average down.
 
-To account for this, we change our time referential: each post time is considered as the time since the user creation (in our analysis, this referential is the first observed post for the user). This allows us to compare users based on how long they have existed in the network (but still treat them as cohorts), as seen in Figure N.
+%% DC 10: I get tired of saying that; it would be useful to define "account creation" as the data handling part earlier as the first visible post in the dataset and just note that they actually created their account earlier than that.
 
-The second pitfall that one should be careful with is that users are being created during the cohort year, but not anymore afterwards. This accounts for the sharp increase in the average number of posts in Figure N. Since we segmented our users by cohorts, by the end of each year onwards, we do not have users joining the network anymore and the number of active users does not increase because of new users anymore. This fact, associated with the fact that young users tend to post less, drag the average down during the year, since young users are always coming in the network. This effect is more clear in Figure N, when we use the user-referential time frame, where it is clear that young users post less. This is particularly true for the first month, specially considering that there are many user accounts that are created and only show activity for a single day in reddit, which likely brings the average down.
+We can largely account for this by still treating users as cohorts based on the year they first posted to reddit, but adjusting the time reference to be relative to the user's first post rather than clock time as we did before.  Figure~\ref{fig:avr_posts_per_user_cohorts_relative} presents this view of the data.
 
 \begin{figure}[!tb]
 \centering
 \includegraphics[scale=0.4]{./images/avr_posts_per_user_cohorts.eps}
 \caption{Caption}
-\label{fig:avr_posts_per_user_cohorts}
+\label{fig:avr_posts_per_user_cohorts_relative}
 \end{figure}
+%% DC 10: Part of me would be curious about either an inset for the first three months, and/or a log-2 scale for time where the first year gets half the frame, etc.  My guess is that the log scale is hard to read because it's an unusual way to present time, but it does have an advantage in that most of the data is on the "left" of the graph and that would emphasize attention toward it, maybe.
+This figure suggests that there may not be strong cohort effects early in a user's lifespan, although even after six months users in the most recent 2012 and 2013 cohorts appear to be less active than those in earlier groups.  In the long run, however, a striking pattern emerges: different cohorts stabilize in different levels of behavior, and in particular, the steady state activity for surviving users goes down for every year from 2008 to 2012.  
 
-It is unclear if in the initial year of existence of the users there are significant cohort effects in the average number of posts. However, we can observe that different cohorts apparently stabilize in different levels of behavior, with a general tendency for older cohorts leveling at lower values, eg. people from 2008 and 2009 level at higher posting frequencies than 2010. Some possible explanations for this would be that users that get most of the utility from the network are more likely to find it earlier, and this accounts for the higher activity for earlier cohorts. Also, earlier users could hold more status in the network, since they joined in an earlier stage of the network and therefore present a higher activity. Yet another explanation would be that earlier users demographics were different in terms of age and interests, for example, and these correlate to the fact that they present a higher activity.
+This raises interesting questions of why we see this behavior.  One plausible explanation is that users who find a community early in its life are also more likely than average to be those who will be attracted to it, in the same way that early ratings for a movie in a recommender system are likely to be higher than later ratings because the people who are most attuned to the movie are likely to see it earlier \cite{if we can find one}.  Another is an argument based on cumulative advantage, status, and attention-seeking: surviving users from earlier cohorts might be more capable of producing content that gets attention from other users.  This would lead to them getting more comments and votes for their content, and people who get positive attention are more likely to return \cite{joyce-kraut, wikipedia, everything2 papers}.  
+
+We're not taking a position on either of these as the mechanism that explains these results; both would be interesting avenues for future work.  We do suggest that looking at Reddit from a cohort and user-based view rather than an aggregate community view helped us uncover interesting phenomena and questions that would have been invisible to more commonly-performed analyses of community behavior. 
+
+%% DC 10: The status bit is intriguing but needs to be explained a little better.  Took a little shot at it but framing it in terms of cumulative advantage rather than status
+%% DC 10:This, too, would need to be explained/justified/supported, and I can't come up with a plausible one, so deleting it.
+%Yet another explanation would be that earlier users demographics were different in terms of age and interests, for example, and these correlate to the fact that they present a higher activity.
+
+%% DC 10: There is a mysterious question about why 2008 ramps up more slowly, that I would interpret in the "there was less to comment on" framing that we've chatted about before.  You could actually do an analysis to test this, where for each user, the number of posts in a month is normalized by the number of posts made in reddit in that month: that is, how active is the user relative to the total amount of activity in reddit.  This is _not_ a linear scaling when the analysis is relative to the user's initial start date, and I would be curious to see what it showed.
+
+
+%%%% DanCo stopping here %%%%
+
+%% DC 10: These are actually a separate section, or sections, for me.  In particular, Users' Effort and the Simpson almost certainly need to be combined.  
 
 \subsection{Users' Effort}
 
@@ -93,6 +125,7 @@ Table indicates that reddit grew significantly from 2007 until 2012, practically
 
 Looking at the user time referential, the evolution of the number of comments per submission shows a decreasing trend for the older cohorts. One explanation for this is that, as the community grew, more content from an absolute point of view was present in the social network, and therefore users had more reason to make contributions commenting instead of submitting new content that was likely to already exist.
 
+%% DC 10: This needs to be managed better, somehow; right now it's a little overwhelming as a blob of graphs.  It might be better to pick one representative year rather than present them all.  Also, this might an excellent place to introduce (or reintroduce) the point that when you zero-adjust, you have less and less data off to the right; the abrupt jumps that especially the later years (4, 5, 6) from the earlier cohorts show at the end are almost surely driven by low n users, right?
 \begin{figure}[!tb]
 \centering
 \includegraphics[scale=0.4]{./images/comments_per_submissions_cohorts.eps}
