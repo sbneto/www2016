@@ -177,7 +177,7 @@ Looking at the user time referential, the evolution of the number of comments pe
 \begin{figure}[!tb]
 \centering
 \includegraphics[scale=0.4]{./images/comments_per_submissions_cohorts.eps}
-\caption{Caption}
+\caption{Comments per submissions cohorted by user creation year. Here we observe that, unlike the total aggregated graphic, all users are are increasing the number of comments per submissions, but latter cohorts show a much higher level of comments per submissions than earlier cohorts. This brings the initial part of the aggregated user-referential curve up, while the end of the curve consists only of users from the latter cohorts that preset an lower ratio. It is also important to notice that, as these curves move to the right, less comments and submissions exist in the bins, for there are less users that survived for such long periods. This results in some spiky behavior in the rightmost end of some curves due to the reduced amount of data. Just as with the previous user-referential cohort curves, we can not distinguish solely based on this graphic if users are increasing their commenting behavior or if the users that do not comment die earlier. Figure \ref{fig:comments_per_submissions_for_surviving_year} help us to answer this question.}
 \label{fig:comments_per_submissions_cohorts}
 \end{figure}
 
@@ -189,7 +189,7 @@ Looking at the user time referential, the evolution of the number of comments pe
 \includegraphics[scale=0.2]{./images/comments_per_submissions_for_surviving_year_for_2011.eps}
 \includegraphics[scale=0.2]{./images/comments_per_submissions_for_surviving_year_for_2012.eps}
 \includegraphics[scale=0.2]{./images/comments_per_submissions_for_surviving_year_for_2013.eps}
-\caption{Caption}
+\caption{Just as in Figures \ref{fig:avr_posts_per_user_for_surviving_year} and \ref{fig:avr_comment_length_for_surviving_year}, each figure corresponds to one cohort. Each cohort was segmented based on users according to how many years they survived. Each figure show the comment per submission ratio for these groups of users per cohort. We can observe a clear pattern of users that die earlier having a lower comment per submission ratio. Also, these curves do not show clear signs of increase over time, which suggests that the main reason for the cohorted user-referential ratio in Figure \ref{fig:comments_per_submissions_cohorts} to increase is due to the fact that the low performers drop out earlier.}
 \label{fig:comments_per_submissions_for_surviving_year}
 \end{figure}
 
@@ -208,9 +208,10 @@ To account for these, we look at a one year window of time for each user. This w
 
 As previously mentioned, reddit shows a significant number of ``single time users'' that only post once in their existence. This can be seen in the initial drop in the first day. An interesting thing to see is that, although different cohorts level in different survival values, the ``user decay'' is similar throughout all of them. Not only that, but there is a general trend for older cohorts to die faster than younger ones. One possible explanation for that is that early reddit still lacked in content, with few subreddits to submit and few submissions to comment. This could lead to a higher number of users that did not stayed around after their initial impressions. 
 
+%% Sam 10: This figure can go if we don't want/can't give a better explanation regarding survival. It is quite common for survival works to have the hazard plot, although I don't fully understand the values myself.
 \begin{figure}[!tb]
 \centering
 \includegraphics[scale=0.4]{./images/nelson_aalen_users.eps}
-\caption{Caption}
+\caption{Nelson-Aalen empirical hazard estimation for the users survival. This curves show the pointwise probability of a user to die in time.}
 \label{fig:nelson_aalen_users}
 \end{figure}
