@@ -5,28 +5,28 @@ In this section, we will use a common metric of user activity in online communit
 
 \subsection{The Aggregate View of Users' Activity}
 
-\begin{figure}[!tb]
-\centering
-\includegraphics[scale=0.4]{./images/avr_posts_per_user_over_time_total.eps}
-\caption{Monthly average of posts per active users over time. Posts as either comments or submissions, we count the total sum of comments and submissions for each month. Active users are the ones that made at least one post in the said month. }
-\label{fig:avr_posts_per_user_over_time_total}
-\end{figure}
+%\begin{figure}[!tb]
+%\centering
+%\includegraphics[scale=0.4]{./images/avr_posts_per_user_over_time_total.eps}
+%\caption{Monthly average of posts per active users over time. Posts as either comments or submissions, we count the total sum of comments and submissions for each month. Active users are the ones that made at least one post in the said month. }
+%\label{fig:avr_posts_per_user_over_time_total}
+%\end{figure}
 
 \begin{figure}[!tb]
 \centering
-\includegraphics[scale=0.4]{./images/avr_posts_per_user_user_ref_total.eps}
-\caption{Evolution of all users in reddit. The x-axis is the time from the user creation referential, i.e., each message creation time is measured in terms of when the user was created. Each tick is one year and we discretized time by month --- the n-th bin holds messages the user wrote in the n-th month. The user count for each month is the number of users that were active, that is, the users that authored at least one post in their n-th month. Since we are looking at the user time referential, you can understand this as the surviving users after x time. The y-axis is the number of posts per active users. }
-\label{fig:avr_posts_per_user_user_ref_total}
+\includegraphics[scale=0.4]{./images/avr_posts_per_user_over_time_cohorts.eps}
+\caption{Average number of posts per active users for the overall network and segmented by the user creation year. Posts as either comments or submissions, we count the total sum of comments and submissions for each month. Active users are the ones that made at least one post in the said month. The user creation year is defined as the year the user made his/her first post. The averages over the cohort year is lower because users are constantly being created over the year. Once you move past the cohort year, the user creation halts (including the high number of ``throw away accounts'') and we only observe the ``death'' of users, that has a strong impact in the count of users for the average, therefore the significant discontinuity by the end of the cohort year. Here we observe that different years level in different values for posts per user, having older users posting more than younger users as a general trend. We also observe that the overall average levels at a lower value than the cohorts also for the fact that it takes into consideration the users that are being created at all points.}
+\label{fig:avr_posts_per_user_over_time_cohorts}
 \end{figure}
 
-Figure~\ref{fig:avr_posts_per_user_over_time_total} shows the average number of posts (submissions plus comments) per month by users who were active in that month.  Taken at face value, this suggests that over the first few years of Reddit, users became more active in posting and that per-user activity has remained more or less steady since mid-2011.  
+Figure~\ref{fig:avr_posts_per_user_over_time_cohorts} shows the average number of posts (submissions plus comments) per month by users who were active in that month.  Taken at face value, this suggests that over the first few years of Reddit, users became more active in posting and that per-user activity has remained more or less steady since mid-2011.
 
 \subsection{Activity relative to a user's lifespan}
 
 %% DC 10: This is the new figure, the one that's adjusted to be relative to user creation date like Figure 5 but aggreated over all users rather than separated by cohort.
 
 %% DC 10: This is my best guess as to what the aggregate version of the avr_posts_per_user_cohorts figure looks like
-This average view hides several important aspects of users' activity dynamics.  In Figure~\ref{fig:NEEDED_avr_monthly_active_posts_relative}, we show a different view that emphasizes the trajectory over a user's lifespan.  Here, we scale the x-axis not by clock time, as in the prior figure, but by time since the user's first post: ``1'' on the x-axis refers to one year since the user's account creation, and so on.  
+This average view hides several important aspects of users' activity dynamics.  In Figure~\ref{fig:avr_posts_per_user_cohorts_relative}, we show a different view that emphasizes the trajectory over a user's lifespan.  Here, we scale the x-axis not by clock time, as in the prior figure, but by time since the user's first post: ``1'' on the x-axis refers to one year since the user's account creation, and so on.  
 One caution about interpreting the graphs that are relative to the user's start time is that the amount of data available rapidly decreases over time, meaning that values toward the right side of an individual data series are more subject to individual variation.  
 %% DC 10: The way to really handle this would probably be confidence intervals, but we should at least note it somewhere and this is the best way I could think of for now.
 
@@ -34,28 +34,17 @@ This figure shows that a user's tenure matters: the longer a user survives, the 
 
 \subsection{Cohort-based views of posting activity}
 
-\begin{figure}[!tb]
-\centering
-\includegraphics[scale=0.4]{./images/avr_posts_per_user_over_time_cohorts.eps}
-\caption{Average number of posts per user segmented by the user creation year. The user creation year is defined as the year the user made his/her first post. The averages over the cohort year is lower because users are constantly being created over the year. Once you move past the cohort year, the user creation halts (including the high number of ``throw away accounts'') and we only observe the ``death'' of users, that has a strong impact in the count of users for the average, therefore the significant discontinuity by the end of the cohort year. Here we observe that different years level in different values for posts per user, having older users posting more than younger users as a general trend.}
-\label{fig:avr_posts_per_user_over_time_cohorts}
-\end{figure}
-
-Implicitly, the prior figure suggests that older (in the sense of first account activity) users are more active than newer ones, raising the question of whether newer users
-are likely to eventually follow in older users' footsteps.  Analyzing users' behavior by cohort, grouping them by account creation year, is one reasonable way to address this question.  Figure~\ref{fig:avr_posts_per_user_over_time_cohorts} shows our first attempt at this analysis.  This figure already shows a significant cohort effect: users from latter cohorts appear to level off at a significantly lower posting average than users from earlier cohorts.  
-
-However, the figure also has an awkward anomaly, the sharp increase in the average number of posts at the end of each cohort's first calendar year in Figure N.  Since we segmented our users by cohorts, by the end of each year onwards, we do not have users joining the network any more and the number of active users does not increase because of new users anymore. This fact, along with the observation that young users tend to post less from Figure~\ref{fig:NEEDED_avr_monthly_active_posts_relative}, drags the average down during the first year, since young users are always coming into the network.  
-%% DC 10: A little redundant.  
-% This is particularly true for the first month, specially considering that there are many user accounts that are created and only show activity for a single day in reddit, which likely brings the average down.
-
-%% DC 10: I get tired of saying that; it would be useful to define "account creation" as the data handling part earlier as the first visible post in the dataset and just note that they actually created their account earlier than that.
-
-We can largely account for this by still treating users as cohorts based on the year they first posted to reddit, but adjusting the time reference to be relative to the user's first post rather than clock time as we did before.  Figure~\ref{fig:avr_posts_per_user_cohorts_relative} presents this view of the data.
+%\begin{figure}[!tb]
+%\centering
+%\includegraphics[scale=0.4]{./images/avr_posts_per_user_user_ref_total.eps}
+%\caption{Evolution of all users in reddit. The x-axis is the time from the user creation referential, i.e., each message creation time is measured in terms of when the user was created. Each tick is one year and we discretized time by month --- the n-th bin holds messages the user wrote in the n-th month. The user count for each month is the number of users that were active, that is, the users that authored at least one post in their n-th month. Since we are looking at the user time referential, you can understand this as the surviving users after x time. The y-axis is the number of posts per active users. }
+%\label{fig:avr_posts_per_user_user_ref_total}
+%\end{figure}
 
 \begin{figure}[!tb]
 \centering
 \includegraphics[scale=0.4]{./images/avr_posts_per_user_cohorts.eps}
-\caption{Number of posts per active (surviving) user for cohorts on the user creation date. An interpretation of this says ``users that survived x time are posting on average y messages''. Here we see that, although the 2008 cohort level at a higher value, the evolution of the number of posts took a longer time to increase. The other cohorts seem to follow a more regular pattern after the first year: older users that survived the first year post more on average than younger users that survived the first year. Since we are talking about surviving users, it is not clear from this figure whether these curves increase because the ``low posting users'' are dying earlier or because the users are actually increasing their activity as they live on. To differentiate these cases, Figure \ref{fig:avr_posts_per_user_for_surviving_year} shows, for each cohort, the average posting for users grouped by the number of years they survived in the cohort.}
+\caption{Number of posts per active user for  the overall set of users and cohorts on the user creation date. The x-axis is the time from the user creation referential, i.e., each message creation time is measured in terms of when the user was created. Each tick is one year and we discretized time by month --- the n-th bin holds messages the user wrote in the n-th month. Since we are looking at the user time referential, you can understand this as the surviving users after x time. An interpretation of this says ``users that survived x time are posting on average y messages''. Here we see that, although the 2008 cohort level at a higher value, the evolution of the number of posts took a longer time to increase. The other cohorts seem to follow a more regular pattern after the first year: older users that survived the first year post more on average than younger users that survived the first year. Since we are talking about surviving users, it is not clear from this figure whether these curves increase because the ``low posting users'' are dying earlier or because the users are actually increasing their activity as they live on. To differentiate these cases, Figure \ref{fig:avr_posts_per_user_for_surviving_year} shows, for each cohort, the average posting for users grouped by the number of years they survived in the cohort.}
 \label{fig:avr_posts_per_user_cohorts_relative}
 \end{figure}
 
@@ -70,6 +59,17 @@ We can largely account for this by still treating users as cohorts based on the 
 \caption{Each figure corresponds to one cohort, from 2008 to 2013, left to right, top to bottom. The users for each cohort are further divided in groups based on how long they survived: users that survived up to 1 year are labeled 0, from 1 to 2 years are labeled 1, and so on. We observe that, for all cohorts, users that have a lower posting average are the first to die. We also observe that the posting  over time seem to decrease once we condition on the fact that users will survive a certain number of years. This suggests that the main reason for users to be posting less throughout the cohorts is because the mixture of users is different: there are more users that post less joining the network and the ones that post more are there to begin with, and they are the ones more likely to survive.}
 \label{fig:avr_posts_per_user_for_surviving_year}
 \end{figure}
+
+Implicitly, the prior figure suggests that older (in the sense of first account activity) users are more active than newer ones, raising the question of whether newer users
+are likely to eventually follow in older users' footsteps.  Analyzing users' behavior by cohort, grouping them by account creation year, is one reasonable way to address this question.  Figure~\ref{fig:avr_posts_per_user_over_time_cohorts} shows our first attempt at this analysis.  This figure already shows a significant cohort effect: users from latter cohorts appear to level off at a significantly lower posting average than users from earlier cohorts.  
+
+However, the figure also has an awkward anomaly, the sharp increase in the average number of posts at the end of each cohort's first calendar year in Figure N.  Since we segmented our users by cohorts, by the end of each year onwards, we do not have users joining the network any more and the number of active users does not increase because of new users anymore. This fact, along with the observation that young users tend to post less from Figure~\ref{fig:NEEDED_avr_monthly_active_posts_relative}, drags the average down during the first year, since young users are always coming into the network.  
+%% DC 10: A little redundant.  
+% This is particularly true for the first month, specially considering that there are many user accounts that are created and only show activity for a single day in reddit, which likely brings the average down.
+
+%% DC 10: I get tired of saying that; it would be useful to define "account creation" as the data handling part earlier as the first visible post in the dataset and just note that they actually created their account earlier than that.
+
+We can largely account for this by still treating users as cohorts based on the year they first posted to reddit, but adjusting the time reference to be relative to the user's first post rather than clock time as we did before.  Figure~\ref{fig:avr_posts_per_user_cohorts_relative} presents this view of the data.
 
 %% DC 10: Part of me would be curious about either an inset for the first three months, and/or a log-2 scale for time where the first year gets half the frame, etc.  My guess is that the log scale is hard to read because it's an unusual way to present time, but it does have an advantage in that most of the data is on the "left" of the graph and that would emphasize attention toward it, maybe.
 This figure suggests that there may not be strong cohort effects early in a user's lifespan, although even after six months users in the most recent 2012 and 2013 cohorts appear to be less active than those in earlier groups.  In the long run, however, a striking pattern emerges: different cohorts stabilize in different levels of behavior, and in particular, the steady state activity for surviving users goes down for every year from 2008 to 2012.  
