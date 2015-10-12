@@ -19,7 +19,7 @@ In this section, we will use a common metric of user activity in online communit
 \label{fig:avr_posts_per_user_user_ref_total}
 \end{figure}
 
-Figure~\ref{avr_posts_per_user_over_time_total} shows the average number of posts (submissions plus comments) per month by users who were active in that month.  Taken at face value, this suggests that over the first few years of Reddit, users became more active in posting and that per-user activity has remained more or less steady since mid-2011.  
+Figure~\ref{fig:avr_posts_per_user_over_time_total} shows the average number of posts (submissions plus comments) per month by users who were active in that month.  Taken at face value, this suggests that over the first few years of Reddit, users became more active in posting and that per-user activity has remained more or less steady since mid-2011.  
 
 \subsection{Activity relative to a user's lifespan}
 
@@ -197,39 +197,39 @@ Looking at the user time referential, the evolution of the number of comments pe
 
 In the previous sections we observed that the average effort per post for older cohorts increases as the users survive in the network. We also observed that users from older cohorts present higher effort per post for the same survived time than users from earlier cohorts. This means that as you age in reddit, you write more per post, and the earlier you joined, the more you write. But we also observed that users from earlier cohorts are commenting more than users from older cohorts for the same time survived in the network. Could users be actually putting the same effort in terms of number of written characters, but younger users do it writing more, shorter posts while older users write less, longer posts? To investigate this, we follow the same steps as in the previous sections, analyzing the overall and cohorted behaviors, over time and from the user time referential.
 
-\begin{figure}[!tb]
-\centering
-\includegraphics[scale=0.4]{./images/avr_comment_size_user_over_time_total.eps}
-\caption{Average number of written characters per user over time for the reddit network. Here we observe that the average number of characters a user writes per month in reddit had it maximum at around 2010. After that, we observe a slightly decreasing pattern for this proxy for user effort on average in the network.}
-\label{fig:avr_comment_size_user_over_time_total}
-\end{figure}
+%% Sam 12: A much better approach to these graphics is to join the overall curve with the cohorted cuves. Not only we save space, but we make the differences in the overall average and the cohorted trends more clear. Will be doing this for all graphics in previous sections, but might not have time to do all of them today.
 
-In Figure \ref{fig:avr_comment_size_user_over_time_total}, we observe that during most of the time, the average number of characters written per user per month stays between 3000 and 3500, peaking near 2010 and showing a slightly downwards tendency throughout the end of 2014.
-
-\begin{figure}[!tb]
-\centering
-\includegraphics[scale=0.4]{./images/avr_comment_size_user_user_ref_total.eps}
-\caption{Average number of written characters per user from the users time referential. This graphic shows that, as users survive in the network, the number of characters they are likely to write every month increases.}
-\label{fig:avr_comment_size_user_user_ref_total}
-\end{figure}
-
-To further investigate how users evolve in the network, we see in Figure \ref{fig:avr_comment_size_user_user_ref_total} the number of written characters per month per user from the user time referential. Here we observe a sharp increase in the beginning, mainly due to the fact that a significant number of users only survive a very short time and the total amount of characters they contribute is condierably lower in comparison with the ones that survive for longer. The effect these users have in the analysis is concentrated in the leftmost part of the graphic, which improves the analysis in this referential. We can see that users, as they survive, write more characters per month. This can be due to the fact that users write more as they age and/or because users that write less die first and the surviving ones are the ones that write the most. This graphic, however, also hides important information regarding the differences in user behavior according to the year they joined the network.
+%\begin{figure}[!tb]
+%\centering
+%\includegraphics[scale=0.4]{./images/avr_comment_size_user_over_time_total.eps}
+%\caption{Average number of written characters per user over time for the reddit network. Here we observe that the average number of characters a user writes per month in reddit had it maximum at around 2010. After that, we observe a slightly decreasing pattern for this proxy for user effort on average in the network.}
+%\label{fig:avr_comment_size_user_over_time_total}
+%\end{figure}
 
 \begin{figure}[!tb]
 \centering
 \includegraphics[scale=0.4]{./images/avr_comment_size_user_over_time_cohorts.eps}
-\caption{Average number of written characters per user over time for cohorts on user creation time superimposed over the trend for the total of users.Here we observe that, at any point in time, the average number of characters that older cohort users write per month is always higher than the earlier cohorts. Also, as with other per user averages, these curves are significantly different in the cohort year, since users are being created in the period.}
+\caption{Average number of written characters per user over time for cohorts on user creation time superimposed over the trend for the total of users. The overall average number of characters a user writes per month in reddit for the total of users had it maximum at around 2010. After that, we observe a slightly decreasing pattern for this proxy for user effort on average in the network. We also observe in the cohorted curves that, at any point in time, the average number of characters that older cohort users write per month is always higher than the earlier cohorts. Also, as with other per user averages, these curves are significantly different in the cohort year, since users are being created in the period.}
 \label{fig:avr_comment_size_user_over_time_cohorts}
 \end{figure}
 
+In Figure \ref{fig:avr_comment_size_user_over_time_cohorts}, we observe that during most of the time, the overall average number of characters written per user per month stays between 3000 and 3500, peaking near 2010 and showing a slightly downwards tendency throughout the end of 2014. The cohorted curves show a different growth pattern in comparison with the overall trend, mainly increasing and then leveling at different values, with older cohorts higher than younger ones. The decreasing overall trend happens because the latter cohorts have a much more significant weight in the average due to the increased number of users that joined reddit in the later years. This highlights the differences of the overall trend for the cohorted trend: while the overall shows a slightly decrease towards 2014, the cohorts show an increasing and leveling behavior. This can lead to wrong conclusions if not treated properly.
 
+%\begin{figure}[!tb]
+%\centering
+%\includegraphics[scale=0.4]{./images/avr_comment_size_user_user_ref_total.eps}
+%\caption{Average number of written characters per user from the users time referential. This graphic shows that, as users survive in the network, the number of characters they are likely to write every month increases.}
+%\label{fig:avr_comment_size_user_user_ref_total}
+%\end{figure}
 
 \begin{figure}[!tb]
 \centering
 \includegraphics[scale=0.4]{./images/avr_comment_size_user_cohorts.eps}
-\caption{Average number of written characters per user from the user time referential segmented by user creation cohorts. Here we observe how the surviving users level at different values according to the cohorts. There is a clear general pattern for users in older cohorts to level at higher values than younger ones, given the same time lived in the network. The partial exception is 2008, that presents a lower evolution in the first one and a half year. Since, as in the previous cases, we can not know if this is because users took a longer time to write more of the low-effort users stayed around for a longer time, we have to further segment these cohorts by the time each user existed in the network.}
+\caption{Average number of written characters per user from the user time referential segmented by user creation cohorts superimposed with the average number of written characters per user from the users time referential for the total of users in the network. The overall line shows that, as users survive in the network, the number of characters they are likely to write every month increases. We also observe for the cohorted curves that the surviving users level at different values, with a clear general pattern for users in older cohorts to level at higher values than younger ones, given the same time lived in the network. The partial exception is 2008, that presents a lower evolution in the first one and a half year. Since, as in the previous cases, we can not know if this is because users took a longer time to write more of the low-effort users stayed around for a longer time, we have to further segment these cohorts by the time each user existed in the network. It is also important to notice how the shapes of the cohorted curves are different from the total line. This happens because the cohorts have different weights in the total curve because of larger number of users in them.}
 \label{fig:avr_comment_size_user_cohorts}
 \end{figure}
+
+To further investigate how users evolve in the network, we see in Figure \ref{fig:avr_comment_size_user_cohorts} the number of written characters per month per user from the user time referential for the overall average and the user creation date cohorted curves. We observe a sharp increase in the beginning of all lines due to the fact that a significant number of users only survive a very short time and the total amount of characters they contribute is considerably lower in comparison with the ones that survive for longer. The effect these users have in the analysis is concentrated in the leftmost part of the graphic, which improves the analysis in this referential. We can see that users, as they survive, write more characters per month. This can be due to the fact that users write more as they age and/or because users that write less die first and the surviving ones are the ones that write the most. From the user perspective, we see that the evolution of overall trend and the cohorted ones are significantly different. The overall trend shows a positive second derivative and apparently keep increasing for older users, while the cohorted ones have a negative one and eventually level. The conclusions about how users behave based on this can be quite misleading, specially considering that it is not reasonable for users to be forever increasing the amount of written characters as they survive.
 
 \begin{figure}[!tb]
 \centering
@@ -243,6 +243,7 @@ To further investigate how users evolve in the network, we see in Figure \ref{fi
 \label{fig:avr_comment_length_user_for_surviving_year}
 \end{figure}
 
+To understand the increasing amount of written characters as the users age in the network, Figure \ref{fig:avr_comment_length_user_for_surviving_year} shows the per cohort set of figures that segments the users in each cohort according to the number of years survived. We can see clear trends of users leveling in different values of written characters per month according to the number of years they are likely to survive. This means that most of the increasing behavior of the user-time referential is due to users that write few characters dying earlier.
 
 \subsection{Users' Survival}
 
