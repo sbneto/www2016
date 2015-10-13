@@ -164,6 +164,29 @@ Let us go back to Figure~\ref{fig:comment_length}a, which shows the overall aver
 
 However, in the same Figure~\ref{fig:comment_length}a, we saw that average comment size increases over time for every cohort. While later cohorts start at smaller comment sizes, after an initial drop, all of the cohorts show a positive trend towards writing bigger comments as time goes on.  This is puzzling: when each of the cohorts exhibit a steady increase in their average comment size, how can the overall mean comment size decrease?  This anomaly is an instance of the Simpson's paradox, and occurs because we fail to properly condition on different cohorts when computing mean comment length. 
 
+%% DC 12: Would delete the prior table and add an overall column to this one.
+%% DC 12: More generally, though, I think these are probably redundant with the figure, and I would just use the figure to explain them.  
+\begin{table}[!tb]
+\centering
+\tabcolsep=0.11cm
+\singlespacing
+\fontsize{7pt}{8pt}\selectfont
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Cohort & 2007 & 2008 & 2009 & 2010 & 2011 & 2012 & 2013 & 2014 & Overall\\ \hline
+2007 & 114 & - & - & - & - & - & - & - & 114 \\ \hline
+2008 & 106 & 99 & - & - & - & - & - & - & 103 \\ \hline
+2009 & 113 & 101 & 99 & - & - & - & - & - & 103 \\ \hline
+2010 & 114 & 103 & 96 & 91 & - & - & - & - & 96 \\ \hline
+2011 & 119 & 109 & 103 & 93 & 83 & - & - & - & 91 \\ \hline
+2012 & 125 & 114 & 110 & 101 & 87 & 81 & - & - & 89 \\ \hline
+2013 & 126 & 117 & 111 & 104 & 92 & 82 & 80 & - & 87 \\ \hline
+2014 & 128 & 119 & 113 & 106 & 95 & 87 & 83 & 82 & 88 \\ \hline
+\end{tabular}
+\caption{Evolution of the median throughout the years for each cohort. Each column here is one cohort and each line is one year in time. Cohorts only start having data on the cohort year, therefore the upper diagonal is blank. On the right column we see the overall median for all users.}
+\label{tab:simpson}
+\end{table}
+
 %% DC 12: I am confused by the comment, because I don't know either the percentage like or the wikipedia example parts.
 %Sam 9: Still unclear if we should calculate the proportion above and bellow the median of the previous year to have a ``percentage like'' number just as in the wikipedia example. I would like to have this set up as similar as possible as the easiest reference people can find about the subject. A little bit going up by the end, although for some analysis including 2014 and 2007 is a problem, I don't necessarily think it gets in the way here, should we get rid of them?
 %\begin{table}[htbp]
@@ -195,30 +218,6 @@ Table \ref{tab:simpson} provides some clues to what might be going on. When we m
 
 %% Also changed some things here
 Without the decision to condition on cohorts, one would have gathered an entirely wrong conclusion. People are not writing less as they survive, rather those who tend to write less are joining the community in much larger numbers. Knowing this, one may focus on better onboarding processes for newcomers, or evaluate why users in later cohorts tend to write smaller comments on average. 
-
-%% DC 12: Would delete the prior table and add an overall column to this one.
-%% DC 12: More generally, though, I think these are probably redundant with the figure, and I would just use the figure to explain them.  
-\begin{table}[htbp]
-\centering
-\tabcolsep=0.11cm
-\singlespacing
-\fontsize{7pt}{8pt}\selectfont
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
-\hline
-Cohort & 2007 & 2008 & 2009 & 2010 & 2011 & 2012 & 2013 & 2014 & Overall\\ \hline
-2007 & 114 & - & - & - & - & - & - & - & 114 \\ \hline
-2008 & 106 & 99 & - & - & - & - & - & - & 103 \\ \hline
-2009 & 113 & 101 & 99 & - & - & - & - & - & 103 \\ \hline
-2010 & 114 & 103 & 96 & 91 & - & - & - & - & 96 \\ \hline
-2011 & 119 & 109 & 103 & 93 & 83 & - & - & - & 91 \\ \hline
-2012 & 125 & 114 & 110 & 101 & 87 & 81 & - & - & 89 \\ \hline
-2013 & 126 & 117 & 111 & 104 & 92 & 82 & 80 & - & 87 \\ \hline
-2014 & 128 & 119 & 113 & 106 & 95 & 87 & 83 & 82 & 88 \\ \hline
-\end{tabular}
-\caption{Evolution of the median throughout the years for each cohort. Each column here is one cohort and each line is one year in time. Cohorts only start having data on the cohort year, therefore the upper diagonal is blank. On the right column we see the overall median for all users.}
-\label{tab:simpson}
-\end{table}
-
 
 %% DC 12: This first one still has no real justification: where is the theory or empirical evidence that demographics is what's going to drive this?
 %Some possible explanations for this difference in the starting points could be that older users are, again, sampled from a different demographics that is more committed and willing to spend more effort into developing their virtual identity. 
