@@ -1,17 +1,51 @@
-\section{Previous Work}
+\section{Time matters}  %% DC 12: Bad pun (matters = important, matters = specifics)
 
-%% DC 10: After seeing this I'm less convinced it was a good idea for me to suggest it, at least as an introduction.  It might read/work better as a related work section now, assuming that we have the previous work available to cite.  
-%% Sam 10: Moving all this part to Previous Work, will give a shot at Introduction. Will fix things here after.
-In previous work, researchers have studied the relationship of different cohorts adopting new technologies and how users that did not grow in a technological environment show different characteristics when compared with the younger generations. This external variable to the social network might explain many different aspects of how adoption of a network happens. Just as users experience outside the network vary according to their age and influence their behavior, users' experience inside the network throughout time vary as the network evolves. Users in the early stages of a social network have a very different experience from latter users.
+%% DC 12: Okay, taking a new stab at an outline/argument for this that better fits the introduction, which is much more about time than it was.  
+%% I do not and will not have time to write this up, but I think a lot of it will be pretty straightforward.  I'm hoping that Sam sees it as reasonable tonight, and that he tonight and/or Amit tomorrow can fill in a good amount of this and change/tweak things as you see that they work or don't.
+%% Cites in this section don't _all_ have to be about modeling user behavior in online communities, but we want to make sure that's embedded in the story wherever possible.
 
-\textbf{\textit{Are users evolving in different ways based on when they join the network? How is an early user different from a late user?}}
+\subsection{Why accounting for time is important}
 
-Evolution in this sense can be interpreted in many different ways. Researchers have looked into many aspects of how user behavior change, how frequent they post, how users adopt new language, how likely a user is to survive in the network (which is also related with the problem of predicting which users are going to depart from your network). Based on this, we have to understand what we are looking for in the user behavior.
+Why time is important: the incoming users and community both likely change over time.  
+
+Users 1: The user adoption curve means that enthusiasts likely join earlier.  
+
+Users 2: Overall patterns of use might change because the overall population of internet users is still changing (this `would be a place to critique the Mexican desensitization to violence paper).
+
+Community 1: The nature or goals of the community can change.  Flixter.  Digg.  Reddit iteself has a number of subcommunities that are the default set for new users---and they change over time. 
+
+Community 2: Successful communities often grow very rapidly, providing more content to react to (which is both good and bad -- there's more to interact with, but getting responses might be a lot easier in a small than large community) and new challenges for management (Wikipedia policies).  
+
+Community 3: Behavior within the community changes as new users come.  Conventions are created.  Language changes.  And, people likely model what they see. 
+
+Pithy summary of why time is important from the above.
+
+\subsection{Accounting for time and change}
+
+Using ordinal time when timestamps aren't available or are coarse. (Cosley et al. Suri paper from 2010 about ordinal time; k-exposure; must be others).  We're more interested in the general case when time data is available.  
+
+Statistical tools: Using joining time as a predictor/control variable (e.g., in regressions).  (Find examples).  
+More sophisticated time series analysis.  But, we're more interested in simpler analyses and effective ways to visualize behavior.
+%% DC 12: This idea of effective visualizations of behavior could be a framing of the whole paper in some worlds, although it's probably a little late to move in that direction and would require us to become more expert in visualization. 
+
+Adjusting time relative to phenomena or events of interest.  Normalizing clock times to local time (Macy and Golder twitter paper) or internal clock time (Liz paper under submission to CHI).  Normalizing to an event of interest (e.g., Crandall paper 'first interaction' in Wikipedia).  
+
+Using cohorts.  (Find examples.)
+
+%% DC 12: I was going to have this as the first subsection, but the flow worked better to start with time.  So, then I went to put it as the third subsection, but I think a lot of the specifics that would have been here will come up in the discussion of time.  So now I don't think this needs to be here.  There are some worlds that it comes as part of the Reddit subsection, but I think the most likely outcome now is that at the beginning of the analysis, there's a brief section that introduces that we're going after these questions, and then at the beginning of each analysis we point to enough related work to help illustrate that it's an important question, to help us define it in Reddit, and (ideally) to charcterize whether other work on that question has done some of this work around accounting for time.
+% \subsection{Modeling user effort in online communities}
+
+
+%In previous work, researchers have studied the relationship of different cohorts adopting new technologies and how users that did not grow in a technological environment show different characteristics when compared with the younger generations. This external variable to the social network might explain many different aspects of how adoption of a network happens. Just as users experience outside the network vary according to their age and influence their behavior, users' experience inside the network throughout time vary as the network evolves. Users in the early stages of a social network have a very different experience from latter users.
+
+%\textbf{\textit{Are users evolving in different ways based on when they join the network? How is an early user different from a late user?}}
+
+%Evolution in this sense can be interpreted in many different ways. Researchers have looked into many aspects of how user behavior change, how frequent they post, how users adopt new language, how likely a user is to survive in the network (which is also related with the problem of predicting which users are going to depart from your network). Based on this, we have to understand what we are looking for in the user behavior.
 
 %% DC 10: This really isn't a separate question; these are common kinds of questions that realted work might ask
 \textbf{\textit{What can ``different'' be? Effort, activity, survival?}}
 
-This evolving process of users changing inside of the network change the network itself. We know that the idea users have from a social network might change their willingness to try it, just as we know how the initial experience might impact in the user future behavior \cite{Miller2015}. But the community evolving in itself changes the idea users outside have about it \cite{Danescu-niculescu-mizil2013}. This internal evolution together with the novelty that the influx of users bring make reddit a very interesting evironment to understand, for sub-communities known as subreddits as being created all the time and in different contexts, which raises the following question.
+%This evolving process of users changing inside of the network change the network itself. We know that the idea users have from a social network might change their willingness to try it, just as we know how the initial experience might impact in the user future behavior \cite{Miller2015}. But the community evolving in itself changes the idea users outside have about it \cite{Danescu-niculescu-mizil2013}. This internal evolution together with the novelty that the influx of users bring make reddit a very interesting evironment to understand, for sub-communities known as subreddits as being created all the time and in different contexts, which raises the following question.
 
 \textbf{\textit{Are communities evolving in different ways based on when they are created in the network?}}
 
@@ -37,6 +71,7 @@ May 7, 2014 & announcements, Art, AskReddit, askscience, aww, blog, books, creep
 \end{tabular}
 \caption{Default subrredits over time.}
 \end{table}
+%% DC 12: Probably not worth laying this out in so much detail -- and this really probably isn't part of related work, versus being part of the subcommunity/joint analysis.
 
 \begin{table}[htbp]
 \centering
@@ -56,15 +91,18 @@ May 7, 2014 & 4 & 23 & 6 & 5 & 4 & 7 & 1 & - \\ \hline
 \end{tabular}
 \caption{Count of subreddits per creation year for each default set of.}
 \end{table}
+%% DC 12: Again, likely too much detail, unless analyzed in tandem with changes in the distribution of activity across subreddits later. 
 
-Kooti et al. \cite{Kooti2010} showed that social conventions can define the evolution of a community and the early adopters play a major role in designing these conventions, even if at the time this is not known by them. Evidence for the need of a retweeting mechanism in Twitter was evident in the early stages of the community and, out of the many possibilities that coexisted, the ``RT'' tag survived. Early adopters of these conventions are core users, well connected and presenting high activity. Just as Twitter, reddit network evolved from a relatively small set of users and subreddits. Wheather or not these early adopter of reddit laid the foundations in terms of content and behavior is not necessarily clear. It is reasonable to imagine that users would always look for content in subreddits that were created around the time they joined the network, for they might refer to the current context they are inserted into. Therefore, we propose the following question.
+%Kooti et al. \cite{Kooti2010} showed that social conventions can define the evolution of a community and the early adopters play a major role in designing these conventions, even if at the time this is not known by them. Evidence for the need of a retweeting mechanism in Twitter was evident in the early stages of the community and, out of the many possibilities that coexisted, the ``RT'' tag survived. Early adopters of these conventions are core users, well connected and presenting high activity. Just as Twitter, reddit network evolved from a relatively small set of users and subreddits. Wheather or not these early adopter of reddit laid the foundations in terms of content and behavior is not necessarily clear. It is reasonable to imagine that users would always look for content in subreddits that were created around the time they joined the network, for they might refer to the current context they are inserted into. Therefore, we propose the following question.
 
-\textbf{\textit{Is there a consolidation point in a social network where the ``core content'' is established? Can this core change over time?}}
+%% DC 12: This question is too broad to really resolve.
+%\textbf{\textit{Is there a consolidation point in a social network where the ``core content'' is established? Can this core change over time?}}
 
-User-Network homophily? They connect because they are similar or do they become similar as the user evolves? Are the ``dissimilar'' leaving?
-Looking at how reddit looked like at a particular point in time is a different question from how users evolve, and much of the user evolution depends on the environment a user finds when they first join the network. In many ways, this is an initial value problem, but separating what is due to the evolution of the network and what comes from the different demographics outside the network is not always clear.
+%User-Network homophily? They connect because they are similar or do they become similar as the user evolves? Are the ``dissimilar'' leaving?
+%Looking at how reddit looked like at a particular point in time is a different question from how users evolve, and much of the user evolution depends on the environment a user finds when they first join the network. In many ways, this is an initial value problem, but separating what is due to the evolution of the network and what comes from the different demographics outside the network is not always clear.
 
-\textbf{\textit{Are latter users intrinsically different from earlier users or are they having different initial experiences?}}
+%% DC 12: This is similar to the first question.
+%\textbf{\textit{Are latter users intrinsically different from earlier users or are they having different initial experiences?}}
 
 
 \begin{itemize}
