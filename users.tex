@@ -38,7 +38,7 @@ One caution about interpreting the graphs that are relative to the user's start 
 
 %This figure shows that a user's tenure matters: the longer a user survives, the more posts they make over time.  Interestingly, we see that the curve rises much higher than it does in Figure~\ref{fig:avr_posts_per_user_over_time_total}: users who survive over five years have almost 50\% more posts per year than average. 
 
-A tempting conclusion at this point is: the longer a user survives, the more posts they make over time. This, however, is not exactly why we see this curve increasing from the user-time referential. The correct interpretation here is: given that the user survived, his/her posting average is going to be higher. As we will see, cohorting segmenting the users will reveal more of the underlying process. 
+A tempting conclusion at this point is: the longer a user survives, the more posts they make over time. This, however, is not exactly why we see this curve increasing from the user-time referential. The correct interpretation here is: given that the user survived, his/her posting average is going to be higher. As we will see, cohorting and segmenting the users will reveal more of the underlying process. 
 
 
 \subsection{Cohort-based views of posting activity}
@@ -67,12 +67,12 @@ A tempting conclusion at this point is: the longer a user survives, the more pos
 %% DC 12: Another option would be to only show the cohorts with more than a couple of years of data, 2008-2011.  This could be justified and also would save some space, or to show all of them for the first one and two illustrative, representative examples for the rest. 
 
 
-Implicitly, the prior figure suggests that older (in the sense of first account activity) users are more active than newer ones, raising the question of whether newer users
+Implicitly, Figure~\ref{fig:overall_posts}b suggests that older (in the sense of first account activity) users are more active than newer ones, raising the question of whether newer users
 are likely to eventually follow in older users' footsteps.  Analyzing users' behavior by cohort, grouping them by account creation year, is one reasonable way to address this question.  Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}a shows our first attempt at this analysis.  This figure already shows a significant cohort effect: users from latter cohorts appear to level off at a significantly lower posting average than users from earlier cohorts.  
 
 However, the figure also has an awkward anomaly, the sharp increase in the average number of posts at the end of each cohort's first calendar year in Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}a.  Since we segmented our users by cohorts, by the end of each year onwards, we do not have users joining the network any more and the influx of low posting, low survival users stops. To support that it is indeed the case that these users are causing these effects, we need yet other representations of the users' evolution.
 
-The fact that users in their early existence have a low posting average can be seen in the user-time referential Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}b. These account for the lower values in the cohort year for the in Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}a. We could, however, imagine that low posting users would keep around after the end of the cohort year and keep dragging the average down. Figure~\ref{fig:avr_posts_per_user_for_surviving_year}c show that this is not the case. It shows, for the years of 2010, 11 and 12 \footnote{We only show these figures for a matter of space, but the same trends are observed for the other cohorts.} that, when segmenting users by the number of years they survived in the network, the low posting ones are the first to die.
+The fact that users in their early existence have a low posting average can be seen in the user-time referential Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}b. These account for the lower values in the cohort year for the in Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}a. We could, however, imagine that low posting users would keep around after the end of the cohort year and keep dragging the average down. Figure~\ref{fig:avr_posts_per_user_for_surviving_year} show that this is not the case. It shows, for the years of 2010, 11 and 12 \footnote{We only show these figures for a matter of space, but the same trends are observed for the other cohorts.} that, when segmenting users by the number of years they survived in the network, the low posting ones are the first to die.
 
 
 
@@ -87,9 +87,9 @@ The fact that users in their early existence have a low posting average can be s
 \centering
 %\includegraphics[scale=0.25]{./images/avr_posts_per_user_for_surviving_year_for_2008.eps}
 %\includegraphics[scale=0.25]{./images/avr_posts_per_user_for_surviving_year_for_2009.eps}
-\begin{subfigure}{.3\textwidth}\includegraphics[scale=0.25]{./images/avr_posts_per_user_for_surviving_year_for_2010.eps}\caption{}\end{subfigure}
-\begin{subfigure}{.3\textwidth}\includegraphics[scale=0.25]{./images/avr_posts_per_user_for_surviving_year_for_2011.eps}\caption{}\end{subfigure}
-\begin{subfigure}{.3\textwidth}\includegraphics[scale=0.25]{./images/avr_posts_per_user_for_surviving_year_for_2012.eps}\caption{}\end{subfigure}
+\includegraphics[scale=0.25]{./images/avr_posts_per_user_for_surviving_year_for_2010.eps}
+\includegraphics[scale=0.25]{./images/avr_posts_per_user_for_surviving_year_for_2011.eps}
+\includegraphics[scale=0.25]{./images/avr_posts_per_user_for_surviving_year_for_2012.eps}
 %\includegraphics[scale=0.25]{./images/avr_posts_per_user_for_surviving_year_for_2013.eps}
 \caption{Each figure corresponds to one cohort, from 2010 to 2012, left to right. The users for each cohort are further divided in groups based on how long they survived: users that survived up to 1 year are labeled 0, from 1 to 2 years are labeled 1, and so on. We observe that, for all cohorts, users that have a lower posting average are the first to die.}
 \label{fig:avr_posts_per_user_for_surviving_year}
@@ -98,18 +98,24 @@ The fact that users in their early existence have a low posting average can be s
 %We can largely account for this by still treating users as cohorts based on the year they first posted to reddit, but adjusting the time reference to be relative to the user's first post rather than clock time as we did before.  Figure~\ref{fig:avr_posts_per_user_cohorts_relative} presents this view of the data.
 
 %% DC 10: Part of me would be curious about either an inset for the first three months, and/or a log-2 scale for time where the first year gets half the frame, etc.  My guess is that the log scale is hard to read because it's an unusual way to present time, but it does have an advantage in that most of the data is on the "left" of the graph and that would emphasize attention toward it, maybe.
-Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}b actually reveals more than just why we see the anomaly on the left. It suggests that there may not be strong cohort effects early in a user's lifespan, although even after six months users in the most recent 2012 and 2013 cohorts appear to be less active than those in earlier groups.  In the long run, however, a striking pattern emerges: different cohorts stabilize in different levels of behavior, and in particular, the steady state activity for surviving users goes down for every year from 2008 to 2012.
+Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}b actually reveals more than just why we see the anomaly on the Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}a. In the long run, a striking pattern emerges: different cohorts stabilize in different levels of behavior, and in particular, the steady state activity for surviving users goes down for every year from 2008 to 2012.
+%It shows that 2008 has a much slower increase of the average number of posts per surviving user than the other cohorts in the first year. Also, 2009 and 2010 have the sharpest increase in the same period. 
+Since Figure \ref{fig:avr_posts_per_user_for_surviving_year} tells us that the main reason why these curves increase is because the low posting users are dying sooner, it means that a higher number of low-posting users are surviving in the later cohorts. It is also important to notice that Figure \ref{fig:avr_posts_per_user_for_surviving_year} shows that users are more likely to post less as they live on.
 
-Also, \ref{fig:avr_posts_per_user_for_surviving_year} tells us that the main reason why these curves increase is because the low posting users are dying, and not because users, as they live longer, they post more, as a naive interpretation of Figure~\ref{fig:overall_posts}b would suggest. In fact, as you live on, you are more likely to post less, with the difference that if you start from a low level to begin with, you are likely to live a short time. These clear patterns suggest that, when conditioned on cohorts, posting activity can be a good predictor of survival.
+%, and not because users post more as they live longer. 
+%Therefore, how steep the curves in Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}b are is related to how many low posting users joined in that cohort and how fast they died.
+%It suggests that there may not be strong cohort effects early in a user's lifespan, although even after six months users in the most recent 2012 and 2013 cohorts appear to be less active than those in earlier groups.  
 
-%% DC 10: The status bit is intriguing but needs to be explained a little better.  Took a little shot at it but framing it in terms of cumulative advantage rather than status
-%% DC 10:This, too, would need to be explained/justified/supported, and I can't come up with a plausible one, so deleting it.
-%Yet another explanation would be that earlier users demographics were different in terms of age and interests, for example, and these correlate to the fact that they present a higher activity.
+
+%Also, Figure \ref{fig:avr_posts_per_user_for_surviving_year} tells us that the main reason why these curves increase is because the low posting users are dying, and not because users, as they live longer, they post more, as a naive interpretation of Figure~\ref{fig:overall_posts}b would suggest. 
+%In fact, as you live on, you are more likely to post less, with the difference that if you start from a low level to begin with, you are likely to live a short time. These clear patterns suggest that, when conditioned on cohorts, posting activity can be a good predictor of survival.
 
 %% DC 10: There is a mysterious question about why 2008 ramps up more slowly, that I would interpret in the "there was less to comment on" framing that we've chatted about before.  You could actually do an analysis to test this, where for each user, the number of posts in a month is normalized by the number of posts made in reddit in that month: that is, how active is the user relative to the total amount of activity in reddit.  This is _not_ a linear scaling when the analysis is relative to the user's initial start date, and I would be curious to see what it showed.
+%% Sam 14: There is an important point here that I think we did not explore properly. The fact that we count surviving users makes the interpretation of the user-time referential figures hard. This happens because we do not know if it is increasing because surviving users are indeed increasing their activity or because the ones dying are the low activity ones. That is why I made the sets of figures for each cohort. But there is more: the cohorted curves from the user-referential (particularly 2008) might not be increasing because in these cohorts the low activity keep around, pulling the average down, but they don't die, while in some other cohorts they might die and let the average go up. This kind of comprimises some of these analysis in my opinion.
+%% Actually, when we control for the surviving time in the set of pictures for each cohort, we see that the posting per user is going down. This actually means that, for the average to increase, low activity users have to die, and if it doesn't increase, it is because low activity users are sticking around.
+%% This makes the interpretation of the user-referential cohorted picture more like the ``speed'' at which low activity users are dying entangled with the ``mixture'' of low and high activity users that joined the network. If the curve goes up fast, it means that the low activity die faster in that cohort. If it goes up slower, they die more slowly. How fast and how slow they can go also depends on how many low activity versus high activity we have in each cohort. E.g.: 2009 might have 10 low and 10 high, and the 10 low die in the 1st year, so the average jumps to a high value fast, while 2013 might have 1000 low and 10 high, and the low activity are not dying so fast. So it would be natural, even if users were not to die, for 2013 to be lower. If they die, and do so more slowly (assuming independence, which might not be the case), the curve would increase slower than 2009.
+%% The curve does say what a user looks like, on average, given that he has survived x time. But does not mean that users are evolving in that way.
 
-
-%% DC 12: These are actually a separate section, or sections, for me.  In particular, Users' Effort and the Simpson need to be combined, so I am doing that here.
 
 \section{Comment length as a proxy for effort}
 
@@ -303,6 +309,7 @@ Figure \ref{fig:comments_submissions}b is more informative of what is happening.
 \begin{subfigure}{.49\textwidth}\includegraphics[scale=0.4]{./images/avr_comment_size_user_over_time_cohorts.eps}\caption{}\end{subfigure}
 \begin{subfigure}{.49\textwidth}\includegraphics[scale=0.4]{./images/avr_comment_size_user_cohorts.eps}\caption{}\end{subfigure}
 \begin{subfigure}{1\textwidth}
+    %\includegraphics[scale=0.285]{./images/avr_comment_length_user_for_surviving_year_for_2009.eps}
     \includegraphics[scale=0.285]{./images/avr_comment_length_user_for_surviving_year_for_2010.eps}
     \includegraphics[scale=0.285]{./images/avr_comment_length_user_for_surviving_year_for_2011.eps}
     \includegraphics[scale=0.285]{./images/avr_comment_length_user_for_surviving_year_for_2012.eps}
