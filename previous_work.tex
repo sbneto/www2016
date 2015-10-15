@@ -37,16 +37,16 @@ To account for time, users on online communities are differentiated based on the
 
 However, much of past work on online communities ignores the time at which a user joins the community and analyzes all users together, irrespective of when they joined a community. These  analyses normalize clock time to a user-relative time, such as measuring time since a user's first post in a community. In this paper,we argue that gnoring the actual wall-clock time at which people joined can be a mistake. Changes in activity we might see between users might get washed out because of the internal differences due to their joining date, or may appear exaggerated when they are, in fact, no effects. As we will show, through a careful analysis of effect of a user's join cohort, not accounting for cohorts can lead us to absolutely wrong conclusions in some cases. 
 
-We use Reddit as an example community to understand people's behavior, effort and survival in a community, through the lens of cohorts. We focus on the following research questions:
+We use Reddit as an example community to understand people's behavior, effort and survival in a community, through the lens of cohorts. We focus on the following research questions, connected to user effort in a community. 
+
+Activity levels of users are a good, first proxy for understanding individual users' behavior \cite{}, their survival rate \cite{}, and  gauging the general health of a community as a whole \cite{}. We look at two ways of studying activity: overall number of contributions, and the type of contributions that people make on Reddit. Our first question concerns simply the number of comments or original submissions that people make on Reddit.
 
 \paragraph*{Evolution of activity} How does the activity of users change as the community evolves?
 
-Activity levels of users are a good, first proxy for understanding individual users' behavior \cite{}, their survival rate \cite{}, and  gauging the general health of a community as a whole \cite{}. We look at two ways of studying activity: overall number of contributions, and the type of contributions that people make on Reddit.
+In addition to overall activity, the length of each contribution may tell us about the effort that people put in the community. Our second question concerns the length of people's comments. 
 
-\paragraph*{Evolution of effort} How does the effort that people put in, measured in terms of their comment length, change as the community evolves?
+\paragraph*{Evolution of comment length} How does the effort that people put in, measured in terms of their comment length, change as the community evolves?
  
-We choose effort as our second question because work in communities such as Wikipedia shows strong associations of user effort with engagement and survival \cite{}.  We look at the length of posts by people as a proxy for the effort they put in the community. 
-
 %Using ordinal time when timestamps aren't available or are coarse. (Cosley et al. Suri paper from 2010 about ordinal time; k-exposure; must be others).  We're more interested in the general case when time data is available.  
 
 %Statistical tools: Using joining time as a predictor/control variable (e.g., in regressions).  (Find examples).  
