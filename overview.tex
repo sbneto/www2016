@@ -24,7 +24,7 @@ Redditor \textit{Stuck\_In\_The\_Matrix} used that API to compile a dataset of a
 
 We focus on submissions and comments in the dataset because they have timestamps and can be tied to specific users and subreddits, allowing us to perform our time-based analyses.   In some analyses, we look only at comments; in some, we combine comments and submissions, calling them ``posts''.  We would also like to have looked at voting behavior as a measure of user activity\footnote{This would also give us more insight than usual into lurkers' behavior; we'll return to this in the discussion.}, but individual votes with timestamps and usernames are not available through the API, only the aggregate number of votes that posts receive.
 
-\subsection{Processing the dataset}
+\subsection{Pre-processing the dataset}
 
 To analyze the data, we used Google BigQuery \footnote{\url{https://cloud.google.com/bigquery/ }.}, a big data processing tool that at the time of writing this paper provided free processing for up to 1TB of data for users with a Google account.  Redditor \textit{fhoffa} imported the comments into BigQuery and made them publicly available \footnote{See \url{https://www.reddit.com/r/bigquery/comments/3cej2b/17_billion_reddit_comments_loaded_on_bigquery/ }.}.  We uploaded the submission data ourselves using Google's SDK \footnote{Part of the alpha code in the SDK, ``gcloud alpha bigquery import''.}.
 %% DC 15: This footnote I don't understand.
@@ -71,10 +71,10 @@ in general our analyses will look only at active users and subreddits in each mo
 %% DC 10: Trying to decide whether this works better here or at the beginning of a cohorty section -- there is some subtlety that I think Sam wants to work through when introducing the first problem.
 %% Amit 9: Added this subsection here. Having the cohorts defined as the part of the overview will help, as we talk about them throughout the paper. Some of the cohort stuff from next section can come here. 
 
-We define a user's or subreddit's creation time as the time of the first post by that user or in that subreddit.  Throughout this paper, we will use the notion of user (or subreddit) cohorts, which will consist of users (subreddits) created in the same calendar year.
+We define a user's creation time as the time of the first post by that user or in that subreddit.  Throughout this paper, we will use the notion of user cohorts, which will consist of users created in the same calendar year.
 
 %% DC 15: This is not super-clear, but it is closer.
-In many cases, we will look at the evolution of these cohorts. Since users (subreddits) can be created at any time during their cohort year, and our dataset ends in 2014, 
+In many cases, we will look at the evolution of these cohorts. Since users can be created at any time during their cohort year, and our dataset ends in 2014, 
 we are likely to have a variation on the data available for each user of up to one year, even though they are in the same cohort.  To deal with this, some of our cohorted analyses will consider only the overlapping time window for which we collect data for all users in a cohort.   This means that we are normally not going to include the 2014 cohort in our analyses.
 
 %% DC 15: Okay, justifying the removal of 2007 is fair enough.
