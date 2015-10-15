@@ -30,14 +30,14 @@ One caution about interpreting the graphs that are relative to the user's start 
 \centering
 \begin{subfigure}{.49\textwidth}\includegraphics[scale=0.4]{./images/avr_posts_per_user_over_time_cohorts.eps}\caption{}\end{subfigure}
 \begin{subfigure}{.49\textwidth}\includegraphics[scale=0.4]{./images/avr_posts_per_user_cohorts.eps}\caption{}\end{subfigure}
-\caption{Figure (a) shows the average number of posts per active users over clock time and Figure (b) the surviving users in the user-time referential, both segmented by users' cohorts. The user cohort is defined as the year the user made his/her first post.  For comparison, the black lines represent the overall averages from Figure~\ref{fig:overall_posts}.}
+\caption{Figure (a) shows the average number of posts per active users over clock time and Figure (b) the active users in the user-time referential, both segmented by users' cohorts. The user cohort is defined as the year the user made his/her first post.  For comparison, the black lines represent the overall averages from Figure~\ref{fig:overall_posts}.}
 \label{fig:avr_posts_per_user_over_time_cohorts}
 \end{figure*}
 
 Figure~\ref{fig:overall_posts}b suggests that users who started earlier are more active than newer ones, raising the question of whether newer users
 will eventually follow in older users' footsteps.  Analyzing users' behavior by cohort is a reasonable way to address this question.  
 
-Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}a shows our first attempt at this analysis.  This Figure (a)lready shows a significant cohort effect: users from later cohorts appear to level off at a significantly lower posting average than users from earlier cohorts.  That is, it suggests that newer users probably won't ever be as active on average as older ones.
+Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}a shows our first attempt at this analysis.  This Figure already shows a significant cohort effect: users from later cohorts appear to level off at a significantly lower posting average than users from earlier cohorts.  That is, it suggests that newer users probably won't ever be as active on average as older ones.
 
 However, Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}a also has an awkward anomaly, the rapid rise in the average number of posts during each cohort's first calendar year, especially in December.  
 Combing cohort segmentation with user-referential analysis, as in Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}b, helps smooth out this anomaly and aligns cohorts with each other.  Doing this alignment makes clear that differences between earlier and later cohorts are apparent early on.
@@ -57,7 +57,7 @@ Combing cohort segmentation with user-referential analysis, as in Figure~\ref{fi
 
 These graphs still support the tempting conclusion that users become more active the longer they exist in Reddit, and don't explain the very rapid increase in posting activity in the first few months.  An alternative hypothesis, inspired by the ``Wikipedians are Born, not Made'' paper \cite{}, is that individual users come in with different posting propensities, and the rise over time is not that individual users become more active but that low-activity users leave the system.  To examine this, we further segment each cohort by the number of years they were active in the system, as defined by the difference between their first and last post times.
  
-Figure~\ref{fig:avr_posts_per_user_for_surviving_year} shows this analysis for the 2010, 2011 and 2012 cohorts\footnote{We only show these figures for a matter of space, but the same trends are observed for the other cohorts.}.  Across all cohorts and yearly survival sub-cohorts, users who leave earlier come in with a lower initial posting rate.  Thus, the rise in average posts per active user is driven by the fact that users who have high posting averages throughout their lifespan are the ones who are more likely to survive.  As the less active users leave the system, the average per surviving user increases.  In other words, the correct interpretation of Figure~\ref{fig:overall_posts}b isn't that longer-lived users post more.  It's that users who post more---right from the beginning---live longer. 
+Figure~\ref{fig:avr_posts_per_user_for_surviving_year} shows this analysis for the 2010, 2011 and 2012 cohorts\footnote{We only show these figures for a matter of space, but the same trends are observed for the other cohorts.}.  Across all cohorts and yearly survival sub-cohorts, users who leave earlier come in with a lower initial posting rate.  Thus, the rise in average posts per active user is driven by the fact that users who have high posting averages throughout their lifespan are the ones who are more likely to survive.  As the less active users leave the system, the average per active user increases.  In other words, the correct interpretation of Figure~\ref{fig:overall_posts}b isn't that longer-lived users post more.  It's that users who post more---right from the beginning---live longer. 
 
 \begin{figure*}[!tb]
 \centering
@@ -156,6 +156,7 @@ Table~\ref{tab:simpson} provides some clues to what might be going on. When we m
 
 Without the decision to condition on cohorts, one would have gathered an entirely wrong conclusion. People are not writing less as they survive, rather those who tend to write less are joining the community in much larger numbers. Knowing this, one may focus on better onboarding processes for newcomers, or try to learn why users in later cohorts tend to write smaller comments on average.  
 %% DC 15: Adding back the speculation about why
+%% Sam 15: I was moving speculations in general to the discussion and citing related work on them. Should we keep both or drop one of them?
 Figure~\ref{fig:comment_length}a suggests an interesting hypothesis: the initial month of each cohort year, which consists of data only from users who joined in that month, is generally very close to the overall line from the prior month---suggesting that new users are observing others' behavior and adopting what they see as the current norm of the community around post length.  
 
 \subsection{New users burn brighter}
