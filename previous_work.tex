@@ -1,19 +1,26 @@
-\section{Time matters}  %% DC 12: Bad pun (matters = important, matters = specifics)
-%% I do not and will not have time to write this up, but I think a lot of it will be pretty straightforward.  I'm hoping that Sam sees it as reasonable tonight, and that he tonight and/or Amit tomorrow can fill in a good amount of this and change/tweak things as you see that they work or don't.
+\section{Time matters} 
 %% Cites in this section don't _all_ have to be about modeling user behavior in online communities, but we want to make sure that's embedded in the story wherever possible.
 
 Communities grow, and die, with time. For any community, its users play a role in its evolution, but they are also simultaneously affected by the evolution of the community. Untangling this interplay can help make sense of patterns of activity in a community.
-One of the popular lens through which to analyze communities is through time, as it provides a linear account of the growth (or decay) of users, their activity, types of content and properties of communities. We discuss how accounting for time can be an important issue for communities and present an overview of past work on online communities.
-\subsection{Why accounting for time is important}
-One of the popular ways to account for time is to cohorts of users. A cohort is defined as a group of people who share a common characteristic, such as the year they were born, joined a school or community. In general, people in a cohort are exposed to the same state of a community and thus are more comparable to each other than people in other cohorts. For this reason, cohorts are a natural unit of analysis for scientific inquiry. For example, sociological studies often use students who join a school in the same year to understand about ..., ...\cite{}. Similarly, medical studies intepret effects of interventions and drugs using cohorts of people with the same age group \cite{}.
 
-While not immediately obvious, the importance of cohorts transfers to online communities as well. In Wikipedia, for example, we find substantial differences in the activities of cohorts of users who joined earlier versus those who joined later \cite{Welser2011a}.
+%We discuss how accounting for time can be an important issue for communities and present an overview of past work on online communities.
+
+%Looking at how reddit looked like at a particular point in time is a different question from how users evolve, and much of the user evolution depends on the environment a user finds when they first join the network. 
+
+\subsection{Why accounting for time is important}
+One useful way to understand the evolution of a community and its users is through time, as it provides a linear account of the growth (or decay) of overall activity, types of content, social norms, and structure of communities. Communities may grow denser or sparser with time \cite{Leskovec2005}, develop new norms \cite{Kooti2011} and/or enact policies and rules guiding people's behavior \cite{Butler2008}.
+
+These changes mean that people experience a different version of a community at different times, which can, in turn, affect their observed behavior. This interaction with the state of a community can confound conclusions about people's behavior, because the differences one observes may simply be due to changes in the community, rather than any significant change in the outcome variable of interest.  
+
+To prevent such confounding, a common unit of analysis to control for such biases is the cohort, widely used in fields such as sociology \cite{Mason2012,glenn2005}, economics \cite{}, and medicine \cite{}. A cohort is defined as a group of people who share a common characteristic, generally with respect to time. For example,  people born in the same year, or those who joined a school at the same time, or got exposed to an intervention at similar times can be considered as cohorts. Such people in a cohort can be assumed to be exposed to the same state of the world and thus are more comparable to each other than people in other cohorts. For example, sociological studies often use students who join a school in the same year to understand the effect of interventions \cite{}, and condition on the year in which people were born to understand people's  behavior, such as variations in financial decisions-making \cite{attanasio1993} or opinions on issues \cite{} . Similarly, medical studies interpret effects of drugs using cohorts of people with the same age group or lifelong exposure to correlated conditions \cite{levy1996,more}. These results are also hold for behavior on the web. For instance,  people who did not grow up in a technological environment differ in their social media and search usage  compared to younger generations\cite{Correa2010,Beldona2005}. 
+
+Recent work shows that the importance of cohorts transfers to online communities as well. Just as people's behavior varies according to their biological age, their experience in an online community may vary with their age in the community and their year of joining. In Wikipedia, for example, we find substantial differences in the activities of cohorts of users who joined earlier versus those who joined later \cite{Welser2011a}. Similarly, on review websites, users who join later tend to adopt different phrases than the older users who had joined earlier \cite{Danescu-niculescu-mizil2013}.
 
 These differences in activity between cohorts may be due to a number of reasons. It could be due to selection effects: people who are enthusiastic about a community or its goals are more likely to self-select as early members of a community, while others may be more likely to join later \cite{Li2008}. 
 
-The norms in community may change over time, which could explain why users in later cohorts may behave differently. In many cases, it is a bottom-up process. Examples include adoption of `RT', retweet norm by Twitter users and the subsequent introduction of the Retweet button on Twitter, change in language use by new and old users on review websites \cite{}, and  Example . In other cases, it may be directed by the community managers. For instance, the makers of Digg unilaterally changed the nature of the community by introducting a new version of the website that undermines norms of the community. 
+The norms in community may change over time, which could explain why users in later cohorts may behave differently. In many cases, it is a bottom-up process. Kooti et al. \cite{Kooti2010} showed that social conventions can define the evolution of a community and the early adopters play a major role in designing these conventions, even if at the time this is not known by them.Examples include adoption of `RT', a retweeting norm by Twitter users and the subsequent introduction of the Retweet button on Twitter, change in language use by new and old users on review websites \cite{Danescu-niculescu-mizil2013}, and assumptions of clear roles and responsibities on Wikipedia \cite{kittur?} . In other cases, it may be directed by the community managers. For instance, the makers of Digg unilaterally changed the nature of the community by introducing a new version of the website, leading to a sudden change in norms and behavior in the community. 
 
-The growth of a community may also affect people's behavior. Successful communitite often grow very rapidly, which can be both good and bad for people's experience with the community. On one hand, growth would imply availability of a larger chunk of content to choose from. On the other, it might be harder to connect to others and get responses in a bigger community. A community may grow big enough to have its own rules and policies, such as Wikipedia \cite{}, and in those cases, the experience of later cohorts of users may be vastly different from the initial ones who joined before formal rules were in place. 
+The growth of a community may also affect people's behavior. Successful communities often grow very rapidly, which can be both good and bad for people's experience with the community. On one hand, growth would imply availability of a larger chunk of content to choose from. On the other, it might be harder to connect to others and get responses in a bigger community. A community may grow big enough to have its own rules and policies, such as Wikipedia \cite{}, and in those cases, the experience of later cohorts of users may be vastly different from the initial ones who joined before formal rules were in place. 
 
 Finally, patterns of use may change because the overall population of Internet users is still changing. As more, and different people become connected with the web, their influx may lead to observed change in activity patterns. 
 % (this `would be a place to critique the Mexican desensitization to violence paper).
@@ -23,40 +30,69 @@ Finally, patterns of use may change because the overall population of Internet u
 
 %Community 3: Behavior within the community changes as new users come.  Conventions are created.  Language changes.  And, people likely model what they see. 
 
-Whatever be the reasons, users from different cohorts are likely to be different, and are often found to be different, in both online and offline communities \cite{}. The cohort of newcomers has received attention in recent work, connecting initial experience of users to their final survival in a community \cite{Tan2015,danescu-mizil}. A more general analysis of different cohorts of users---both old and new---can be helpful for making sense of user activity in online communities. 
+All of the above reasons suggest that users from different cohorts are likely to be different, which has also been demonstrated in online and offline communities \cite{danescu,others}. Accounting for these differences can be helpful for making conclusions about outcomes of interest, such as user's activity levels, their survival, and other outcomes of interest.
 
-\subsection{Accounting for time and change}
+\subsection{Accounting for time and change}'
+To account for time, users on online communities are differentiated based on their age, such as when modeling their preferences \cite{McAuley2013} or analyzing the evolution of their language \cite{danescu}. These analyses uncover insights about the lifecycle of a user in a community: users' preferences and behavior change with their age in a community \cite{panciera2010}, are and their early experiences and activity shape future outcomes predictably \cite{Tan2015,Yang2010,Panciera2009, Miller2015}. 
 
-Using ordinal time when timestamps aren't available or are coarse. (Cosley et al. Suri paper from 2010 about ordinal time; k-exposure; must be others).  We're more interested in the general case when time data is available.  
+However, much of past work on online communities ignores the time at which a user joins the community and analyzes all users together, irrespective of when they joined a community. These  analyses normalize clock time to a user-relative time, such as measuring time since a user's first post in a community. In this paper,we argue that gnoring the actual wall-clock time at which people joined can be a mistake. Changes in activity we might see between users might get washed out because of the internal differences due to their joining date, or may appear exaggerated when they are, in fact, no effects. As we will show, through a careful analysis of effect of a user's join cohort, not accounting for cohorts can lead us to absolutely wrong conclusions in some cases. 
 
-Statistical tools: Using joining time as a predictor/control variable (e.g., in regressions).  (Find examples).  
-More sophisticated time series analysis.  But, we're more interested in simpler analyses and effective ways to visualize behavior.
-%% DC 12: This idea of effective visualizations of behavior could be a framing of the whole paper in some worlds, although it's probably a little late to move in that direction and would require us to become more expert in visualization. 
+We use Reddit as an example community to understand people's behavior, effort and survival in a community, through the lens of cohorts. We focus on the following research questions:
 
-Adjusting time relative to phenomena or events of interest.  Normalizing clock times to local time (Macy and Golder twitter paper) or internal clock time (Liz paper under submission to CHI).  Normalizing to an event of interest (e.g., Crandall paper 'first interaction' in Wikipedia).  
+\paragraph*{Evolution of activity} How does the activity of users change as the community evolves?
 
-Using cohorts.  (Find examples.)
-\cite{Welser2011a}
+Activity levels of users are important for ...We look at two ways of studying activity: overall number of contributions, and the type of contributions that people make on Reddit.
 
-%% DC 12: I was going to have this as the first subsection, but the flow worked better to start with time.  So, then I went to put it as the third subsection, but I think a lot of the specifics that would have been here will come up in the discussion of time.  So now I don't think this needs to be here.  There are some worlds that it comes as part of the Reddit subsection, but I think the most likely outcome now is that at the beginning of the analysis, there's a brief section that introduces that we're going after these questions, and then at the beginning of each analysis we point to enough related work to help illustrate that it's an important question, to help us define it in Reddit, and (ideally) to charcterize whether other work on that question has done some of this work around accounting for time.
-% \subsection{Modeling user effort in online communities}
+\paragraph*{Evolution of effort} How does the effort that people put in, measured in terms of their comment length, change as the community evolves?
+ 
+We look at the length of posts by people as a proxy for the effort they put in the community. 
 
+%Using ordinal time when timestamps aren't available or are coarse. (Cosley et al. Suri paper from 2010 about ordinal time; k-exposure; must be others).  We're more interested in the general case when time data is available.  
 
-%In previous work, researchers have studied the relationship of different cohorts adopting new technologies and how users that did not grow in a technological environment show different characteristics when compared with the younger generations. This external variable to the social network might explain many different aspects of how adoption of a network happens. Just as users experience outside the network vary according to their age and influence their behavior, users' experience inside the network throughout time vary as the network evolves. Users in the early stages of a social network have a very different experience from latter users.
+%Statistical tools: Using joining time as a predictor/control variable (e.g., in regressions).  (Find examples).  
+%More sophisticated time series analysis.  But, we're more interested in simpler analyses and effective ways to visualize behavior.
+
+%Adjusting time relative to phenomena or events of interest.  Normalizing clock times to local time (Macy and Golder twitter paper) or internal clock time (Liz paper under submission to CHI).  Normalizing to an event of interest (e.g., Crandall paper 'first interaction' in Wikipedia).  
+
+%Using cohorts.  (Find examples.)\cite{Welser2011a}
 
 %\textbf{\textit{Are users evolving in different ways based on when they join the network? How is an early user different from a late user?}}
 
-%Evolution in this sense can be interpreted in many different ways. Researchers have looked into many aspects of how user behavior change, how frequent they post, how users adopt new language, how likely a user is to survive in the network (which is also related with the problem of predicting which users are going to depart from your network). Based on this, we have to understand what we are looking for in the user behavior.
-
 %% DC 10: This really isn't a separate question; these are common kinds of questions that realted work might ask
-\textbf{\textit{What can ``different'' be? Effort, activity, survival?}}
+%\textbf{\textit{What can ``different'' be? Effort, activity, survival?}}
 
 %This evolving process of users changing inside of the network change the network itself. We know that the idea users have from a social network might change their willingness to try it, just as we know how the initial experience might impact in the user future behavior \cite{Miller2015}. But the community evolving in itself changes the idea users outside have about it \cite{Danescu-niculescu-mizil2013}. This internal evolution together with the novelty that the influx of users bring make reddit a very interesting evironment to understand, for sub-communities known as subreddits as being created all the time and in different contexts, which raises the following question.
+%\textbf{\textit{Are communities evolving in different ways based on when they are created in the network?}}
 
-\textbf{\textit{Are communities evolving in different ways based on when they are created in the network?}}
+%Evidence for the need of a retweeting mechanism in Twitter was evident in the early stages of the community and, out of the many possibilities that coexisted, the ``RT'' tag survived. Early adopters of these conventions are core users, well connected and presenting high activity. Just as Twitter, reddit network evolved from a relatively small set of users and subreddits. Wheather or not these early adopter of reddit laid the foundations in terms of content and behavior is not necessarily clear. It is reasonable to imagine that users would always look for content in subreddits that were created around the time they joined the network, for they might refer to the current context they are inserted into. Therefore, we propose the following question.
 
-%% DC 10: Problem. https://www.reddit.com/wiki/reddit_101 new users are subscribed by default to a number of subreddits, which I'm guessing explains an enormous amount of the advantage of reddits from 2008.  That makes this part much less interesting for us to talk about.  See if these subreddits were created mostly in 2008. http://i.imgur.com/4PxSX4e.png (and also, how this list has changed over time).
-%%
+
+%\begin{itemize}
+    %\item The Taste for Privacy: An Analysis of College Student Privacy Settings in an Online Social Network \cite{Lewis2008}: Studies which characteristics are predictive of whether or not users are going to set their profile as public or private in Facebook. Raises questions about the limitations of the work because data collected came from a single cohort of users in a college.
+%
+    %\item Social selection and peer influence in an online social network \cite{Lewis2012a}: Yet another study based on a single cohort of Facebook data for college students. Discuss the relationship between homophily in creating connections and influence over the course of a connection.
+%
+    %\item Who interacts on the Web?: The intersection of users' personality and social media use \cite{Correa2010}: Studies how personality traits correlate with social media usage controlling for demographic variables age, gender, race, education and income. One of the research questions was whether user age cohorts influence social media usage. They found significant correlation of some personality traits with social media usage for the younger cohort (users from 18 to 29). They also acknowledge the lack of research on how age influences interaction on social media, pointing out that significant differences emerge from people that grew on a digital environment when compared to the ones that were introduced to the technology at a later time.
+%
+    %\item ``I LOVE THIS SITE!'' vs. ``It's a little girly'': Perceptions of and Initial User Experience with Pinterest \cite{Miller2015}: Initial experience matters! 
+%
+    %\item No Country for Old Members : User Lifecycle and Linguistic Change in Online Communities \cite{Danescu-niculescu-mizil2013}: User experience changes their behavior over time but they also come with some linguistic predispositions.
+%
+    %\item All Who Wander : On the Prevalence and Characteristics of Multi-community Engagement \cite{Tan2015}: Survival does depend on user initial activities.
+%
+    %\item Wikipedians are Born, Not Made \cite{Panciera2009}: Users do have predispositions. Does that mean they do not change and we are simply sampling differently?
+%
+    %\item Creating , Destroying , and Restoring Value in Wikipedia \cite{Priedhorsky2007}: Not clear where it fits.
+%
+    %\item The Impact of Membership Overlap on the Survival of Online Communities \cite{Zhu2014}: The survival of communities depends on the type of users that participate in it, and sharing certain types of users --- core members from other communities that are not core members in the focal community --- can be beneficial for community survival. Also, concepts of young and mature communities play a important role when analyzing community activity level, where young communities benefit from sharing members from matures communities. 
+%
+    %\item No Country for Old Members : User Lifecycle and Linguistic Change in Online Communities: Highlights the interplay on community language change and user adoption of new norms. As a general pattern, newcomers start learning the norms of the community and, as they age, they become more conservative in adopting new norms. Users that are more flexible in assimilating new norms have a higher survival rate.
+    %
+%\end{itemize}
+
+
+
+
 
 %% Sam 10: We can check weather the introduction or removal of subreddits in the default set influences significantly activity in them. Since the default are chosen based on the activity on them to begin with, it is more a positive reinforcement than a decisive bias for the community (as we can see, subreddits that are not ``doing well'' are removed, there is more on the comments in https://www.reddit.com/r/defaults). Even though, it might be worth to remove the subreddit section. We could also analyze wheather or not being included or removed from the default changes something for the community.
 %\begin{table}[htbp]
@@ -98,31 +134,3 @@ Using cohorts.  (Find examples.)
 %\end{table}
 %% DC 12: Again, likely too much detail, unless analyzed in tandem with changes in the distribution of activity across subreddits later. 
 
-%Kooti et al. \cite{Kooti2010} showed that social conventions can define the evolution of a community and the early adopters play a major role in designing these conventions, even if at the time this is not known by them. Evidence for the need of a retweeting mechanism in Twitter was evident in the early stages of the community and, out of the many possibilities that coexisted, the ``RT'' tag survived. Early adopters of these conventions are core users, well connected and presenting high activity. Just as Twitter, reddit network evolved from a relatively small set of users and subreddits. Wheather or not these early adopter of reddit laid the foundations in terms of content and behavior is not necessarily clear. It is reasonable to imagine that users would always look for content in subreddits that were created around the time they joined the network, for they might refer to the current context they are inserted into. Therefore, we propose the following question.
-
-%User-Network homophily? They connect because they are similar or do they become similar as the user evolves? Are the ``dissimilar'' leaving?
-%Looking at how reddit looked like at a particular point in time is a different question from how users evolve, and much of the user evolution depends on the environment a user finds when they first join the network. In many ways, this is an initial value problem, but separating what is due to the evolution of the network and what comes from the different demographics outside the network is not always clear.
-
-
-%\begin{itemize}
-    %\item The Taste for Privacy: An Analysis of College Student Privacy Settings in an Online Social Network \cite{Lewis2008}: Studies which characteristics are predictive of whether or not users are going to set their profile as public or private in Facebook. Raises questions about the limitations of the work because data collected came from a single cohort of users in a college.
-%
-    %\item Social selection and peer influence in an online social network \cite{Lewis2012a}: Yet another study based on a single cohort of Facebook data for college students. Discuss the relationship between homophily in creating connections and influence over the course of a connection.
-%
-    %\item Who interacts on the Web?: The intersection of users' personality and social media use \cite{Correa2010}: Studies how personality traits correlate with social media usage controlling for demographic variables age, gender, race, education and income. One of the research questions was whether user age cohorts influence social media usage. They found significant correlation of some personality traits with social media usage for the younger cohort (users from 18 to 29). They also acknowledge the lack of research on how age influences interaction on social media, pointing out that significant differences emerge from people that grew on a digital environment when compared to the ones that were introduced to the technology at a later time.
-%
-    %\item ``I LOVE THIS SITE!'' vs. ``It's a little girly'': Perceptions of and Initial User Experience with Pinterest \cite{Miller2015}: Initial experience matters! 
-%
-    %\item No Country for Old Members : User Lifecycle and Linguistic Change in Online Communities \cite{Danescu-niculescu-mizil2013}: User experience changes their behavior over time but they also come with some linguistic predispositions.
-%
-    %\item All Who Wander : On the Prevalence and Characteristics of Multi-community Engagement \cite{Tan2015}: Survival does depend on user initial activities.
-%
-    %\item Wikipedians are Born, Not Made \cite{Panciera2009}: Users do have predispositions. Does that mean they do not change and we are simply sampling differently?
-%
-    %\item Creating , Destroying , and Restoring Value in Wikipedia \cite{Priedhorsky2007}: Not clear where it fits.
-%
-    %\item The Impact of Membership Overlap on the Survival of Online Communities \cite{Zhu2014}: The survival of communities depends on the type of users that participate in it, and sharing certain types of users --- core members from other communities that are not core members in the focal community --- can be beneficial for community survival. Also, concepts of young and mature communities play a important role when analyzing community activity level, where young communities benefit from sharing members from matures communities. 
-%
-    %\item No Country for Old Members : User Lifecycle and Linguistic Change in Online Communities: Highlights the interplay on community language change and user adoption of new norms. As a general pattern, newcomers start learning the norms of the community and, as they age, they become more conservative in adopting new norms. Users that are more flexible in assimilating new norms have a higher survival rate.
-    %
-%\end{itemize}
