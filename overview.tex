@@ -52,26 +52,17 @@ We also considered only comment data from October 2007 until December 2014 in or
 \caption{Figure a shows the cumulative growth of reddit for users and subreddits. Figure b shows the number of active users and subreddits in reddit over time. An active user or subreddit is one that had at least one post (comment or submission) in the time bin we used---here, discretized by month.}
 \label{fig:cumulative}
 \end{figure*}
-%% DC 15: The left figure still has the ratio/difference line, which should be removed unless we analyze it.  Likwise, the single-time users are no longer analyzed, really.
 
 \subsection{An overview of the dataset}
 
 Here we present an overview of the dataset that shows Reddit's overall growth.  Figure~\ref{fig:cumulative}a presents the cumulative number of user accounts and subreddits created as of the last day of every month. After an initial extremely rapid expansion from 2008--2009, both the number of users and subreddits have grown exponentially.  As of the end of 2014, about 16.2 million distinct users have made at least posts and 327,000 subreddits received at least post since Reddit's inception.
 
 However, as with many other online sites, most users \cite{} and communities \cite{butler_kraut_paper} do not stay active. Figure~\ref{fig:cumulative}b shows the monthly number of active users and subreddits.
-%% DC 15: Defined earlier
-% (our definition of post is either a comment or a submission). 
+
 We define as an \textit{active user} as one that made at least one post in the month in question. Similarly, an \textit{active subreddit} is one that received at least one post in the month. In December 2014, about 470,000 thousand users and 11,400 subreddits were active, both an order of magnitude less than the cumulative numbers.  
 
 Our interest in this paper is not so much whether users survive as it is about the behavior of active users.  Thus, 
 in general our analyses will look only at active users and subreddits in each month; those that are temporarily or permanently gone from Reddit are not included.  
-
-%\begin{figure}[!tb]
-%\centering
-%\includegraphics[scale=0.4]{./images/active_users_subreddits.eps}
-%\caption{Number of active users and subreddits in reddit over time. An active user or subreddit is the one that presented at least one post in the time bin we used --- time here is discretized by month.}
-%\label{fig:active_users_subreddits}
-%\end{figure}
 
 %% DC 15: We don't really look at giving up behavior so much, so, commenting this out.
 % The fact that such a significant amount of users stopped using the platform raises questions such as why users give up on their accounts, when they do so, and which users are more likely to stay active. In later sections we will take a closer look at how some of these things are happening in reddit.
@@ -87,4 +78,4 @@ In many cases, we will look at the evolution of these cohorts. Since users (subr
 we are likely to have a variation on the data available for each user of up to one year, even though they are in the same cohort.  To deal with this, some of our cohorted analyses will consider only the overlapping time window for which we collect data for all users in a cohort.   This means that we are normally not going to include the 2014 cohort in our analyses.
 
 %% DC 15: Okay, justifying the removal of 2007 is fair enough.
-Our data starts in October 2007, but Reddit existed before that. That means that, not only do we have incomplete data for the 2007 year (which compromises this cohort), but also there might be users and subreddits that show up in 2007 that were actually created in the previous years. Since we can not control for these, we will also omit 2007 cohort. We will, however, include 2007 in the overall analyses over time (the non cohorted ones) for two reasons: first, it does not have any direct impact in the results, only extends the axis for 3 extra months, and second, we often compare the cohorted approach with a naive approach based on aggregation, and we would not expect a naive approach to do such filtering. 
+Our data starts in October 2007, but Reddit existed before that. That means that, not only do we have incomplete data for the 2007 year (which compromises this cohort), but there might also be users and subreddits that show up in 2007 that were actually created in the previous years. Since we can not control for these, we will also omit 2007 cohort. We will, however, include 2007 in the overall analyses over time (the non cohorted ones) for two reasons: first, it does not have any direct impact in the results, only extends the axis for 3 extra months, and second, we often compare the cohorted approach with a naive approach based on aggregation, and we would not expect a naive approach to do such filtering. 
