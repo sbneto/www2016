@@ -10,7 +10,7 @@
 %% DC 15: Note that the legends in the graphs say "surviving user", not "active user" (and can probably be removed for single-series graphs, since the text caption will explain it). The y-axis label is also a variable name, not a meaningful human name; those will want to get fixed in the final cleanup.
 %% Sam 15: I will do that, changing these names requires some tweaking because I user the names of the comlumns that bigquery returns automatically, and I can't name columns in sql with space between them. I will work around it though.
 
-In this section, we will use a common metric of user activity in online communities, the number of posts per user over time. 
+In this section, we will use a common metric of user activity in online communities, the number of posts per user over time.  This metric has been used for characterizing user behavior in blogspace \cite{Gruhl2004}, 
 %% DC 12: This might be the place to briefly lay out other work that has addressed this question. 
 
 As we will see, both visualizing behavior relative to a user's join time rather than calendar time and using cohorts provide additional insight into posting activity in Reddit compared to a straightforward aggregate analysis based on clock time.
@@ -19,7 +19,7 @@ As we will see, both visualizing behavior relative to a user's join time rather 
 
 We start with a common analysis used in this kind of work: aggregating behavior in the community based on calendar time.  Figure~\ref{fig:overall_posts}a shows the average number of posts per month by active users in that month.  Taken at face value, this suggests that over the first few years of Reddit, users became more active in posting, with per-user activity remaining more or less steady since mid-2011.
 
-This average view hides several important aspects of users' activity dynamics.  In Figure~\ref{fig:overall_posts}b, we show a different view that emphasizes the trajectory over a user's lifespan.  Here, we scale the x-axis not by clock time, as in the left figure, but by time since the user's first post: ``1'' on the x-axis refers to one year since the user's account first post, and so on. 
+This average view hides several important aspects of users' activity dynamics. Previous work has looked into behavior relative to the user creation time. It has been shown that edge creation time in a social network relative to the user creation follows an exponential distribution \cite{Tomkins2008}. User lifetime, however, does not follow a exponential distribution and some types of user content generation follow a stretched exponential distribution \cite{Guo2009}. In Figure~\ref{fig:overall_posts}b, we show a different view that emphasizes the trajectory over a user's lifespan.  Here, we scale the x-axis not by clock time, as in the left figure, but by time since the user's first post: ``1'' on the x-axis refers to one year since the user's account first post, and so on.
 
 One caution about interpreting the graphs that are relative to the user's start time is that the amount of data available rapidly decreases over time as users leave the community, meaning that values toward the right side of an individual data series are more subject to individual variation.  A tempting conclusion at this point is that the longer a user survives, the more posts they make over time.  This conclusion, however, is incorrect; we will present a more nuanced description of what is happening informed by cohort-based analyses.
 
