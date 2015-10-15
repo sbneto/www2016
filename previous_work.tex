@@ -1,26 +1,29 @@
 \section{Time matters}  %% DC 12: Bad pun (matters = important, matters = specifics)
-
-%% DC 12: Okay, taking a new stab at an outline/argument for this that better fits the introduction, which is much more about time than it was.  
 %% I do not and will not have time to write this up, but I think a lot of it will be pretty straightforward.  I'm hoping that Sam sees it as reasonable tonight, and that he tonight and/or Amit tomorrow can fill in a good amount of this and change/tweak things as you see that they work or don't.
 %% Cites in this section don't _all_ have to be about modeling user behavior in online communities, but we want to make sure that's embedded in the story wherever possible.
 
+Communities grow, and die, with time. For any community, its users play a role in its evolution, but they are also simultaneously affected by the evolution of the community. Untangling this interplay can help make sense of patterns of activity in a community.
+One of the popular lens through which to analyze communities is through time, as it provides a linear account of the growth (or decay) of users, their activity, types of content and properties of communities. We discuss how accounting for time can be an important issue for communities and present an overview of past work on online communities.
 \subsection{Why accounting for time is important}
+One of the popular ways to account for time is to cohorts of users. A cohort is defined as a group of people who share a common characteristic, such as the year they were born, joined a school or community. In general, people in a cohort are exposed to the same state of a community and thus are more comparable to each other than people in other cohorts. For this reason, cohorts are a natural unit of analysis for scientific inquiry. For example, sociological studies often use students who join a school in the same year to understand about ..., ...\cite{}. Similarly, medical studies intepret effects of interventions and drugs using cohorts of people with the same age group \cite{}.
 
-Why time is important: the incoming users and community both likely change over time.  
-Differences in cohorts \cite{Welser2011a}
+While not immediately obvious, the importance of cohorts transfers to online communities as well. In Wikipedia, for example, we find substantial differences in the activities of cohorts of users who joined earlier versus those who joined later \cite{Welser2011a}.
 
-Users 1: The user adoption curve means that enthusiasts likely join earlier.  
-Self-selection \cite{Li2008}, 
+These differences in activity between cohorts may be due to a number of reasons. It could be due to selection effects: people who are enthusiastic about a community or its goals are more likely to self-select as early members of a community, while others may be more likely to join later \cite{Li2008}. 
 
-Users 2: Overall patterns of use might change because the overall population of internet users is still changing (this `would be a place to critique the Mexican desensitization to violence paper).
+The norms in community may change over time, which could explain why users in later cohorts may behave differently. In many cases, it is a bottom-up process. Examples include adoption of `RT', retweet norm by Twitter users and the subsequent introduction of the Retweet button on Twitter, change in language use by new and old users on review websites \cite{}, and  Example . In other cases, it may be directed by the community managers. For instance, the makers of Digg unilaterally changed the nature of the community by introducting a new version of the website that undermines norms of the community. 
 
-Community 1: The nature or goals of the community can change.  Flixter.  Digg.  Reddit iteself has a number of subcommunities that are the default set for new users---and they change over time. 
+The growth of a community may also affect people's behavior. Successful communitite often grow very rapidly, which can be both good and bad for people's experience with the community. On one hand, growth would imply availability of a larger chunk of content to choose from. On the other, it might be harder to connect to others and get responses in a bigger community. A community may grow big enough to have its own rules and policies, such as Wikipedia \cite{}, and in those cases, the experience of later cohorts of users may be vastly different from the initial ones who joined before formal rules were in place. 
 
-Community 2: Successful communities often grow very rapidly, providing more content to react to (which is both good and bad -- there's more to interact with, but getting responses might be a lot easier in a small than large community) and new challenges for management (Wikipedia policies).  
+Finally, patterns of use may change because the overall population of Internet users is still changing. As more, and different people become connected with the web, their influx may lead to observed change in activity patterns. 
+% (this `would be a place to critique the Mexican desensitization to violence paper).
 
-Community 3: Behavior within the community changes as new users come.  Conventions are created.  Language changes.  And, people likely model what they see. 
+%As users experience with changes with Community 1: The nature or goals of the community can change.  Flixter.  Digg.  Reddit iteself has a number of subcommunities that are the default set for new users---and they change over time. 
+  
 
-Pithy summary of why time is important from the above.
+%Community 3: Behavior within the community changes as new users come.  Conventions are created.  Language changes.  And, people likely model what they see. 
+
+Whatever be the reasons, users from different cohorts are likely to be different, and are often found to be different, in both online and offline communities \cite{}. The cohort of newcomers has received attention in recent work, connecting initial experience of users to their final survival in a community \cite{Tan2015,danescu-mizil}. A more general analysis of different cohorts of users---both old and new---can be helpful for making sense of user activity in online communities. 
 
 \subsection{Accounting for time and change}
 
@@ -54,7 +57,6 @@ Using cohorts.  (Find examples.)
 
 %% DC 10: Problem. https://www.reddit.com/wiki/reddit_101 new users are subscribed by default to a number of subreddits, which I'm guessing explains an enormous amount of the advantage of reddits from 2008.  That makes this part much less interesting for us to talk about.  See if these subreddits were created mostly in 2008. http://i.imgur.com/4PxSX4e.png (and also, how this list has changed over time).
 %%
-%% DC 10: There's a reasonable chance there's still a fun paper just about users, but what we don't want to do is say that our cohort analysis really bought us something that would have been better bought by actually looking at site norms.
 
 %% Sam 10: We can check weather the introduction or removal of subreddits in the default set influences significantly activity in them. Since the default are chosen based on the activity on them to begin with, it is more a positive reinforcement than a decisive bias for the community (as we can see, subreddits that are not ``doing well'' are removed, there is more on the comments in https://www.reddit.com/r/defaults). Even though, it might be worth to remove the subreddit section. We could also analyze wheather or not being included or removed from the default changes something for the community.
 %\begin{table}[htbp]
@@ -98,14 +100,8 @@ Using cohorts.  (Find examples.)
 
 %Kooti et al. \cite{Kooti2010} showed that social conventions can define the evolution of a community and the early adopters play a major role in designing these conventions, even if at the time this is not known by them. Evidence for the need of a retweeting mechanism in Twitter was evident in the early stages of the community and, out of the many possibilities that coexisted, the ``RT'' tag survived. Early adopters of these conventions are core users, well connected and presenting high activity. Just as Twitter, reddit network evolved from a relatively small set of users and subreddits. Wheather or not these early adopter of reddit laid the foundations in terms of content and behavior is not necessarily clear. It is reasonable to imagine that users would always look for content in subreddits that were created around the time they joined the network, for they might refer to the current context they are inserted into. Therefore, we propose the following question.
 
-%% DC 12: This question is too broad to really resolve.
-%\textbf{\textit{Is there a consolidation point in a social network where the ``core content'' is established? Can this core change over time?}}
-
 %User-Network homophily? They connect because they are similar or do they become similar as the user evolves? Are the ``dissimilar'' leaving?
 %Looking at how reddit looked like at a particular point in time is a different question from how users evolve, and much of the user evolution depends on the environment a user finds when they first join the network. In many ways, this is an initial value problem, but separating what is due to the evolution of the network and what comes from the different demographics outside the network is not always clear.
-
-%% DC 12: This is similar to the first question.
-%\textbf{\textit{Are latter users intrinsically different from earlier users or are they having different initial experiences?}}
 
 
 %\begin{itemize}
