@@ -32,17 +32,6 @@ To analyze the data, we used Google BigQuery \footnote{\url{https://cloud.google
 
 For the analyses in the paper, we did light preprocessing to filter out posts by deleted users, posts with no creation time, and posts by authors with names that follow Reddit's conventions for auto-posting bots. 
 
-%The SQL constraints are shown below.
-%
-%\begin{verbatim}
-%created_utc is not NULL
-%and author <> '[deleted]'
-%and not right(author, 4) = '_bot'
-%and not right(author, 3) = 'Bot'
-%and not lower(author) contains 'transcriber'
-%and not lower(author) contains 'automoderator'
-%\end{verbatim}
-
 We also considered only comment data from October 2007 until December 2014 in order to have a matching period for comments and submissions. After this process, we had a total of 1.17 billion comments and 114 million submissions.
 
 %% DC 15: I like big figures, but we could if needed scale/shrink these more to force page boundaries.  Things will change when the front part of the paper changes as well.
@@ -65,12 +54,7 @@ We define as an \textit{active user} as one that made at least one post in the m
 Our interest in this paper is not so much whether users survive as it is about the behavior of active users.  Thus, 
 in general our analyses will look only at active users and subreddits in each month; those that are temporarily or permanently gone from Reddit are not included.  
 
-%% DC 15: We don't really look at giving up behavior so much, so, commenting this out.
-% The fact that such a significant amount of users stopped using the platform raises questions such as why users give up on their accounts, when they do so, and which users are more likely to stay active. In later sections we will take a closer look at how some of these things are happening in Reddit.
-
 \subsection{Identifying cohorts}
-%% DC 10: Trying to decide whether this works better here or at the beginning of a cohorty section -- there is some subtlety that I think Sam wants to work through when introducing the first problem.
-%% Amit 9: Added this subsection here. Having the cohorts defined as the part of the overview will help, as we talk about them throughout the paper. Some of the cohort stuff from next section can come here. 
 
 We define a user's creation time as the time of the first post by that user or in that subreddit.  Throughout this paper, we will use the notion of user cohorts, which will consist of users created in the same calendar year.
 
@@ -78,5 +62,4 @@ We define a user's creation time as the time of the first post by that user or i
 In many cases, we will look at the evolution of these cohorts. Since users can be created at any time during their cohort year, and our dataset ends in 2014, 
 we are likely to have a variation on the data available for each user of up to one year, even though they are in the same cohort.  To deal with this, some of our cohorted analyses will consider only the overlapping time window for which we collect data for all users in a cohort.   This means that we are normally not going to include the 2014 cohort in our analyses.
 
-%% DC 15: Okay, justifying the removal of 2007 is fair enough.
 Our data starts in October 2007, but Reddit existed before that. That means that, not only do we have incomplete data for the 2007 year (which compromises this cohort), but there might also be users and subreddits that show up in 2007 that were actually created in the previous years. Since we can not control for these, we will also omit 2007 cohort. We will, however, include 2007 in the overall analyses over time (the non cohorted ones) for two reasons: first, it does not have any direct impact in the results, only extends the axis for 3 extra months, and second, we often compare the cohorted approach with a naive approach based on aggregation, and we would not expect a naive approach to do such filtering. 
