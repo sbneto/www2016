@@ -47,8 +47,8 @@ We also considered only comment data from October 2007 until December 2014 in or
 %% DC 15: I like big figures, but we could if needed scale/shrink these more to force page boundaries.  Things will change when the front part of the paper changes as well.
 \begin{figure*}[!tb]
 \centering
-\begin{subfigure}{.49\textwidth}\includegraphics[scale=0.4]{./images/cumulative_users_subreddits.eps}\caption{}\end{subfigure}
-\begin{subfigure}{.49\textwidth}\includegraphics[scale=0.4]{./images/active_users_subreddits.eps}\caption{}\end{subfigure}
+\subimage[width=0.48, scale=0.45]{./images/cumulative_users_subreddits.eps}
+\subimage[width=0.48, scale=0.45]{./images/active_users_subreddits.eps}
 \caption{Figure a shows the cumulative growth of Reddit for users and subreddits. Figure b shows the number of active users and subreddits in Reddit over time. An active user or subreddit is one that had at least one post (comment or submission) in the time bin we used---here, discretized by month.}
 \label{fig:cumulative}
 \end{figure*}

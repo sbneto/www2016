@@ -1,0 +1,12 @@
+\makeatletter
+\define@key{subimagedic}{width}{\def\width{#1}}
+\define@key{subimagedic}{scale}{\def\scale{#1}}
+\makeatother
+\NewDocumentCommand\subimage{O{} m G{}}{
+    \begingroup
+        \setkeys{subimagedic}{width={1.0},scale={1.0}, #1}
+        \begin{subfigure}{\width\textwidth}
+            \expandafter\includegraphics\expandafter[scale=\scale]{#2}
+        \caption{#3}\end{subfigure}
+    \endgroup
+}

@@ -2,8 +2,8 @@
 
 \begin{figure*}[!tb]
 \centering
-\begin{subfigure}{.49\textwidth}\includegraphics[scale=0.4]{./images/avr_posts_per_user_over_time_total.eps}\caption{}\end{subfigure}
-\begin{subfigure}{.49\textwidth}\includegraphics[scale=0.4]{./images/avr_posts_per_user_user_ref_total.eps}\caption{}\end{subfigure}
+\subimage[width=0.48, scale=0.45]{./images/avr_posts_per_user_over_time_total.eps}
+\subimage[width=0.48, scale=0.45]{./images/avr_posts_per_user_user_ref_total.eps}
 \caption{In Figure (a), monthly average posts per active user over clock time. In Figure (b), the monthly average posts per active users in the user-time referential, i.e., message creation time is measured relative to the user's first post.  Each tick in the x-axis is one year.  In both figures (and all later figures), we consider only active users during each month; users that are either temporarily or permanently away from Reddit are not included.}
 \label{fig:overall_posts}
 \end{figure*}
@@ -28,8 +28,8 @@ One caution about interpreting the graphs that are relative to the user's start 
 
 \begin{figure*}[!tb]
 \centering
-\begin{subfigure}{.49\textwidth}\includegraphics[scale=0.4]{./images/avr_posts_per_user_over_time_cohorts.eps}\caption{}\end{subfigure}
-\begin{subfigure}{.49\textwidth}\includegraphics[scale=0.4]{./images/avr_posts_per_user_cohorts.eps}\caption{}\end{subfigure}
+\subimage[width=0.48, scale=0.45]{./images/avr_posts_per_user_over_time_cohorts.eps}
+\subimage[width=0.48, scale=0.45]{./images/avr_posts_per_user_cohorts.eps}
 \caption{Figure (a) shows the average number of posts per active users over clock time and Figure (b) the active users in the user-time referential, both segmented by users' cohorts. The user cohort is defined as the year the user made his/her first post.  For comparison, the black lines represent the overall averages from Figure~\ref{fig:overall_posts}.}
 \label{fig:avr_posts_per_user_over_time_cohorts}
 \end{figure*}
@@ -61,12 +61,9 @@ Figure~\ref{fig:avr_posts_per_user_for_surviving_year} shows this analysis for t
 
 \begin{figure*}[!tb]
 \centering
-%\includegraphics[scale=0.25]{./images/avr_posts_per_user_for_surviving_year_for_2008.eps}
-%\includegraphics[scale=0.25]{./images/avr_posts_per_user_for_surviving_year_for_2009.eps}
-\includegraphics[scale=0.25]{./images/avr_posts_per_user_for_surviving_year_for_2010.eps}
-\includegraphics[scale=0.25]{./images/avr_posts_per_user_for_surviving_year_for_2011.eps}
-\includegraphics[scale=0.25]{./images/avr_posts_per_user_for_surviving_year_for_2012.eps}
-%\includegraphics[scale=0.25]{./images/avr_posts_per_user_for_surviving_year_for_2013.eps}
+\subimage[width=0.31, scale=0.29]{./images/avr_posts_per_user_for_surviving_year_for_2010.eps}{2010}
+\subimage[width=0.31, scale=0.29]{./images/avr_posts_per_user_for_surviving_year_for_2011.eps}{2011}
+\subimage[width=0.31, scale=0.29]{./images/avr_posts_per_user_for_surviving_year_for_2012.eps}{2012}
 \caption{Each Figure corresponds to one cohort, from 2010 to 2012, left to right. The users for each cohort are further divided in groups based on how long they survived: users that survived up to 1 year are labeled 0, from 1 to 2 years are labeled 1, and so on.  For all cohorts, longer-tenured users started at higher activity levels than shorter-tenured ones.}
 \label{fig:avr_posts_per_user_for_surviving_year}
 \end{figure*}
@@ -92,13 +89,11 @@ Combining Figure \ref{fig:avr_posts_per_user_for_surviving_year}'s insight that 
 
 \begin{figure*}[!tb]
 \centering
-\begin{subfigure}{.49\textwidth}\includegraphics[scale=0.4]{./images/avr_comment_size_over_time_cohorts.eps}\caption{}\end{subfigure}
-\begin{subfigure}{.49\textwidth}\includegraphics[scale=0.4]{./images/avr_comment_size_cohorts.eps}\caption{}\end{subfigure}
-\begin{subfigure}{1\textwidth}
-    \includegraphics[scale=0.285]{./images/avr_comment_length_for_surviving_year_for_2010.eps}
-    \includegraphics[scale=0.285]{./images/avr_comment_length_for_surviving_year_for_2011.eps}
-    \includegraphics[scale=0.285]{./images/avr_comment_length_for_surviving_year_for_2012.eps}
-\caption{}\end{subfigure}
+\subimage[width=0.48, scale=0.45]{./images/avr_comment_size_over_time_cohorts.eps}
+\subimage[width=0.48, scale=0.45]{./images/avr_comment_size_cohorts.eps}
+\subimage[width=0.31, scale=0.29]{./images/avr_comment_length_for_surviving_year_for_2010.eps}{2010}
+\subimage[width=0.31, scale=0.29]{./images/avr_comment_length_for_surviving_year_for_2011.eps}{2011}
+\subimage[width=0.31, scale=0.29]{./images/avr_comment_length_for_surviving_year_for_2012.eps}{2012}
 \caption{Figure (a) shows the average comment length over clock time and Figure (b) from the user-referential time. Both figures show the cohorted trends and the overall users trends.  The overall average length per comment decreases over time, although for any individual cohort, it increases after a sharp initial drop. Figure (c), similar to Figure \ref{fig:avr_posts_per_user_for_surviving_year}, shows the monthly average comment length for active users in the cohorts of 2010, 2011 and 2012, segmented by the number of years that the user survived in the network.  Opposite the analysis for average posts, which showed that low-activity users were the first to leave Reddit, here, people who start out as longer commenters are \textit{more} likely to leave.}
 \label{fig:comment_length}
 \end{figure*}
@@ -168,14 +163,12 @@ As with the posting per user, we can not say if the increase in the curves seen 
 
 \begin{figure*}[!tb]
 \centering
-\begin{subfigure}{.49\textwidth}\includegraphics[scale=0.4]{./images/comments_per_submissions_over_time_cohorts.eps}\caption{}\end{subfigure}
-\begin{subfigure}{.49\textwidth}\includegraphics[scale=0.4]{./images/comments_per_submissions_cohorts.eps}\caption{}\end{subfigure}
-\begin{subfigure}{1\textwidth}
-    \includegraphics[scale=0.21]{./images/comments_per_submissions_for_surviving_year_for_2008.eps}
-    \includegraphics[scale=0.21]{./images/comments_per_submissions_for_surviving_year_for_2009.eps}
-    \includegraphics[scale=0.21]{./images/comments_per_submissions_for_surviving_year_for_2010.eps}
-    \includegraphics[scale=0.21]{./images/comments_per_submissions_for_surviving_year_for_2011.eps}
-\caption{}\end{subfigure}
+\subimage[width=0.48, scale=0.45]{./images/comments_per_submissions_over_time_cohorts.eps}
+\subimage[width=0.48, scale=0.45]{./images/comments_per_submissions_cohorts.eps}
+\subimage[width=0.23, scale=0.23]{./images/comments_per_submissions_for_surviving_year_for_2008.eps}{2008}
+\subimage[width=0.23, scale=0.23]{./images/comments_per_submissions_for_surviving_year_for_2009.eps}{2009}
+\subimage[width=0.23, scale=0.23]{./images/comments_per_submissions_for_surviving_year_for_2010.eps}{2010}
+\subimage[width=0.23, scale=0.23]{./images/comments_per_submissions_for_surviving_year_for_2011.eps}{2011}
 \caption{Figure (a) shows the average comment per submission ratio over clock time and Figure (b) from the user-referential time. Both figures show the cohorted trends and the overall users trends. Figure (c), just as in Figure \ref{fig:avr_posts_per_user_for_surviving_year}, correspond to the cohorts of 2010, 11 and 12. They show the average comment per submission ratio for users segmented by the number of years that the user survived in the network.}
 \label{fig:comments_submissions}
 \end{figure*}
