@@ -1,4 +1,4 @@
-\section{Activity: Average posts per user}
+\section{Average posts per user}
 
 \begin{figure*}[!tb]
 \centering
@@ -88,7 +88,7 @@ Combining Figure \ref{fig:avr_posts_per_user_for_surviving_year}'s insight that 
 %% The curve does say what a user looks like, on average, given that he has survived x time. But does not mean that users are evolving in that way.
 %% DC 15: Yep, this all makes sense and I think mostly comes out in the text now.
 
-\section{Effort: Comment length}
+\section{Comment length}
 
 \begin{figure*}[!tb]
 \centering
@@ -152,20 +152,19 @@ Cohort & 2007 & 2008 & 2009 & 2010 & 2011 & 2012 & 2013 & 2014 & Overall\\ \hlin
 %% Sam 13: This paragraph does not make sense to me, rewriting as I think it should be.
 %% DC 15: This reads pretty clear for me. 
 
-Table~\ref{tab:simpson} provides some clues to what might be going on. When we move down the rows, we observe an increasing tendency in each column. It means that the average comment length increases for these users. However, when we move right through the columns, people in later cohorts tend to write less per comment. If we were to average each row, we would still get an overall increasing comment length per year, but that is not what we see in the overall column. What happens here is that the latter cohorts have many more users than earlier ones. Since their numbers increase year by year, we have a  much larger contribution from them towards comments, compared to users of earlier cohorts. This uneven contribution leads to the paradox we observe in the Table~\ref{tab:simpson}. 
+Table~\ref{tab:simpson} provides some clues to what might be going on. When we move down the rows, we observe an increasing tendency in each column. It means that the average comment length increases for these users. However, when we move right through the columns, people in later cohorts tend to write less per comment. If we were to average each row, we would still get an overall increasing comment length per year, but that is not what we see in the overall column. What happens here is that the latter cohorts have many more users than earlier ones. Since their numbers increase year by year, we have a much larger contribution from them towards comments, compared to users of earlier cohorts. This uneven contribution leads to the paradox we observe in the Table~\ref{tab:simpson}. 
 
 Without the decision to condition on cohorts, one would have gathered an entirely wrong conclusion. People are not writing less as they survive, rather those who tend to write less are joining the community in much larger numbers. Knowing this, one may focus on better onboarding processes for newcomers, or try to learn why users in later cohorts tend to write smaller comments on average.  
 %% DC 15: Adding back the speculation about why
 %% Sam 15: I was moving speculations in general to the discussion and citing related work on them. Should we keep both or drop one of them?
-Figure~\ref{fig:comment_length}a suggests an interesting hypothesis: the initial month of each cohort year, which consists of data only from users who joined in that month, is generally very close to the overall line from the prior month---suggesting that new users are observing others' behavior and adopting what they see as the current norm of the community around post length.  
+%% DC 15: Fair enough; will integrate this with that.  Part of me wonders if it's easier to hypothesize in the context of the results, but having it all collected in the discussion is useful for making clear that we're _not_ claiming we _know_ the things we're speculating about. 
 
 \subsection{New users burn brighter}
 As with the posting per user, we can not say if the increase in the curves seen in \ref{fig:comment_length}b are due to the lower effort users dying first or because users are writing more as they live on the network. To answer this, \ref{fig:comment_length}c allow us to make two important observations: first, \textit{comment length does increase inside of each cohort}, no matter how long the user survives. Secondly, as a general trend, \textit{users that make longer comments inside of each cohort die faster}. This is quite surprising, given that we would expect people to put less effort when they are more likely to stop using the network.
 
-%% DC 15: Stopping here for now, out of time.
+\section{Kinds of contributions}
 
-\section{Kinds of contributions people make}
-
+%% DC 15: Caption and figure don't line up, making it hard for me to know what to focus on here.
 \begin{figure*}[!tb]
 \centering
 \begin{subfigure}{.49\textwidth}\includegraphics[scale=0.4]{./images/comments_per_submissions_over_time_cohorts.eps}\caption{}\end{subfigure}
@@ -176,17 +175,36 @@ As with the posting per user, we can not say if the increase in the curves seen 
     \includegraphics[scale=0.21]{./images/comments_per_submissions_for_surviving_year_for_2010.eps}
     \includegraphics[scale=0.21]{./images/comments_per_submissions_for_surviving_year_for_2011.eps}
 \caption{}\end{subfigure}
-\caption{Figure (a) shows the average comment per submission ratio over clock time and Figure (b) from the user-referential time. Both figures show the cohorted trends and the overall users trends. Figure (c), just as in Figure \ref{fig:avr_posts_per_user_for_surviving_year}, correspond to the cohorts of 2010, 11 and 12. They show the average comment per submission ratio for users segmented by the number of years that the user survived in the network.}
+\caption{Figure (a) shows the average comment per submission ratio over clock time and Figure (b) from the user-referential time. Both figures show the cohorted trends and the overall users trends. Figure (c), similarly to Figure \ref{fig:avr_posts_per_user_for_surviving_year}, shows the 2008, 2009, 2010, and 2011 cohorts, segmented by the number of years a user in the cohort survived.  As with average posts per month, users who stay active longer appear to start their careers with a relatively high comment-to-submission ratio than users who abandon Reddit sooner.  Unlike that analysis, however, the early 2008 cohort ends up below the later cohorts.}
 \label{fig:comments_submissions}
 \end{figure*}
 
-One common question from the literature is what sorts of activities users engage in; this can be used as a metric of community health (cites) or to categorize users into roles they play in the community (cite).  In Reddit, we do not have per-user voting behavior, but we do have the number of comments and submissions, and a naive view of this would look at the ratio of comments to submissions over time.
+One common question from the literature is what sorts of activities users engage in, for instance, to categorize users into roles they play in the community\cite{welser 2011 wikipedia roles paper from iconference}.  
 
-While submissions can be considered new content that an author generates, a comment can be considered as a contribution to an existing content from another author. Since the total number of comments always surpasses the number of submissions, Figure \ref{fig:comments_submissions}a shows the evolution of the overall and cohorted ratio of comments per submission over time from 2008 until 2013. Here we see that current recent Reddit main commenters are users from 2009, 10 and 11. It is important to highlight here that we are not talking about the average number of comments a submission gets, but how many comments a user authors for each of his/her submissions. We observe an increasing trend in the overall and cohorted ratios.
+\subsection{Over time, responsiveness increases}
+For instance, in Usenet, people who never start threads and only respond play the role of answerer, while there are other roles that include fostering discussion \cite{http://www.cmu.edu/joss/content/articles/volume8/Welser/}; these might naturally map onto people who primarily comment and who primarily submit in Reddit, respectively.  While submissions can be considered new content that an author generates, a comment can be considered as a contribution to an existing content from another author.
 
-Again, we analyze our data from the user-time referential, as seen in Figure \ref{fig:comments_submissions}b. It shows a clear pattern for users in older cohorts to have a lower comment per submission ratio than the younger ones for the same surviving time. Also, cohorts from 2010 onwards show a much more similar evolution when compared with 08 and 09. Our observation that 2009, 10 and 11 are the main comenters therefore is mainly due to the fact that users in those cohorts are the ones that survived longer. To control for the surviving users, Figure \ref{fig:comments_submissions}c shows each cohort with users segmented by their surviving years. For this particular analysis, we include the years of 2008, 09, 10 and 11 because there is a change in user evolution in these years. 2010 and 11 are consistent with the following years, with users that survive longer rapidly leveling at higher values while users that survive less also rapidly leveling at lower values. For 2008 and 09, however, this is not the case. Users actually increased their commenting behavior in the early years. Still, users that survived longer show a higher commenting behavior than the ones that survived a shorter period.
+Since the total number of comments always surpasses the number of submissions, Figure \ref{fig:comments_submissions}a shows the evolution of the overall and cohorted ratio of the average number of comments a user makes for each submission they make over time from 2008 until 2013. Here we see that users who most prefer commenting to submitting come from 2009, 2010 and 2011, and we observe that over time the average ratio of comments to submissions increases both overall and per-cohort for active users.
+%It is important to highlight here that we are not talking about the average number of comments a submission gets, but how many comments a user authors for each of his/her submissions. 
 
-This suggests that the increasing tendency in Figure \ref{fig:comments_submissions}b for the cohorts of 2010 and later is mainly due to the death of low-ratio users, but the earlier cohorts also increased due to an actual increase in the commenting behavior of the users, and not only low commenting users dropouts. Figure \ref{fig:comments_submissions}c also indicates that this ratio, conditioned on the cohort, can be a good predictor of user survival.
+Again, we analyze our data from the user-time referential, as seen in Figure \ref{fig:comments_submissions}b. It shows a clear pattern for users in earlier cohorts to have a lower comment per submission ratio than users in later cohorts ones, given that they both survived the same amount of time.  Surviving users from later cohorts also exhibit a more rapid increase in comments per submission than those from earlier cohorts.  In particular, the 2008 and 2009 cohorts increase much more slowly over time than those from 2010 onwards; later cohorts are more similar (although the 2012 and 2013 cohorts may level off lower than 2011 based on the limited data we have). 
+%% DC 15: Don't understand what you mean here.
+% Also, cohorts from 2010 onwards show a much more similar evolution when compared with 08 and 09. Our observation that 2009, 10 and 11 are the main comenters therefore is mainly due to the fact that users in those cohorts are the ones that survived longer.  
+
+\subsection{Comment early, comment often}
+
+Figure \ref{fig:comments_submissions}c shows the cohorts from 2008, 2009, 2010 and 2011 segmented by surviving year.  Three interesting observations arise from these data.  First, we see that just as in the analysis of average posts per user, the users who survive the longest in each cohort are also the ones who hit the ground running.  They start out with a high comment-to-submission ratio relative to users in their who abandon Reddit more quickly.  This suggests that both the count of posts and the propensity to comment might be a strong predictor of user survival.
+
+Second, and unlike the case for average post length, surviving users' behavior changes over time.  Figure~\ref{fig:avr_posts_per_user_for_surviving_year} shows that even for the most active users, they come in at a certain activity level and stay there, perhaps even slowly declining over time.  Here, the ratio of comments to submissions increases over time; combined with the observation that overall activity stays steady, this suggests that the ratio is changing because people \textit{substitute} commenting on others' posts for making their own submissions.
+
+Finally, this increase is most pronounced for the earliest cohorts from 2008 and 2009, with ratios more than doubling over their first year, much more than the change for later cohorts.  Still, the ratio for these earlier cohorts never rises to the level it does for surviving users from later cohorts.  
+
+%% DC 15: Here's an interesting history from someone.  https://www.reddit.com/r/TheoryOfReddit/comments/1a7aoj/retracing_the_evolution_of_reddit_through_post/
+ 
+%% DC 15: This isn't quite right; folks grow, especially in 2011 -- but at a slower rate than the first two cohorts.
+%2010 and 11 are consistent with the following years, with users that survive longer rapidly leveling at higher values while users that survive less also rapidly leveling at lower values. For 2008 and 09, however, this is not the case. Users actually increased their commenting behavior in the early years. Still, users that survived longer show a higher commenting behavior than the ones that survived a shorter period.
+
+% This suggests that the increasing tendency in Figure \ref{fig:comments_submissions}b for the cohorts of 2010 and later is mainly due to the death of low-ratio users, but the earlier cohorts also increased due to an actual increase in the commenting behavior of the users, and not only low commenting users dropouts. 
 
 %% Sam 10: It just occurred to me that although the comment size is decreasing, users might be putting just the same amount of effort, just writing more comments. This figure that shows that the newer cohorts comment more might mean that users are actually typing the same amount, but they are pulverizing more their efforts. Might be worth to comment about it, although it obviously raises the question of why we didn't do it. I can try to generate this results on monday, it is likely easy to do so.
 %% Sam 10: Thinking again about it, I raise the question of weather users are getting ``lazier'' many times in the text. This should be included. Can probably make up for the removal of the subreddits section due to the fact that we have a lot of default 2008 subreddits.
