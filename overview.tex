@@ -1,7 +1,8 @@
 \section{Data: Reddit as a community}
 
 %% DC 15: The citations here, just to give exmples of work that asks these questions in various ways.
-In this paper we explore how cohort-inspired analysis can give us deeper insights into three common questions about online communities: how active are users \cite{Scellato2011,Hughes2009,Java2007,Levy1984}, how much do they contribute \cite{Scellato2011,Gruhl2004,Guo2009}, and what kinds of work do they engage in?  We do this work in the context of Reddit; here, we present a brief overview of both Reddit and the dataset that we use in this paper, focusing on aspects that directly impact our analyses\footnote{There is more to say about Reddit itself (see \url{https://www.Reddit.com/about/ }).}.
+%% Sam 17: Missing ``kinds of things'' citations.
+In this paper, we explore how cohort based analysis can give us deeper insights into three common questions about online communities: how active are users \cite{Scellato2011,Hughes2009,Java2007,Levy1984}, how much do they contribute \cite{Scellato2011,Gruhl2004,Guo2009}, and what kinds of work do they engage in?  We do this in the context of Reddit, beginning with a brief overview of both Reddit and the dataset that we use in this paper, focusing on aspects that directly impact our analyses\footnote{There is more to say about Reddit itself (see \url{https://www.Reddit.com/about/ }).}.
 
 
 \subsection{What is Reddit, briefly}
@@ -21,16 +22,17 @@ We choose Reddit as our target community for a number of reasons.  It has existe
 
 \subsection{The dataset}
 
-Redditor \textit{Stuck\_In\_The\_Matrix} used that API to compile a dataset of almost every publicly available comment \footnote{Available in \url{https://www.Reddit.com/r/datasets/comments/3bxlg7/i_have_every_publicly_available_Reddit_comment }.} from October 2007 until May 2015.  The dataset is composed of 1.65 billion comments, although due to API call failures, about 350,000 comments were not available.  He also compiled a submissions dataset for the period of October 2007 until December 2014 that was made available for us upon request, containing a total of 114 million submissions.  These datasets contain the JSON data returned by the Reddit API for comments and submissions \footnote{A full description of the JSON objects is available at \url{https://github.com/Reddit/Reddit/wiki/JSON }.}; for our purposes, the main items of interest were the UTC creation date, the username, the subreddit, and for comments, the comment text.
+Redditor \textit{Stuck\_In\_The\_Matrix} used that API to compile a dataset of almost every publicly available comment \footnote{Available in \url{https://www.Reddit.com/r/datasets/comments/3bxlg7/i_have_every_publicly_available_Reddit_comment }.} from October 2007 until May 2015.  The dataset is composed of 1.65 billion comments, although due to API call failures, about 350,000 comments are unavailable.  He also compiled a submissions dataset for the period of October 2007 until December 2014 that was made available for us upon request, containing a total of 114 million submissions.  These datasets contain the JSON data objects returned by Reddit's API for comments and submissions \footnote{A full description of the JSON objects is available at \url{https://github.com/Reddit/Reddit/wiki/JSON }.}; for our purposes, the main items of interest were the UTC creation date, the username, the subreddit, and for comments, the comment text.
 
-We focus on submissions and comments in the dataset because they have timestamps and can be tied to specific users and subreddits, allowing us to perform our time-based analyses.   In some analyses, we look only at comments; in some, we combine comments and submissions, calling them ``posts''.  We would also like to have looked at voting behavior as a measure of user activity\footnote{This would also give us more insight than usual into lurkers' behavior; we'll return to this in the discussion.}, but individual votes with timestamps and usernames are not available through the API, only the aggregate number of votes that posts receive.
+We focus on submissions and comments in the dataset because they have timestamps and can be tied to specific users and subreddits, allowing us to perform our time-based analyses.   In some analysis, we look only at comments; in some, we combine comments and submissions, calling them ``posts''.  We would also like to have looked at voting behavior as a measure of user activity\footnote{This would also give us more insight than usual into lurkers' behavior; we'll return to this in the discussion.}, but individual votes with timestamps and usernames are not available through the API, only the aggregate number of votes that posts receive.
 
 \subsection{Preprocessing the dataset}
 
-To analyze the data, we used Google BigQuery \footnote{\url{https://cloud.google.com/bigquery/}.}, a big data processing tool that at the time of writing this paper provided free processing for up to 1TB of data for users with a Google account.  Redditor \textit{fhoffa} imported the comments into BigQuery and made them publicly available \footnote{See \url{https://www.Reddit.com/r/bigquery/comments/3cej2b/17_billion_Reddit_comments_loaded_on_bigquery/}.}.  We uploaded the submission data ourselves using Google's SDK \footnote{Bigquery tools were still part of the alpha code in the SDK by the time.}.
-%% DC 15: This footnote I don't understand.
+To analyze the data, we used Google BigQuery \footnote{\url{https://cloud.google.com/bigquery/}.}, a big data processing tool that, at the time of writing this paper, provided free processing for up to 1TB of data for users with a Google account.  Redditor \textit{fhoffa} imported the comments into BigQuery and made them publicly available \footnote{See \url{https://www.Reddit.com/r/bigquery/comments/3cej2b/17_billion_Reddit_comments_loaded_on_bigquery/}.}.  We uploaded the submission data ourselves using Google's SDK \footnote{Bigquery tools were still part of the alpha code in the SDK by the time.}.
 
-For the analyses in the paper, we did light preprocessing to filter out posts by deleted users, posts with no creation time, and posts by authors with names that follow Reddit's conventions for auto-posting bots. 
+
+%% Sam 17: I don't think there is such a thing as ``bot'' names conventions
+For the analysis in the paper, we did light preprocessing to filter out posts by deleted users, posts with no creation time, and posts by authors with names that follow Reddit's conventions for auto-posting bots. 
 
 We also considered only comment data from October 2007 until December 2014 in order to have a matching period for comments and submissions. After this process, we had a total of 1.17 billion comments and 114 million submissions.
 
@@ -45,18 +47,18 @@ We also considered only comment data from October 2007 until December 2014 in or
 
 \subsection{An overview of the dataset}
 
-Here we present an overview of the dataset that shows Reddit's overall growth.  Figure~\ref{fig:cumulative}a presents the cumulative number of user accounts and subreddits created as of the last day of every month. After an initial extremely rapid expansion from 2008--2009, both the number of users and subreddits have grown exponentially.  As of the end of 2014, about 16.2 million distinct users have made at least posts and 327,000 subreddits received at least post since Reddit's inception.
+Here we present an overview of the dataset that shows Reddit's overall growth.  Figure~\ref{fig:cumulative}a presents the cumulative number of user accounts and subreddits created as of the last day of every month. After an initial extremely rapid expansion from 2008--2009, both the number of users and subreddits have grown exponentially.  As of the end of 2014, about 16.2 million distinct users have made at least one post and 327,000 subreddits received at least one post based on our data.
 
 However, as with many other online sites, most users \cite{Scellato2011,Hughes2009,Java2007} and communities \cite{Arguello2006} do not stay active. Figure~\ref{fig:cumulative}b shows the monthly number of active users and subreddits.
 
-We define as an \textit{active user} as one that made at least one post in the month in question. Similarly, an \textit{active subreddit} is one that received at least one post in the month. In December 2014, about 470,000 thousand users and 11,400 subreddits were active, both an order of magnitude less than the cumulative numbers.  
+We define as an \textit{active user} one that made at least one post in the month in question. Similarly, an \textit{active subreddit} is one that received at least one post in the month. In December 2014, about 470,000 thousand users and 11,400 subreddits were active, both an order of magnitude less than the cumulative numbers.  
 
 Our interest in this paper is not so much whether users survive as it is about the behavior of active users.  Thus, 
-in general our analyses will look only at active users and subreddits in each month; those that are temporarily or permanently gone from Reddit are not included.  
+in general our analysis will look only at active users and subreddits in each month; those that are temporarily or permanently gone from Reddit are not included.  
 
 \subsection{Identifying cohorts}
 
-We define a user's creation time as the time of the first post by that user or in that subreddit.  Throughout this paper, we will use the notion of user cohorts, which will consist of users created in the same calendar year.
+We define the ``user's creation time'' as the time of the first post made by that user.  Throughout this paper, we will use the notion of user cohorts, which will consist of users created in the same calendar year.
 
 %% DC 15: This is not super-clear, but it is closer.
 In many cases, we will look at the evolution of these cohorts. Since users can be created at any time during their cohort year, and our dataset ends in 2014, 
