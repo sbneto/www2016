@@ -1,0 +1,30 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Time matters}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Why accounting for time is important}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Cohorts are useful analytically}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{What might cause these differences?}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Data: Reddit as a community}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{What is Reddit, briefly}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{The dataset}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Preprocessing the dataset}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.4}{An overview of the dataset}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.5}{Identifying cohorts}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{Average posts per user}{}% 12
+\BOOKMARK [2][-]{subsection.4.1}{Calendar versus user-relative time}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.2}{New cohorts don't catch up}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.3}{Does tenure predict activity, or vice versa?}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{Comment length}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{Comment length drops over time}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.2}{Simpson's Paradox: the length also rises}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.3}{New users burn brighter}{section.5}% 19
+\BOOKMARK [1][-]{section.6}{Kinds of contributions}{}% 20
+\BOOKMARK [2][-]{subsection.6.1}{Over time, responsiveness increases}{section.6}% 21
+\BOOKMARK [2][-]{subsection.6.2}{Comment early, comment often}{section.6}% 22
+\BOOKMARK [1][-]{section.7}{Discussion}{}% 23
+\BOOKMARK [2][-]{subsection.7.1}{Why are newer ``active'' users less so?}{section.7}% 24
+\BOOKMARK [2][-]{subsection.7.2}{Why are comments getting shorter?}{section.7}% 25
+\BOOKMARK [2][-]{subsection.7.3}{Why do comments per submission increase?}{section.7}% 26
+\BOOKMARK [2][-]{subsection.7.4}{Limitations and Future Work}{section.7}% 27
+\BOOKMARK [1][-]{section.8}{Conclusions}{}% 28
+\BOOKMARK [1][-]{section.9}{Acknowledgments}{}% 29
+\BOOKMARK [1][-]{section.10}{References}{}% 30

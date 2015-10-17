@@ -49,7 +49,7 @@ Combing cohort segmentation with user-referential analysis, as in Figure~\ref{fi
 %% DC 15: Calling this out was really nice; very subtle.
 These graphs still support the tempting conclusion that users become more active the longer they exist in Reddit, and don't explain the very rapid increase in posting activity in the first few months.  An alternative hypothesis, inspired by the ``Wikipedians are Born, not Made'' paper \cite{Panciera2009}, is that individual users come in with different posting propensities, and the rise over time is not that individual users become more active but that low-activity users leave the system.  To examine this, we further segment each cohort by the number of years they were active in the system, as defined by the difference between their first and last post times.
  
-Figure~\ref{fig:avr_posts_per_user_for_surviving_year} shows this analysis for the 2010, 2011 and 2012 cohorts\footnote{We only show these figures for a matter of space, but the same trends are observed for the other cohorts.}.  Across all cohorts and yearly survival sub-cohorts, users who leave earlier come in with a lower initial posting rate.  Thus, the rise in average posts per active user is driven by the fact that users who have high posting averages throughout their lifespan are the ones who are more likely to survive.  As the less active users leave the system, the average per active user increases.  In other words, the correct interpretation of Figure~\ref{fig:overall_posts}b isn't that longer-lived users post more.  It's that users who post more---right from the beginning---live longer. 
+Figure~\ref{fig:avr_posts_per_user_for_surviving_year} shows this analysis for the 2010, 2011 and 2012 cohorts\footnote{We only show these figures for the sake of saving space, but the same trends are observed for the other cohorts.}.  Across all cohorts and yearly survival sub-cohorts, users who leave earlier come in with a lower initial posting rate.  Thus, the rise in average posts per active user is driven by the fact that users who have high posting averages throughout their lifespan are the ones who are more likely to survive.  As the less active users leave the system, the average per active user increases.  In other words, the correct interpretation of Figure~\ref{fig:overall_posts}b isn't that longer-lived users post more.  It's that users who post more---right from the beginning---live longer. 
 
 \begin{figure*}[!tb]
 \centering
@@ -92,15 +92,15 @@ An important thing to notice here is that younger users start from a lower basel
 
 Let us go back to Figure~\ref{fig:comment_length}a, which shows the overall average comment size on Reddit over time. We see a clear trend towards declining sizes of comments in the overall line (the black line that averages across all users).
 %% DC 15: This is a little harder to say "across all users" because of the individual cohort views in Fig a here.  I still think removing them there makes the story quite a bit clearer, and the per-cohort info is visible in Fig b.
-This could be a warning sign for Reddit community managers, assuming longer comments are associated with more involved users and healthier discussions. A data analyst looking at these numbers might think about ways to incentivize or promote longer comments on Reddit. 
+This could be a warning sign for Reddit community managers, assuming longer comments are associated with more involved users and healthier discussions. A data analyst looking at these numbers might think about ways to promote longer comments on Reddit. 
 
-However, in Figure~\ref{fig:comment_length}b, we saw that average comment size increases over time for every cohort. While later cohorts start at smaller comment sizes, after an initial drop, all of the cohorts show a positive trend towards writing longer comments as time goes on.  This is puzzling: when each of the cohorts exhibits a steady increase in their average comment size, how can the overall mean comment size decrease?  This anomaly is an instance of the Simpson's paradox \cite{simpson1951}, and occurs because we fail to properly condition on different cohorts when computing mean comment length. 
+However, in Figure~\ref{fig:comment_length}b, we saw that average comment size increases over time for every cohort. While later cohorts start at smaller comment sizes, after an initial drop, all cohorts show a positive trend towards writing longer comments as time goes on.  This is puzzling: when each of the cohorts exhibits a steady increase in their average comment size, how can the overall mean comment size decrease?  This anomaly is an instance of the Simpson's paradox \cite{simpson1951}, and occurs because we fail to properly condition on different cohorts when computing mean comment length. 
 
 \begin{table}[!tb]
 \centering
-\tabcolsep=0.08cm
+\tabcolsep=0.07cm
 \singlespacing
-\fontsize{8pt}{10pt}\selectfont
+\fontsize{9pt}{11.5pt}\selectfont
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
 \cline{2-9}
 \multicolumn{1}{c|}{} & \multicolumn{8}{c|}{Cohorts} \\ \hline
@@ -122,11 +122,6 @@ Table~\ref{tab:simpson} provides some clues to what might be going on. When we m
 
 Without the decision to condition on cohorts, one would have gathered an entirely wrong conclusion. People are not writing less as they survive, rather those who tend to write less are joining the community in much larger numbers. Knowing this, one may focus on better onboarding processes for newcomers, or try to learn why users in later cohorts tend to write smaller comments on average.  
 
-\subsection{New users burn brighter}
-As with the posting per user, we can not say if the increase in the curves seen in \ref{fig:comment_length}b are due to the lower effort users dying first or because users are writing more as they live on the network. To answer this, \ref{fig:comment_length}c allow us to make two important observations: first, \textit{comment length does increase inside of each cohort}, no matter how long the user survives. Secondly, as a general trend, \textit{users that make longer comments inside of each cohort die faster}. This is quite surprising, given that we would expect people to put less effort when they are more likely to stop using the network.
-
-\section{Kinds of contributions}
-
 %% DC 15: Caption and figure don't line up, making it hard for me to know what to focus on here.
 \begin{figure*}[!tb]
 \centering
@@ -139,6 +134,11 @@ As with the posting per user, we can not say if the increase in the curves seen 
 \caption{Figure (a) shows the average comment per submission ratio over clock time and Figure (b) from the user-referential time. Both figures show the cohorted trends and the overall users trends. Figure (c), similarly to Figure \ref{fig:avr_posts_per_user_for_surviving_year}, shows the 2008, 2009, 2010, and 2011 cohorts, segmented by the number of years a user in the cohort survived.  As with average posts per month, users who stay active longer appear to start their careers with a relatively high comment-to-submission ratio than users who abandon Reddit sooner.  Unlike that analysis, however, the early 2008 cohort ends up below the later cohorts.}
 \label{fig:comments_submissions}
 \end{figure*}
+
+\subsection{New users burn brighter}
+As with the posting per user, we can not say if the increase in the curves seen in \ref{fig:comment_length}b are due to the lower effort users dying first or because users are writing more as they live on the network. To answer this, \ref{fig:comment_length}c allow us to make two important observations: first, \textit{comment length does increase inside of each cohort}, no matter how long the user survives. Secondly, as a general trend, \textit{users that make longer comments inside of each cohort die faster}. This is quite surprising, given that we would expect people to put less effort when they are more likely to stop using the network.
+
+\section{Kinds of contributions}
 
 One common question from the literature is what sorts of activities users engage in, for instance, to categorize users into roles they play in the community\cite{Welser2011}.
 

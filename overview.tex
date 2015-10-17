@@ -25,9 +25,9 @@ Redditor \textit{Stuck\_In\_The\_Matrix} used that API to compile a dataset of a
 
 We focus on submissions and comments in the dataset because they have timestamps and can be tied to specific users and subreddits, allowing us to perform our time-based analyses.   In some analyses, we look only at comments; in some, we combine comments and submissions, calling them ``posts''.  We would also like to have looked at voting behavior as a measure of user activity\footnote{This would also give us more insight than usual into lurkers' behavior; we'll return to this in the discussion.}, but individual votes with timestamps and usernames are not available through the API, only the aggregate number of votes that posts receive.
 
-\subsection{Pre-processing the dataset}
+\subsection{Preprocessing the dataset}
 
-To analyze the data, we used Google BigQuery \footnote{\url{https://cloud.google.com/bigquery/ }.}, a big data processing tool that at the time of writing this paper provided free processing for up to 1TB of data for users with a Google account.  Redditor \textit{fhoffa} imported the comments into BigQuery and made them publicly available \footnote{See \url{https://www.Reddit.com/r/bigquery/comments/3cej2b/17_billion_Reddit_comments_loaded_on_bigquery/ }.}.  We uploaded the submission data ourselves using Google's SDK \footnote{Part of the alpha code in the SDK, ``gcloud alpha bigquery import''.}.
+To analyze the data, we used Google BigQuery \footnote{\url{https://cloud.google.com/bigquery/}.}, a big data processing tool that at the time of writing this paper provided free processing for up to 1TB of data for users with a Google account.  Redditor \textit{fhoffa} imported the comments into BigQuery and made them publicly available \footnote{See \url{https://www.Reddit.com/r/bigquery/comments/3cej2b/17_billion_Reddit_comments_loaded_on_bigquery/}.}.  We uploaded the submission data ourselves using Google's SDK \footnote{Bigquery tools were still part of the alpha code in the SDK by the time.}.
 %% DC 15: This footnote I don't understand.
 
 For the analyses in the paper, we did light preprocessing to filter out posts by deleted users, posts with no creation time, and posts by authors with names that follow Reddit's conventions for auto-posting bots. 
