@@ -61,7 +61,7 @@ Figure~\ref{fig:avr_posts_per_user_for_surviving_year} shows this analysis for t
 \end{figure*}
 
 %% DC 15: Trying to make this argument clearer.  I'm not positive I believe it but it's interesting. 
-Combining Figure \ref{fig:avr_posts_per_user_for_surviving_year}'s insight that the main reason why these curves increase is because the low posting users are dying sooner with the earlier observation that the stable activity level is lower for newer cohorts suggests that low-activity users from later cohorts tend to survive longer than longer than those from earlier cohorts.  That is, people joining later in the community's life are less likely to be either committed users or leave than those from earlier on: they are more likely to be ``causal'' users that stick around.
+Combining Figure \ref{fig:avr_posts_per_user_for_surviving_year}'s insight that the main reason why these curves increase is because the low posting users are dying sooner with the earlier observation that the stable activity level is lower for newer cohorts suggests that low-activity users from later cohorts tend to survive longer than longer than those from earlier cohorts.  That is, people joining later in the community's life are less likely to be either committed users or leave than those from earlier on: they are more likely to be ``casual'' users that stick around.
 
 \section{Comment length}
 
@@ -94,7 +94,7 @@ Let us go back to Figure~\ref{fig:comment_length}a, which shows the overall aver
 %% DC 15: This is a little harder to say "across all users" because of the individual cohort views in Fig a here.  I still think removing them there makes the story quite a bit clearer, and the per-cohort info is visible in Fig b.
 This could be a warning sign for Reddit community managers, assuming longer comments are associated with more involved users and healthier discussions. A data analyst looking at these numbers might think about ways to incentivize or promote longer comments on Reddit. 
 
-However, in Figure~\ref{fig:comment_length}b, we saw that average comment size increases over time for every cohort. While later cohorts start at smaller comment sizes, after an initial drop, all of the cohorts show a positive trend towards writing longer comments as time goes on.  This is puzzling: when each of the cohorts exhibits a steady increase in their average comment size, how can the overall mean comment size decrease?  This anomaly is an instance of the Simpson's paradox, and occurs because we fail to properly condition on different cohorts when computing mean comment length. 
+However, in Figure~\ref{fig:comment_length}b, we saw that average comment size increases over time for every cohort. While later cohorts start at smaller comment sizes, after an initial drop, all of the cohorts show a positive trend towards writing longer comments as time goes on.  This is puzzling: when each of the cohorts exhibits a steady increase in their average comment size, how can the overall mean comment size decrease?  This anomaly is an instance of the Simpson's paradox \cite{simpson1951}, and occurs because we fail to properly condition on different cohorts when computing mean comment length. 
 
 \begin{table}[!tb]
 \centering
