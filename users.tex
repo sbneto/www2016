@@ -32,7 +32,7 @@ One caution about interpreting the graphs that are relative to the user's start 
 \centering
 \subimage[width=0.48, scale=0.45]{./images/avr_posts_per_user_over_time_cohorts.eps}
 \subimage[width=0.48, scale=0.45]{./images/avr_posts_per_user_cohorts.eps}
-\caption{Figure (a) shows the average number of posts per active users over clock time and Figure (b) the active users in the user-time referential, both segmented by users' cohorts. The user cohort is defined as the year the user made his/her first post.  For comparison, the black lines represent the overall averages from Figure~\ref{fig:overall_posts}.}
+\caption{Figure (a) shows the average number of posts per active users over clock time and Figure (b) the active users in the user-time referential, both segmented by users' cohorts. The user cohort is defined by the year of the user's creation time.  For comparison, the black lines represent the overall averages from Figure~\ref{fig:overall_posts}.}
 \label{fig:avr_posts_per_user_over_time_cohorts}
 \end{figure*}
 
@@ -85,16 +85,15 @@ Activity as measured by the average number of posts per user is one proxy for us
 Figure \ref{fig:comment_length}a shows the overall comment length in Reddit over time (the black line) and the overall length per cohort. 
 Based on the downwards tendency of the overall comment length in Figure \ref{fig:comment_length}a, one might infer that users' commitment to the network is decreasing over time, or that there is some community-wide norm toward shorter commenting. 
 
-This, however, might not be the best way to interpret this information. Figure \ref{fig:comment_length}b shows the comment length per cohort based on the user referential time.  
-An important thing to notice here is that younger users start from a lower baseline comment length than older users. Together with the fact that recent Reddit has experienced exponential growth, the weight when evaluating the overall average for Figures \ref{fig:comment_length}a and b as the years go by is shifted towards the size of the ever-growing younger generation; this younger generation brings the average down since they writing less on average.
+This, however, might not be the best way to interpret this information. Figure \ref{fig:comment_length}b shows the comment length per cohort based on the user referential time. An important thing to notice here is that younger users start from a lower baseline comment length than older users. Together with the fact that recent Reddit has experienced exponential growth, the weight when evaluating the overall average for Figures \ref{fig:comment_length}a and \ref{fig:comment_length}b as the years go by is shifted towards the length of the ever-growing younger generation; this younger generation brings the average down since they writing less on average.
 
 \subsection{Simpson's Paradox: the length also rises}
 
-Let us go back to Figure~\ref{fig:comment_length}a, which shows the overall average comment size on Reddit over time. We see a clear trend towards declining sizes of comments in the overall line (the black line that averages across all users).
+Let us go back to Figure~\ref{fig:comment_length}a, which shows the overall average comment length on Reddit over time. We see a clear trend towards declining length of comments in the overall line (the black line that averages across all users).
 %% DC 15: This is a little harder to say "across all users" because of the individual cohort views in Fig a here.  I still think removing them there makes the story quite a bit clearer, and the per-cohort info is visible in Fig b.
 This could be a warning sign for Reddit community managers, assuming longer comments are associated with more involved users and healthier discussions. A data analyst looking at these numbers might think about ways to promote longer comments on Reddit. 
 
-However, in Figure~\ref{fig:comment_length}b, we saw that average comment size increases over time for every cohort. While later cohorts start at smaller comment sizes, after an initial drop, all cohorts show a positive trend towards writing longer comments as time goes on.  This is puzzling: when each of the cohorts exhibits a steady increase in their average comment size, how can the overall mean comment size decrease?  This anomaly is an instance of the Simpson's paradox \cite{simpson1951}, and occurs because we fail to properly condition on different cohorts when computing mean comment length. 
+However, in Figure~\ref{fig:comment_length}b, we saw that average comment length increases over time for every cohort. While later cohorts start at smaller comment length, after an initial drop, all cohorts show positive trends towards writing longer comments over time.  This is puzzling: when each of the cohorts exhibits a steady increase in their average comment length, how can the overall mean comment length decrease?  This anomaly is an instance of the Simpson's paradox \cite{simpson1951}, and occurs because we fail to properly condition on different cohorts when computing mean comment length. 
 
 \begin{table}[!tb]
 \centering
@@ -118,7 +117,7 @@ Year & 2007 & 2008 & 2009 & 2010 & 2011 & 2012 & 2013 & 2014 & Overall\\ \hline
 \label{tab:simpson}
 \end{table}
 
-Table~\ref{tab:simpson} provides some clues to what might be going on. When we move down the rows, we observe an increasing tendency in each column. It means that the average comment length increases for these users. However, when we move right through the columns, people in later cohorts tend to write less per comment. If we were to average each row, we would still get an overall increasing comment length per year, but that is not what we see in the overall column. What happens here is that the latter cohorts have many more users than earlier ones. Since their numbers increase year by year, we have a much larger contribution from them towards comments, compared to users of earlier cohorts. This uneven contribution leads to the paradox we observe in the Table~\ref{tab:simpson}. 
+Table~\ref{tab:simpson} provides some clues to what might be going on. When we move down the rows, we observe an increasing tendency in each cohort column. It means that the average comment length increases for these users. However, when we move right through the columns, people in later cohorts tend to write less per comment. If we were to average each row, we would still get an overall increasing comment length per year, but that is not what we see in the overall column. What happens here is that the latter cohorts have many more users than earlier ones. Since their numbers increase year by year, we have a much larger contribution from them towards comments, compared to users of earlier cohorts. This uneven contribution leads to the paradox we observed in Figure~\ref{fig:comment_length}a. 
 
 Without the decision to condition on cohorts, one would have gathered an entirely wrong conclusion. People are not writing less as they survive, rather those who tend to write less are joining the community in much larger numbers. Knowing this, one may focus on better onboarding processes for newcomers, or try to learn why users in later cohorts tend to write smaller comments on average.  
 

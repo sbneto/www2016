@@ -24,7 +24,7 @@ We choose Reddit as our target community for a number of reasons.  It has existe
 
 Redditor \textit{Stuck\_In\_The\_Matrix} used that API to compile a dataset of almost every publicly available comment \footnote{Available in \url{https://www.Reddit.com/r/datasets/comments/3bxlg7/i_have_every_publicly_available_Reddit_comment }.} from October 2007 until May 2015.  The dataset is composed of 1.65 billion comments, although due to API call failures, about 350,000 comments are unavailable.  He also compiled a submissions dataset for the period of October 2007 until December 2014 that was made available for us upon request, containing a total of 114 million submissions.  These datasets contain the JSON data objects returned by Reddit's API for comments and submissions \footnote{A full description of the JSON objects is available at \url{https://github.com/Reddit/Reddit/wiki/JSON }.}; for our purposes, the main items of interest were the UTC creation date, the username, the subreddit, and for comments, the comment text.
 
-We focus on submissions and comments in the dataset because they have timestamps and can be tied to specific users and subreddits, allowing us to perform our time-based analyses.   In some analysis, we look only at comments; in some, we combine comments and submissions, calling them ``posts''.  We would also like to have looked at voting behavior as a measure of user activity\footnote{This would also give us more insight than usual into lurkers' behavior; we'll return to this in the discussion.}, but individual votes with timestamps and usernames are not available through the API, only the aggregate number of votes that posts receive.
+We focus on submissions and comments in the dataset because they have timestamps and can be tied to specific users and subreddits, allowing us to perform our time-based analyses.   In some analysis, we look only at comments; in some, we combine comments and submissions, calling them \textbf{``posts''}.  We would also like to have looked at voting behavior as a measure of user activity\footnote{This would also give us more insight than usual into lurkers' behavior; we'll return to this in the discussion.}, but individual votes with timestamps and usernames are not available through the API, only the aggregate number of votes that posts receive.
 
 \subsection{Preprocessing the dataset}
 
@@ -58,7 +58,7 @@ in general our analysis will look only at active users and subreddits in each mo
 
 \subsection{Identifying cohorts}
 
-We define the ``user's creation time'' as the time of the first post made by that user.  Throughout this paper, we will use the notion of user cohorts, which will consist of users created in the same calendar year.
+We define the ``\textbf{user's creation time}'' as the time of the first post made by that user.  Throughout this paper, we will use the notion of user cohorts, which will consist of users created in the same calendar year.
 
 %% DC 15: This is not super-clear, but it is closer.
 In many cases, we will look at the evolution of these cohorts. Since users can be created at any time during their cohort year, and our dataset ends in 2014, 
