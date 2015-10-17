@@ -14,7 +14,7 @@
 %% DC 15: Note that the legends in the graphs say "surviving user", not "active user" (and can probably be removed for single-series graphs, since the text caption will explain it). The y-axis label is also a variable name, not a meaningful human name; those will want to get fixed in the final cleanup.
 %% Sam 15: I will do that, changing these names requires some tweaking because I user the names of the comlumns that bigquery returns automatically, and I can't name columns in sql with space between them. I will work around it though.
 
-In this section, we will use a common metric of user activity in online communities, the number of posts per user over time.  This metric has been used for characterizing user behavior in blogspace \cite{Gruhl2004}, 
+In this section, we will use a common metric of user activity in online communities, the number of posts per user over time. Approaches that consider the total number of posts per user in a particular dataset \cite{Gruhl2004} and that analyzes the variation on the number of posts per user over the days \cite{Guo2009} have been applied to online social networks.
 %% DC 12: This might be the place to briefly lay out other work that has addressed this question. 
 
 As we will see, both visualizing behavior relative to a user's join time rather than calendar time and using cohorts provide additional insight into posting activity in Reddit compared to a straightforward aggregate analysis based on clock time.
@@ -48,7 +48,7 @@ Combing cohort segmentation with user-referential analysis, as in Figure~\ref{fi
 \subsection{Does tenure predict activity, or vice versa?}
 
 %% DC 15: Calling this out was really nice; very subtle.
-These graphs still support the tempting conclusion that users become more active the longer they exist in Reddit, and don't explain the very rapid increase in posting activity in the first few months.  An alternative hypothesis, inspired by the ``Wikipedians are Born, not Made'' paper \cite{}, is that individual users come in with different posting propensities, and the rise over time is not that individual users become more active but that low-activity users leave the system.  To examine this, we further segment each cohort by the number of years they were active in the system, as defined by the difference between their first and last post times.
+These graphs still support the tempting conclusion that users become more active the longer they exist in Reddit, and don't explain the very rapid increase in posting activity in the first few months.  An alternative hypothesis, inspired by the ``Wikipedians are Born, not Made'' paper \cite{Panciera2009}, is that individual users come in with different posting propensities, and the rise over time is not that individual users become more active but that low-activity users leave the system.  To examine this, we further segment each cohort by the number of years they were active in the system, as defined by the difference between their first and last post times.
  
 Figure~\ref{fig:avr_posts_per_user_for_surviving_year} shows this analysis for the 2010, 2011 and 2012 cohorts\footnote{We only show these figures for a matter of space, but the same trends are observed for the other cohorts.}.  Across all cohorts and yearly survival sub-cohorts, users who leave earlier come in with a lower initial posting rate.  Thus, the rise in average posts per active user is driven by the fact that users who have high posting averages throughout their lifespan are the ones who are more likely to survive.  As the less active users leave the system, the average per active user increases.  In other words, the correct interpretation of Figure~\ref{fig:overall_posts}b isn't that longer-lived users post more.  It's that users who post more---right from the beginning---live longer. 
 
@@ -143,10 +143,10 @@ As with the posting per user, we can not say if the increase in the curves seen 
 \label{fig:comments_submissions}
 \end{figure*}
 
-One common question from the literature is what sorts of activities users engage in, for instance, to categorize users into roles they play in the community\cite{welser 2011 wikipedia roles paper from iconference}.  
+One common question from the literature is what sorts of activities users engage in, for instance, to categorize users into roles they play in the community\cite{Welser2011}.
 
 \subsection{Over time, responsiveness increases}
-For instance, in Usenet, people who never start threads and only respond play the role of answerer, while there are other roles that include fostering discussion \cite{http://www.cmu.edu/joss/content/articles/volume8/Welser/}; these might naturally map onto people who primarily comment and who primarily submit in Reddit, respectively.  While submissions can be considered new content that an author generates, a comment can be considered as a contribution to an existing content from another author.
+For instance, in Usenet, people who never start threads and only respond play the role of answerer, while there are other roles that include fostering discussion \cite{Welser2007}; these might naturally map onto people who primarily comment and who primarily submit in Reddit, respectively.  While submissions can be considered new content that an author generates, a comment can be considered as a contribution to an existing content from another author.
 
 Since the total number of comments always surpasses the number of submissions, Figure \ref{fig:comments_submissions}a shows the evolution of the overall and cohorted ratio of the average number of comments a user makes for each submission they make over time from 2008 until 2013. Here we see that users who most prefer commenting to submitting come from 2009, 2010 and 2011, and we observe that over time the average ratio of comments to submissions increases both overall and per-cohort for active users.
 
