@@ -9,12 +9,7 @@ In this paper, we explore how cohort based analysis can give us deeper insights 
 
 %% DC 10: Will want a couple of legible screenshots here to help illustrate.
 %% DC 15: Ideally we would get these numbers as of the end of the dataset to be more consistent.
-Reddit is one of the largest sharing and discussion communities on the Web.  According to Alexa, as of late 2015 Reddit is in the top 15 sites in the U.S. and the top 35 in the world in terms of monthly unique visitors.  It consists of a large number of subreddits (853,000 as of June 21st, 2015\footnote{\url
-{http://www.Redditblog.com/2015/06/happy-10th-birthday-to-us-celebrating.html }for more numbers on Reddit size.}), each of which focuses on a particular purpose.  Many subreddits are primarily about sharing web content from other sites: in ``Pics'', ``News'', ``Funny'', ``Gaming', and many other communities, users (``Redditors'') make ``submissions'' of links posted at other sites that they think are interesting.  In other subreddits, Redditors primarily write text-based ``self-posts'': ``AskReddit'', ``IamA'', ``ShowerThoughts'' are places where people can ask questions and share stories of their own lives.  Generically, we will refer to submissions and text posts as ``submissions''.  
-
-%% DC 10: Sam should choose a precise terminology here and use it throughout, and be clear on every single analysis exactly what is being counted.  We don't want someone being confused, trying to replicate the data, and finding something different because they don't understand what the analysis is.  (We will also want to be super-clear below when we introduce the dataset to talk about any filtering we did, so that people can exactly replicate what we did.)
-
-%% DC 10: Further, this terminology should agree with Reddit's, so that people who are familiar with the community aren't confused. 
+Reddit is one of the largest sharing and discussion communities on the Web.  According to Alexa, as of late 2015 Reddit is in the top 15 sites in the U.S. and the top 35 in the world in terms of monthly unique visitors.  It consists of a large number of subreddits (853,000 as of June 21st, 2015\footnote{\url{http://www.Redditblog.com/2015/06/happy-10th-birthday-to-us-celebrating.html }for more numbers on Reddit size.}), each of which focuses on a particular purpose.  Many subreddits are primarily about sharing web content from other sites: in ``Pics'', ``News'', ``Funny'', ``Gaming', and many other communities, users (``Redditors'') make ``submissions'' of links posted at other sites that they think are interesting.  In other subreddits, Redditors primarily write text-based ``self-posts'': ``AskReddit'', ``IamA'', ``ShowerThoughts'' are places where people can ask questions and share stories of their own lives.  Generically, we will refer to submissions and text posts as ``submissions''.  
 
 Each post can be imagined as the root of a threaded comment tree; in addition to submitting, Redditors can make comments, and vote on both submissions and comments.  Votes are used both to sort comments within a submission and submissions within a subreddit, and also form the basis of ``karma'', a reputation system that essentially tracks how often people upvote a given Redditor's comments and submitted links.  Redditors can also create subreddits and volunteer to moderate them.
 
@@ -32,7 +27,9 @@ To analyze the data, we used Google BigQuery \footnote{\url{https://cloud.google
 
 
 %% Sam 17: I don't think there is such a thing as ``bot'' names conventions
-For the analysis in the paper, we did light preprocessing to filter out posts by deleted users, posts with no creation time, and posts by authors with names that follow Reddit's conventions for auto-posting bots. 
+For the analysis in the paper, we did light preprocessing to filter out posts by deleted users, posts with no creation time, and posts by authors with
+% names that follow Reddit's conventions for auto-posting bots. 
+bot-like names\footnote{Ending with ``\_bot'' or ``Bot''; or containing ``transcriber'' or ``automoderator''.}.
 
 We also considered only comment data from October 2007 until December 2014 in order to have a matching period for comments and submissions. After this process, we had a total of 1.17 billion comments and 114 million submissions.
 
