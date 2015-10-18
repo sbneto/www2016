@@ -10,7 +10,7 @@ In this paper, we explore how cohort based analysis can give us deeper insights 
 
 \begin{figure}[!tb]
 \centering
-\includegraphics[width=0.48\textwidth,natwidth=964,natheight=823]{./images/reddit.png}
+\includegraphics[width=0.45\textwidth,natwidth=964,natheight=823]{./images/reddit.png}
 \caption{Reddit interface for visualizing a submission. Here we see a Patrick Stewart ``IAmA'', when he is online answering questions in the comments of his submission. We can see the most upvoted comment and Patrick's answer right below.}
 \label{fig:reddit}
 \end{figure}
@@ -28,8 +28,8 @@ Third, Reddit data are publicly available through an API.
 
 \begin{figure*}[!tb]
 \centering
-\subimage[width=0.48, scale=0.42]{./images/cumulative_users_subreddits.eps}
-\subimage[width=0.48, scale=0.42]{./images/active_users_subreddits.eps}
+\subimage[width=0.48, scale=0.40]{./images/cumulative_users_subreddits.eps}
+\subimage[width=0.48, scale=0.40]{./images/active_users_subreddits.eps}
 \caption{Figure (a) shows the cumulative growth of Reddit for users and subreddits. Figure (b) shows the number of active users and subreddits in Reddit over time. An active user or subreddit is one that had at least one post (comment or submission) in the time bin we used---here, discretized by month.}
 \label{fig:cumulative}
 \end{figure*}
@@ -63,6 +63,14 @@ Our interest in this paper is not so much whether users survive as it is about t
 in general our analysis will look only at active users and subreddits in each month; those that are temporarily or permanently gone from Reddit are not included.  
 
 \subsection{Identifying cohorts}
+
+\begin{figure*}[!tb]
+\centering
+\subimage[width=0.48, scale=0.40]{./images/avr_posts_per_user_over_time_total.eps}
+\subimage[width=0.48, scale=0.40]{./images/avr_posts_per_user_user_ref_total.eps}
+\caption{In Figure (a), monthly average posts per active user over clock time. In Figure (b), the monthly average posts per active users in the user-time referential, i.e., message creation time is measured relative to the user's first post.  Each tick in the x-axis is one year.  In both figures (and all later figures), we consider only active users during each month; users that are either temporarily or permanently away from Reddit are not included.}
+\label{fig:overall_posts}
+\end{figure*}
 
 We define the ``\textbf{user's creation time}'' as the time of the first post made by that user.  Throughout this paper, we will use the notion of user cohorts, which will consist of users created in the same calendar year.
 

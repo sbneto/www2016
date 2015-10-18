@@ -4,14 +4,6 @@
 
 \section{Average posts per user}
 
-\begin{figure*}[!tb]
-\centering
-\subimage[width=0.48, scale=0.42]{./images/avr_posts_per_user_over_time_total.eps}
-\subimage[width=0.48, scale=0.42]{./images/avr_posts_per_user_user_ref_total.eps}
-\caption{In Figure (a), monthly average posts per active user over clock time. In Figure (b), the monthly average posts per active users in the user-time referential, i.e., message creation time is measured relative to the user's first post.  Each tick in the x-axis is one year.  In both figures (and all later figures), we consider only active users during each month; users that are either temporarily or permanently away from Reddit are not included.}
-\label{fig:overall_posts}
-\end{figure*}
-
 In this section, we will use a common metric of user activity in online communities, the number of posts per user over time. Approaches that consider the total number of posts per user in a particular dataset \cite{Gruhl2004} and that analyzes the variation on the number of posts per user over the days \cite{Guo2009} have been applied to online social networks.
 
 As we will see, both visualizing behavior relative to a user's join time rather than calendar time and using cohorts provide additional insight into posting activity in Reddit compared to a straightforward aggregate analysis based on clock time.
@@ -24,7 +16,6 @@ This average view hides several important aspects of users' activity dynamics. P
 
 One caution about interpreting the graphs that are relative to the user's start time is that the amount of data available rapidly decreases over time as users leave the community, meaning that values toward the right side of an individual data series are more subject to individual variation.  A tempting conclusion at this point is that the longer a user survives, the more posts they make over time.  This conclusion, however, is incorrect; we will present a more nuanced description of what is happening informed by cohort-based analyses.
 
-\vspace{5pt} % fixing header in wrong page
 \subsection{New cohorts do not catch up}
 
 \begin{figure*}[!tb]
@@ -100,7 +91,7 @@ However, in Figure~\ref{fig:comment_length}b, we saw that average comment length
 \centering
 \tabcolsep=0.07cm
 \singlespacing
-\fontsize{9pt}{11.5pt}\selectfont
+\fontsize{9pt}{10.5pt}\selectfont
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
 \cline{2-9}
 \multicolumn{1}{c|}{} & \multicolumn{8}{c|}{Cohorts} \\ \hline
