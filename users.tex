@@ -6,8 +6,8 @@
 
 \begin{figure*}[!tb]
 \centering
-\subimage[width=0.48, scale=0.45]{./images/avr_posts_per_user_over_time_total.eps}
-\subimage[width=0.48, scale=0.45]{./images/avr_posts_per_user_user_ref_total.eps}
+\subimage[width=0.48, scale=0.42]{./images/avr_posts_per_user_over_time_total.eps}
+\subimage[width=0.48, scale=0.42]{./images/avr_posts_per_user_user_ref_total.eps}
 \caption{In Figure (a), monthly average posts per active user over clock time. In Figure (b), the monthly average posts per active users in the user-time referential, i.e., message creation time is measured relative to the user's first post.  Each tick in the x-axis is one year.  In both figures (and all later figures), we consider only active users during each month; users that are either temporarily or permanently away from Reddit are not included.}
 \label{fig:overall_posts}
 \end{figure*}
@@ -24,13 +24,14 @@ This average view hides several important aspects of users' activity dynamics. P
 
 One caution about interpreting the graphs that are relative to the user's start time is that the amount of data available rapidly decreases over time as users leave the community, meaning that values toward the right side of an individual data series are more subject to individual variation.  A tempting conclusion at this point is that the longer a user survives, the more posts they make over time.  This conclusion, however, is incorrect; we will present a more nuanced description of what is happening informed by cohort-based analyses.
 
+\vspace{5pt} % fixing header in wrong page
 \subsection{New cohorts do not catch up}
 
 \begin{figure*}[!tb]
 \centering
-\subimage[width=0.48, scale=0.45]{./images/avr_posts_per_user_over_time_cohorts.eps}
-\subimage[width=0.48, scale=0.45]{./images/avr_posts_per_user_cohorts.eps}
-\caption{Figure (a) shows the average number of posts per active users over clock time and Figure (b) the active users in the user-time referential, both segmented by users' cohorts. The user cohort is defined by the year of the user's creation time.  For comparison, the black lines represent the overall averages from Figure~\ref{fig:overall_posts}.}
+\subimage[width=0.48, scale=0.42]{./images/avr_posts_per_user_over_time_cohorts.eps}
+\subimage[width=0.48, scale=0.42]{./images/avr_posts_per_user_cohorts.eps}
+\caption{Figure (a) shows the average number of posts per active users over clock time and Figure (b) the active users in the user-time referential, both segmented by users' cohorts. The user cohort is defined by the year of the user's creation time.  For comparison, the black lines in Figure (a) represent the overall average.}
 \label{fig:avr_posts_per_user_over_time_cohorts}
 \end{figure*}
 
@@ -44,11 +45,6 @@ Combing cohort segmentation with user-referential analysis, as in Figure~\ref{fi
 
 \subsection{Does tenure predict activity, or vice versa?}
 
-%% DC 15: Calling this out was really nice; very subtle.
-These graphs still support the tempting conclusion that users become more active the longer they exist in Reddit, and they do not explain the very rapid increase in posting activity in the first few months.  An alternative hypothesis, inspired by the ``Wikipedians are Born, not Made'' paper \cite{Panciera2009}, is that individual users come in with different posting propensities, and the rise over time is not that individual users become more active but that low-activity users leave the system.  To examine this, we further segment each cohort by the number of years they were active in the system, as defined by the difference between their first and last post times.
- 
-Figure~\ref{fig:avr_posts_per_user_for_surviving_year} shows this analysis for the 2010, 2011 and 2012 cohorts\footnote{We only show these figures for the sake of saving space, but the same trends are observed in the other cohorts.}.  Across all cohorts and yearly survival sub-cohorts, users who leave earlier come in with a lower initial posting rate.  Thus, the rise in average posts per active user is driven by the fact that users who have high posting averages throughout their lifespan are the ones who are more likely to survive.  As the less active users leave the system, the average per active user increases.  In other words, the correct interpretation of Figure~\ref{fig:overall_posts}b isn't that longer-lived users post more.  It actually is that users who post more---right from the beginning---live longer. 
-
 \begin{figure*}[!tb]
 \centering
 %\subimage[width=0.31, scale=0.29]{./images/avr_posts_per_user_for_surviving_year_for_2008.eps}{2008 cohort}
@@ -60,19 +56,24 @@ Figure~\ref{fig:avr_posts_per_user_for_surviving_year} shows this analysis for t
 \label{fig:avr_posts_per_user_for_surviving_year}
 \end{figure*}
 
+%% DC 15: Calling this out was really nice; very subtle.
+These graphs still support the tempting conclusion that users become more active the longer they exist in Reddit, and they do not explain the very rapid increase in posting activity in the first few months.  An alternative hypothesis, inspired by the ``Wikipedians are Born, not Made'' paper \cite{Panciera2009}, is that individual users come in with different posting propensities, and the rise over time is not that individual users become more active but that low-activity users leave the system.  To examine this, we further segment each cohort by the number of years they were active in the system, as defined by the difference between their first and last post times.
+ 
+Figure~\ref{fig:avr_posts_per_user_for_surviving_year} shows this analysis for the 2010, 2011 and 2012 cohorts\footnote{We only show these figures for the sake of saving space, but the same trends are observed in the other cohorts.}.  Across all cohorts and yearly survival sub-cohorts, users who leave earlier come in with a lower initial posting rate.  Thus, the rise in average posts per active user is driven by the fact that users who have high posting averages throughout their lifespan are the ones who are more likely to survive.  As the less active users leave the system, the average per active user increases.  In other words, the correct interpretation of Figure~\ref{fig:overall_posts}b isn't that longer-lived users post more.  It actually is that users who post more---right from the beginning---live longer. 
+
 %% DC 15: Trying to make this argument clearer.  I'm not positive I believe it but it's interesting. 
-Combining Figure \ref{fig:avr_posts_per_user_for_surviving_year}'s insight that the main reason why these curves increase is because the low posting users are dying sooner with the earlier observation that the stable activity level is lower for newer cohorts suggests that low-activity users from later cohorts tend to survive longer than those from earlier cohorts.  That is, people joining later in the community's life are less likely to be either committed users or leave than those from earlier on: they are more likely to be ``casual'' users that stick around.
+Combining Figure~\ref{fig:avr_posts_per_user_for_surviving_year}'s insight that the main reason why these curves increase is because the low posting users are dying sooner with the earlier observation that the stable activity level is lower for newer cohorts suggests that low-activity users from later cohorts tend to survive longer than those from earlier cohorts.  That is, people joining later in the community's life are less likely to be either committed users or leave than those from earlier on: they are more likely to be ``casual'' users that stick around.
 
 \section{Comment length}
 
 \begin{figure*}[!tb]
 \centering
-\subimage[width=0.48, scale=0.45]{./images/avr_comment_size_over_time_cohorts.eps}
-\subimage[width=0.48, scale=0.45]{./images/avr_comment_size_cohorts.eps}
+\subimage[width=0.48, scale=0.42]{./images/avr_comment_size_over_time_cohorts.eps}
+\subimage[width=0.48, scale=0.42]{./images/avr_comment_size_cohorts.eps}
 \subimage[width=0.31, scale=0.29]{./images/avr_comment_length_for_surviving_year_for_2010.eps}{2010 cohort}
 \subimage[width=0.31, scale=0.29]{./images/avr_comment_length_for_surviving_year_for_2011.eps}{2011 cohort}
 \subimage[width=0.31, scale=0.29]{./images/avr_comment_length_for_surviving_year_for_2012.eps}{2012 cohort}
-\caption{Figure (a) shows the average comment length over clock time and Figure (b) from the user-referential time. Both figures show the cohorted trends and the overall users trends.  The overall average length per comment decreases over time, although for any individual cohort, it increases after a sharp initial drop. Figure (c), similar to Figure \ref{fig:avr_posts_per_user_for_surviving_year}, shows the monthly average comment length for active users in the cohorts of 2010, 2011 and 2012, segmented by the number of years that the user survived in the network.  Opposite the analysis for average posts, which showed that low-activity users were the first to leave Reddit, here, people who start out as longer commenters are \textit{more} likely to leave.}
+\caption{Figure (a) shows the average comment length over clock time and Figure (b) from the user-referential time. Both figures show the cohorted trends and the overall users trends.  The overall average length per comment decreases over time, although for any individual cohort, it increases after a sharp initial drop. Figure (c), similar to Figure~\ref{fig:avr_posts_per_user_for_surviving_year}, shows the monthly average comment length for active users in the cohorts of 2010, 2011 and 2012, segmented by the number of years that the user survived in the network.  Opposite the analysis for average posts, which showed that low-activity users were the first to leave Reddit, here, people who start out as longer commenters are \textit{more} likely to leave.}
 \label{fig:comment_length}
 \end{figure*}
 %% DC 15: You do want the _key_ point to come out in the caption. 
@@ -82,10 +83,10 @@ Activity as measured by the average number of posts per user is one proxy for us
 \subsection{Comment length drops over time}
 
 %% DC 15: The per-cohort by calendar time analysis isn't as interesting to me, just the overall one, because that's what's going to really make the Simpson's paradox for us.  (Especially if we drop our speculation that people coming in start commenting at average lengths they see at their moment of inception.  I'm going to put that back for now, at the end where you talk about understanding why. ).
-Figure \ref{fig:comment_length}a shows the overall comment length in Reddit over time (the black line) and the overall length per cohort. 
-Based on the downwards tendency of the overall comment length in Figure \ref{fig:comment_length}a, one might infer that users' commitment to the network is decreasing over time, or that there is some community-wide norm toward shorter commenting. 
+Figure~\ref{fig:comment_length}a shows the overall comment length in Reddit over time (the black line) and the overall length per cohort. 
+Based on the downwards tendency of the overall comment length in Figure~\ref{fig:comment_length}a, one might infer that users' commitment to the network is decreasing over time, or that there is some community-wide norm toward shorter commenting. 
 
-This, however, might not be the best way to interpret this information. Figure \ref{fig:comment_length}b shows the comment length per cohort based on the user referential time. An important thing to notice here is that younger users start from a lower baseline comment length than older users. Together with the fact that recent Reddit has experienced exponential growth, the weight when evaluating the overall average for Figures \ref{fig:comment_length}a and \ref{fig:comment_length}b as the years go by is shifted towards the length of the ever-growing younger generation; this younger generation brings the average down since they writing less on average.
+This, however, might not be the best way to interpret this information. Figure~\ref{fig:comment_length}b shows the comment length per cohort based on the user referential time. An important thing to notice here is that younger users start from a lower baseline comment length than older users. Together with the fact that recent Reddit has experienced exponential growth, the weight when evaluating the overall average for Figures \ref{fig:comment_length}a and \ref{fig:comment_length}b as the years go by is shifted towards the length of the ever-growing younger generation; this younger generation brings the average down since they writing less on average.
 
 \subsection{Simpson's Paradox: the length also rises}
 
@@ -124,13 +125,13 @@ Without the decision to condition on cohorts, one would have gathered an entirel
 %% DC 15: Caption and figure don't line up, making it hard for me to know what to focus on here.
 \begin{figure*}[!tb]
 \centering
-\subimage[width=0.48, scale=0.45]{./images/comments_per_submissions_over_time_cohorts.eps}
-\subimage[width=0.48, scale=0.45]{./images/comments_per_submissions_cohorts.eps}
+\subimage[width=0.48, scale=0.42]{./images/comments_per_submissions_over_time_cohorts.eps}
+\subimage[width=0.48, scale=0.42]{./images/comments_per_submissions_cohorts.eps}
 \subimage[width=0.23, scale=0.23]{./images/comments_per_submissions_for_surviving_year_for_2008.eps}{2008 cohort}
 \subimage[width=0.23, scale=0.23]{./images/comments_per_submissions_for_surviving_year_for_2009.eps}{2009 cohort}
 \subimage[width=0.23, scale=0.23]{./images/comments_per_submissions_for_surviving_year_for_2010.eps}{2010 cohort}
 \subimage[width=0.23, scale=0.23]{./images/comments_per_submissions_for_surviving_year_for_2011.eps}{2011 cohort}
-\caption{Figure (a) shows the average comment per submission ratio over clock time and Figure (b) from the user-referential time. Both figures show the cohorted trends and the overall users trends. Figure (c), similarly to Figure \ref{fig:avr_posts_per_user_for_surviving_year}, shows the 2008, 2009, 2010, and 2011 cohorts, segmented by the number of years a user in the cohort survived.  As with average posts per month, users who stay active longer appear to start their careers with a relatively high comment-to-submission ratio than users who abandon Reddit sooner.  Unlike that analysis, however, the early 2008 cohort ends up below the later cohorts.}
+\caption{Figure (a) shows the average comment per submission ratio over clock time for the cohorts and the overall average. Figure (b) shows the average comment per submission from the user-referential time for the cohorts. Figure (c), similarly to Figure~\ref{fig:avr_posts_per_user_for_surviving_year}, shows the 2008, 2009, 2010, and 2011 cohorts, segmented by the number of years a user in the cohort survived.  As with average posts per month, users who stay active longer appear to start their careers with a relatively higher comments per submission ratio than users who abandon Reddit sooner.  Unlike that analysis, however, the early 2008 cohort ends up below the later cohorts in Figure (b).}
 \label{fig:comments_submissions}
 \end{figure*}
 
@@ -144,15 +145,15 @@ One common question from the literature is what sorts of activities users engage
 \subsection{Over time, responsiveness increases}
 Consider the case of Usenet: people who never start threads and only respond play the role of answerer, while there are other roles that include fostering discussion \cite{Welser2007}. These might naturally map onto people who primarily comment and who primarily submit in Reddit, respectively.  While submissions can be considered new content that an author generates, a comment can be considered as a contribution to an existing content from another author.
 
-Since the total number of comments always surpasses the number of submissions, Figure \ref{fig:comments_submissions}a shows the evolution of the overall and cohorted ratio of the average number of comments a user makes for each submission they make over time from 2008 until 2013. Here we see that users who most prefer commenting to submitting come from 2009, 2010 and 2011, and we observe that, over time, the average ratio of comments to submissions increases both overall and per-cohort for active users.
+Since the total number of comments always surpasses the number of submissions, Figure~\ref{fig:comments_submissions}a shows the evolution of the overall and cohorted ratio of the average number of comments a user makes for each submission they make over time from 2008 until 2013. Here we see that users who most prefer commenting to submitting come from 2009, 2010 and 2011, and we observe that, over time, the average ratio of comments to submissions increases both overall and per-cohort for active users.
 
-Again, we analyze our data from the user-time referential, as seen in Figure \ref{fig:comments_submissions}b. It shows a clear pattern for users in earlier cohorts to have a lower comment per submission ratio than users in later cohorts ones, given that they both survived the same amount of time.  Surviving users from later cohorts also exhibit a more rapid increase in comments per submission than those from earlier cohorts.  In particular, the 2008 and 2009 cohorts increase much more slowly over time than those from 2010 onwards; later cohorts are more similar (although the 2012 and 2013 cohorts may level off lower than 2011 based on the limited data we have). 
+Again, we analyze our data from the user-time referential, as seen in Figure~\ref{fig:comments_submissions}b. It shows a clear pattern for users in earlier cohorts to have a lower comment per submission ratio than users in later cohorts ones, given that they both survived the same amount of time.  Surviving users from later cohorts also exhibit a more rapid increase in comments per submission than those from earlier cohorts.  In particular, the 2008 and 2009 cohorts increase much more slowly over time than those from 2010 onwards; later cohorts are more similar (although the 2012 and 2013 cohorts may level off lower than 2011 based on the limited data we have). 
 %% DC 15: Don't understand what you mean here.
 % Also, cohorts from 2010 onwards show a much more similar evolution when compared with 08 and 09. Our observation that 2009, 10 and 11 are the main comenters therefore is mainly due to the fact that users in those cohorts are the ones that survived longer.  
 
 \subsection{Comment early, comment often}
 
-Figure \ref{fig:comments_submissions}c shows the cohorts from 2008, 2009, 2010 and 2011 segmented by surviving year.  Three interesting observations arise from these data.  First, we see that just as in the analysis of average posts per user, the users who survive the longest in each cohort are also the ones who hit the ground running.  They start out with a high comment-to-submission ratio relative to users in their cohort who abandon Reddit more quickly.  This suggests that both the count of posts and the propensity to comment might be a strong predictor of user survival.
+Figure~\ref{fig:comments_submissions}c shows the cohorts from 2008, 2009, 2010 and 2011 segmented by surviving year.  Three interesting observations arise from these data.  First, we see that just as in the analysis of average posts per user, the users who survive the longest in each cohort are also the ones who hit the ground running.  They start out with a high comment-to-submission ratio relative to users in their cohort who abandon Reddit more quickly.  This suggests that both the count of posts and the propensity to comment might be a strong predictor of user survival.
 
 Second, and unlike the case for average post length, surviving users' behavior changes over time.  Figure~\ref{fig:avr_posts_per_user_for_surviving_year} shows that even for the most active users, they come in at a certain activity level and stay there, perhaps even slowly declining over time.  Here, the ratio of comments to submissions increases over time; combined with the observation that overall activity stays steady, this suggests that the ratio is changing because people \textit{substitute} making their own submissions for commenting on others' posts.
 
@@ -173,7 +174,7 @@ Finally, this increase is most pronounced for the earliest cohorts from 2008 and
 %2010 and 11 are consistent with the following years, with users that survive longer rapidly leveling at higher values while users that survive less also rapidly leveling at lower values. For 2008 and 09, however, this is not the case. Users actually increased their commenting behavior in the early years. Still, users that survived longer show a higher commenting behavior than the ones that survived a shorter period.
 
 %% DC 15: Not sure I believe this one; most of that is driven by the last year of data for each sub-cohort, which has the right-censoring problem. 
-% It is also important to notice that Figure \ref{fig:avr_posts_per_user_for_surviving_year} shows that users are more likely to post less as they live on.
+% It is also important to notice that Figure~\ref{fig:avr_posts_per_user_for_surviving_year} shows that users are more likely to post less as they live on.
 
 %% DC 10: There is a mysterious question about why 2008 ramps up more slowly, that I would interpret in the "there was less to comment on" framing that we've chatted about before.  You could actually do an analysis to test this, where for each user, the number of posts in a month is normalized by the number of posts made in Reddit in that month: that is, how active is the user relative to the total amount of activity in Reddit.  This is _not_ a linear scaling when the analysis is relative to the user's initial start date, and I would be curious to see what it showed.
 %% Sam 14: There is an important point here that I think we did not explore properly. The fact that we count surviving users makes the interpretation of the user-time referential figures hard. This happens because we do not know if it is increasing because surviving users are indeed increasing their activity or because the ones dying are the low activity ones. That is why I made the sets of figures for each cohort. But there is more: the cohorted curves from the user-referential (particularly 2008) might not be increasing because in these cohorts the low activity keep around, pulling the average down, but they don't die, while in some other cohorts they might die and let the average go up. This kind of comprimises some of these analysis in my opinion.
@@ -183,7 +184,7 @@ Finally, this increase is most pronounced for the earliest cohorts from 2008 and
 %% DC 15: Yep, this all makes sense and I think mostly comes out in the text now.
 
 
-% This suggests that the increasing tendency in Figure \ref{fig:comments_submissions}b for the cohorts of 2010 and later is mainly due to the death of low-ratio users, but the earlier cohorts also increased due to an actual increase in the commenting behavior of the users, and not only low commenting users dropouts. 
+% This suggests that the increasing tendency in Figure~\ref{fig:comments_submissions}b for the cohorts of 2010 and later is mainly due to the death of low-ratio users, but the earlier cohorts also increased due to an actual increase in the commenting behavior of the users, and not only low commenting users dropouts. 
 
 %% Sam 10: It just occurred to me that although the comment size is decreasing, users might be putting just the same amount of effort, just writing more comments. This figure that shows that the newer cohorts comment more might mean that users are actually typing the same amount, but they are pulverizing more their efforts. Might be worth to comment about it, although it obviously raises the question of why we didn't do it. I can try to generate this results on monday, it is likely easy to do so.
 %% Sam 10: Thinking again about it, I raise the question of weather users are getting ``lazier'' many times in the text. This should be included. Can probably make up for the removal of the subreddits section due to the fact that we have a lot of default 2008 subreddits.
@@ -216,7 +217,7 @@ Finally, this increase is most pronounced for the earliest cohorts from 2008 and
 %\begin{figure}[!tb]
 %\centering
 %\includegraphics[scale=0.4]{./images/comments_per_submissions_cohorts.eps}
-%\caption{Comments per submissions cohorted by user creation year. Here we observe that, unlike the total aggregated graphic, all users are are increasing the number of comments per submissions, but latter cohorts show a much higher level of comments per submissions than earlier cohorts. This brings the initial part of the aggregated user-referential curve up, while the end of the curve consists only of users from the latter cohorts that preset an lower ratio. It is also important to notice that, as these curves move to the right, less comments and submissions exist in the bins, for there are less users that survived for such long periods. This results in some spiky behavior in the rightmost end of some curves due to the reduced amount of data. Just as with the previous user-referential cohort curves, we can not distinguish solely based on this graphic if users are increasing their commenting behavior or if the users that do not comment die earlier. Figure \ref{fig:comments_per_submissions_for_surviving_year} help us to answer this question.}
+%\caption{Comments per submissions cohorted by user creation year. Here we observe that, unlike the total aggregated graphic, all users are are increasing the number of comments per submissions, but latter cohorts show a much higher level of comments per submissions than earlier cohorts. This brings the initial part of the aggregated user-referential curve up, while the end of the curve consists only of users from the latter cohorts that preset an lower ratio. It is also important to notice that, as these curves move to the right, less comments and submissions exist in the bins, for there are less users that survived for such long periods. This results in some spiky behavior in the rightmost end of some curves due to the reduced amount of data. Just as with the previous user-referential cohort curves, we can not distinguish solely based on this graphic if users are increasing their commenting behavior or if the users that do not comment die earlier. Figure~\ref{fig:comments_per_submissions_for_surviving_year} help us to answer this question.}
 %\label{fig:comments_per_submissions_cohorts}
 %\end{figure}
 
@@ -254,7 +255,7 @@ Finally, this increase is most pronounced for the earliest cohorts from 2008 and
 %\begin{figure}[!tb]
 %\centering
 %\includegraphics[scale=0.4]{./images/avr_posts_per_user_cohorts.eps}
-%\caption{Number of posts per active user for  the overall set of users and cohorts on the user creation date. The x-axis is the time from the user creation referential, i.e., each message creation time is measured in terms of when the user was created. Each tick is one year and we discretized time by month --- the n-th bin holds messages the user wrote in the n-th month. Since we are looking at the user time referential, you can understand this as the surviving users after x time. An interpretation of this says ``users that survived x time are posting on average y messages''. Here we see that, although the 2008 cohort level at a higher value, the evolution of the number of posts took a longer time to increase. The other cohorts seem to follow a more regular pattern after the first year: older users that survived the first year post more on average than younger users that survived the first year. Since we are talking about surviving users, it is not clear from this figure whether these curves increase because the ``low posting users'' are dying earlier or because the users are actually increasing their activity as they live on. To differentiate these cases, Figure \ref{fig:avr_posts_per_user_for_surviving_year} shows, for each cohort, the average posting for users grouped by the number of years they survived in the cohort.}
+%\caption{Number of posts per active user for  the overall set of users and cohorts on the user creation date. The x-axis is the time from the user creation referential, i.e., each message creation time is measured in terms of when the user was created. Each tick is one year and we discretized time by month --- the n-th bin holds messages the user wrote in the n-th month. Since we are looking at the user time referential, you can understand this as the surviving users after x time. An interpretation of this says ``users that survived x time are posting on average y messages''. Here we see that, although the 2008 cohort level at a higher value, the evolution of the number of posts took a longer time to increase. The other cohorts seem to follow a more regular pattern after the first year: older users that survived the first year post more on average than younger users that survived the first year. Since we are talking about surviving users, it is not clear from this figure whether these curves increase because the ``low posting users'' are dying earlier or because the users are actually increasing their activity as they live on. To differentiate these cases, Figure~\ref{fig:avr_posts_per_user_for_surviving_year} shows, for each cohort, the average posting for users grouped by the number of years they survived in the cohort.}
 %\label{fig:avr_posts_per_user_cohorts_relative}
 %\end{figure}
 %% DC 12: The captions need to be longer than one line, but on average shorter than this.  The first set of figures probably wants longer-than-usual captions to explain what's going on (and you do good to not re-explain things later), but the analysis probably has to go to the body text. 
@@ -291,7 +292,7 @@ Finally, this increase is most pronounced for the earliest cohorts from 2008 and
 %\begin{figure}[!tb]
 %\centering
 %\includegraphics[scale=0.4]{./images/avr_comment_size_cohorts.eps}
-%\caption{Average length of comments from the user time referential segmented by user creation cohorts. This figure start to explain why we see different trends in the overall network comment length and user referential overall comment length. It shows that, as users come from latter cohorts, they start from a lower commenting length average compared the the earlier cohorts. This, together with the fact that Reddit is growing exponentially in terms of users means that \textit{we have an influx of users that make smaller comments than the previous generations}, although even for them, as they survive, they make longer comments. Just as for the users' posting average, we can not distinguish based on this graphic alone whether users that make smaller comments leave the network earlier or they indeed write longer comments as they survive. Figure \ref{fig:avr_comment_length_for_surviving_year} sheds some light on this question.}
+%\caption{Average length of comments from the user time referential segmented by user creation cohorts. This figure start to explain why we see different trends in the overall network comment length and user referential overall comment length. It shows that, as users come from latter cohorts, they start from a lower commenting length average compared the the earlier cohorts. This, together with the fact that Reddit is growing exponentially in terms of users means that \textit{we have an influx of users that make smaller comments than the previous generations}, although even for them, as they survive, they make longer comments. Just as for the users' posting average, we can not distinguish based on this graphic alone whether users that make smaller comments leave the network earlier or they indeed write longer comments as they survive. Figure~\ref{fig:avr_comment_length_for_surviving_year} sheds some light on this question.}
 %\label{fig:fig_label}
 %\end{figure}
 
