@@ -1,3 +1,4 @@
+*.pyc
 *.tps
 *.log
 *.synctex
