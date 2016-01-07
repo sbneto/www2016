@@ -9,3 +9,4 @@
 *.aux
 *.orig
 images_old/*
+src/.idea/*
