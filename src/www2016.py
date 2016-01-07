@@ -206,6 +206,7 @@ def main():
                              loc='lower right',
                              show=False,
                              linewidth=3,
+                             legend_size=15,
                              filename='../images/cumulative_users_subreddits.eps')
 
     # 2
@@ -234,7 +235,8 @@ def main():
                   loc='lower right',
                   show=False,
                   linewidth=3,
-                  filename='C:/sam/www2016/draft/images/active_users_subreddits.eps')
+                  legend_size=15,
+                  filename='../images/active_users_subreddits.eps')
 
     ##########################################################################
     # USER ACTIVITY ##########################################################
@@ -259,7 +261,7 @@ def main():
                   show=False,
                   y_min=0.0,
                   linewidth=3,
-                  filename='C:/sam/www2016/draft/images/avr_posts_per_user_over_time_total.eps')
+                  filename='../images/avr_posts_per_user_over_time_total.eps')
 
     # 4
     n_queries += 1
@@ -281,7 +283,7 @@ def main():
                   show=False,
                   y_min=0.0,
                   linewidth=3,
-                  filename='C:/sam/www2016/draft/images/avr_posts_per_user_user_ref_total.eps')
+                  filename='../images/avr_posts_per_user_user_ref_total.eps')
 
     # 5
     n_queries += 1
@@ -308,11 +310,11 @@ def main():
     if n_queries in run_queries:
         multiplot('reddit-978',
                   query,
-                  legend_size=12,
+                  legend_size=15,
                   show=False,
                   y_min=0.0,
                   linewidth=3,
-                  filename='C:/sam/www2016/draft/images/avr_posts_per_user_over_time_cohorts.eps')
+                  filename='../images/avr_posts_per_user_over_time_cohorts.eps')
 
     # 6
     n_queries += 1
@@ -335,11 +337,11 @@ def main():
         multiplot('reddit-978',
                   query,
                   loc='lower right',
-                  legend_size=12,
+                  legend_size=15,
                   show=False,
                   y_min=0.0,
                   linewidth=3,
-                  filename='C:/sam/www2016/draft/images/avr_posts_per_user_cohorts.eps')
+                  filename='../images/avr_posts_per_user_cohorts.eps')
 
     # 7
     n_queries += 1
@@ -357,7 +359,6 @@ def main():
     """
     if n_queries in run_queries:
         for year in range(2010, 2013):
-            output = 'C:/sam/www2016/draft/images/avr_posts_per_user_for_surviving_year_for_{}.eps'.format(year)
             multiplot('reddit-978',
                       query.format(dataset, year),
                       ('linear', 'linear'),
@@ -369,7 +370,7 @@ def main():
                       tick_size=24,
                       legend_size=20,
                       y_min=0.0,
-                      filename=output)
+                      filename='../images/avr_posts_per_user_for_surviving_year_for_{}.eps'.format(year))
 
     ##########################################################################
     # EFFORT PER POST ########################################################
@@ -405,7 +406,7 @@ def main():
                   legend_size=15,
                   show=False,
                   linewidth=3,
-                  filename='C:/sam/www2016/draft/images/avr_comment_size_over_time_cohorts.eps')
+                  filename='../images/avr_comment_size_over_time_cohorts.eps')
 
     # 9
     n_queries += 1
@@ -428,10 +429,10 @@ def main():
         multiplot('reddit-978',
                   query,
                   loc='lower right',
-                  legend_size=12,
+                  legend_size=15,
                   show=False,
                   linewidth=3,
-                  filename='C:/sam/www2016/draft/images/avr_comment_size_cohorts.eps')
+                  filename='../images/avr_comment_size_cohorts.eps')
 
     # 10
     n_queries += 1
@@ -449,7 +450,6 @@ def main():
     """
     if n_queries in run_queries:
         for year in range(2010, 2013):
-            output = 'C:/sam/www2016/draft/images/avr_comment_length_for_surviving_year_for_{}.eps'.format(year)
             multiplot('reddit-978',
                       query.format(dataset, year),
                       ('linear', 'linear'),
@@ -460,7 +460,7 @@ def main():
                       y_label_size=24,
                       tick_size=24,
                       legend_size=20,
-                      filename=output)
+                      filename='../images/avr_comment_length_for_surviving_year_for_{}.eps'.format(year))
 
     ##########################################################################
     # COMMENTS PER SUBMISSIONS ###############################################
@@ -498,7 +498,8 @@ def main():
                   show=False,
                   y_min=0.0,
                   linewidth=3,
-                  filename='C:/sam/www2016/draft/images/comments_per_submissions_over_time_cohorts.eps')
+                  legend_size=15,
+                  filename='../images/comments_per_submissions_over_time_cohorts.eps')
 
     # 12
     n_queries += 1
@@ -525,7 +526,8 @@ def main():
                   show=False,
                   y_min=0.0,
                   linewidth=3,
-                  filename='C:/sam/www2016/draft/images/comments_per_submissions_cohorts.eps')
+                  legend_size=15,
+                  filename='../images/comments_per_submissions_cohorts.eps')
 
     # 13
     n_queries += 1
@@ -543,19 +545,18 @@ def main():
     """
     if n_queries in run_queries:
         for year in range(2008, 2012):
-            output = 'C:/sam/www2016/draft/images/comments_per_submissions_for_surviving_year_for_{}.eps'.format(year)
             multiplot('reddit-978',
                       query.format(dataset, year),
                       ('linear', 'linear'),
                       loc='lower right',
                       linewidth=4,
                       show=False,
-                      x_label_size=28,
-                      y_label_size=28,
+                      x_label_size=30,
+                      y_label_size=30,
                       tick_size=28,
                       legend_size=24,
                       y_min=0.0,
-                      filename=output)
+                      filename='../images/comments_per_submissions_for_surviving_year_for_{}.eps'.format(year))
 
 
 if __name__ == '__main__':
