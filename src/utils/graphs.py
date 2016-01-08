@@ -11,13 +11,13 @@ def create_new_figure(w, h):
     fig = plt.figure()
     fig.set_size_inches(w, h)
 
-    params = {'backend': 'eps',
-              'font.family': 'serif',
+    params = {'font.family': 'serif',
               'font.size': 8,
               'axes.labelsize': 6,
               'legend.fontsize': 6,
               'xtick.labelsize': 6,
-              'ytick.labelsize': 6}
+              'ytick.labelsize': 6,
+              'image.cmap': 'viridis'}
     plt.rcParams.update(params)
     fig.set_tight_layout(True)
     return fig
@@ -85,7 +85,10 @@ def formated_plot(plot_function, data, labels, axes, loc, normalize, show, **kwa
     data_sets = data[1]
     data_y = data[2]
     ax = plt.gca()
-    for s in np.nditer(np.unique(data_sets), ['refs_ok']):
+    cm = plt.get_cmap('viridis')
+    sets = np.unique(data_sets)
+    i = 0
+    for s in np.nditer(sets, ['refs_ok']):
         if 'x' in normalize:
             norm = np.max(data_x[data_sets == s])
         else:
@@ -99,7 +102,12 @@ def formated_plot(plot_function, data, labels, axes, loc, normalize, show, **kwa
         else:
             norm = 1
         y_plot = data_y[data_sets == s]/norm
-        plot_function(x_plot, y_plot, **get_kwargs(kwargs, 'width', 'linewidth'))
+        i += 1
+        plot_function(x_plot,
+                      y_plot,
+                      color=cm(int(256*(len(sets) - i)/len(sets))),
+                      **get_kwargs(kwargs, 'width', 'linewidth'))
+
     plt.xlabel(labels[0].replace('_', ' '), fontsize=kwargs['x_label_size'])
     plt.ylabel(labels[2].replace('_', ' '), fontsize=kwargs['y_label_size'])
     ax.xaxis.get_major_formatter().set_useOffset(False)
@@ -144,49 +152,6 @@ def multiplot(data, labels, axes=('linear', 'linear'),
     kwargs['tick_width'] = kwargs.get('tick_width', 2)
     kwargs['tick_length'] = kwargs.get('tick_length', 12)
     formated_plot(plt.plot, data, labels, axes, loc, normalize, show, **kwargs)
-    # data_x = data[0]
-    # data_sets = data[1]
-    # data_y = data[2]
-    # ax = plt.gca()
-    # for s in np.nditer(np.unique(data_sets), ['refs_ok']):
-    #     if 'x' in normalize:
-    #         norm = np.max(data_x[data_sets == s])
-    #     else:
-    #         norm = 1
-    #     x_plot = data_x[data_sets == s]/norm
-    #
-    #     if 'sum' in normalize:
-    #         norm = np.sum(data_y[data_sets == s])
-    #     elif 'y' in normalize:
-    #         norm = np.max(data_y[data_sets == s])
-    #     else:
-    #         norm = 1
-    #     y_plot = data_y[data_sets == s]/norm
-    #     plt.plot(x_plot, y_plot)
-    # plt.xlabel(labels[0].replace('_', ' '), fontsize=18)
-    # plt.ylabel(labels[2].replace('_', ' '), fontsize=18)
-    # ax.xaxis.get_major_formatter().set_useOffset(False)
-    # ax.yaxis.get_major_formatter().set_useOffset(False)
-    # plt.xlim(kwargs['x_min'] if 'x_min' in kwargs else data_x.min(),
-    #          kwargs['x_max'] if 'x_max' in kwargs else data_x.max())
-    # plt.ylim(kwargs['y_min'] if 'y_min' in kwargs else data_y.min(),
-    #          kwargs['y_max'] if 'y_max' in kwargs else data_y.max())
-    # if axes[0] == 'log':
-    #     ax.set_xscale('log')
-    # if axes[1] == 'log':
-    #     ax.set_yscale('log')
-    # plot_legend = kwargs['legend'] if 'legend' in kwargs else True
-    # if plot_legend:
-    #     if 'legend_size' in kwargs:
-    #         ax.legend(np.unique(data_sets), loc=loc, fontsize=kwargs['legend_size'])
-    #     else:
-    #         ax.legend(np.unique(data_sets), loc=loc)
-    # plt.grid(True)
-    # if 'filename' in kwargs:
-    #     plt.savefig(**kwargs)
-    # if show:
-    #     plt.show()
-    # plt.close()
 
 
 def scatter(data, labels, axes=('linear', 'linear'), loc='upper right'):
@@ -221,53 +186,6 @@ def bars(data, labels, axes=('linear', 'linear'),
     kwargs['width'] = kwargs.get('width', 0.8)
     kwargs['linewidth'] = kwargs.get('linewidth', 0.8)
     formated_plot(plt.bar, data, labels, axes, loc, normalize, show, **kwargs)
-    # data_x = data[0]
-    # data_sets = data[1]
-    # data_y = data[2]
-    # plt.figure(figsize=(32, 18))
-    # ax = plt.gca()
-    # kwargs['width'] = kwargs.get('width', 0.8)
-    # for s in np.nditer(np.unique(data_sets), ['refs_ok']):
-    #     if 'x' in normalize:
-    #         norm = np.max(data_x[data_sets == s])
-    #     else:
-    #         norm = 1
-    #     x_plot = data_x[data_sets == s]/norm
-    #
-    #     if 'sum' in normalize:
-    #         norm = np.sum(data_y[data_sets == s])
-    #     elif 'y' in normalize:
-    #         norm = np.max(data_y[data_sets == s])
-    #     else:
-    #         norm = 1
-    #     y_plot = data_y[data_sets == s]/norm
-    #     plt.bar(x_plot, y_plot, width=kwargs['width'], linewidth=kwargs['linewidth'])
-    # plt.xlabel(labels[0].replace('_', ' '), fontsize=18)
-    # plt.ylabel(labels[2].replace('_', ' '), fontsize=18)
-    # ax.xaxis.get_major_formatter().set_useOffset(False)
-    # ax.yaxis.get_major_formatter().set_useOffset(False)
-    # plt.xlim(kwargs['x_min'] if 'x_min' in kwargs else data_x.min(),
-    #          kwargs['x_max'] if 'x_max' in kwargs else data_x.max() + kwargs['width'])
-    # plt.ylim(0,
-    #          kwargs['y_max'] if 'y_max' in kwargs else data_y.max())
-    # if axes[0] == 'log':
-    #     ax.set_xscale('log')
-    # if axes[1] == 'log':
-    #     ax.set_yscale('log')
-    # plot_legend = kwargs['legend'] if 'legend' in kwargs else True
-    # if plot_legend:
-    #     if 'legend_size' in kwargs:
-    #         ax.legend(np.unique(data_sets), loc=loc, fontsize=kwargs['legend_size'])
-    #     else:
-    #         ax.legend(np.unique(data_sets), loc=loc)
-    # plt.grid(True)
-    # if 'filename' in kwargs:
-    #     plt.savefig(**kwargs)
-    # if show:
-    #     fmng = plt.get_current_fig_manager()
-    #     fmng.window.showMaximized()
-    #     plt.show()
-    # plt.close()
 
 
 def scatter3d(data, labels, axes=('linear', 'linear', 'linear')):

@@ -6,14 +6,17 @@
 \section{Average posts per user}
 In this section, we will use a common metric of user activity in online communities, the number of posts per user over time. Approaches that consider the total number of posts per user in a particular dataset \cite{Gruhl2004} and that analyzes the variation on the number of posts per user over the days \cite{Guo2009} have been applied to online social networks.
 
+\looseness=-1
 As we will see, both visualizing behavior relative to a user's join time rather than calendar time and using cohorts provide additional insight into posting activity in Reddit compared to a straightforward aggregate analysis based on clock time.
 
 \subsection{Calendar versus user-relative time}
 
 We start with a common analysis used in this kind of work: aggregating behavior in the community based on calendar time.  Figure~\ref{fig:overall_posts}a shows the average number of posts per month by active users in that month.  Taken at face value, this suggests that over the first few years of Reddit, users became more active in posting, with per-user activity remaining more or less steady since mid-2011.
 
+\looseness=-1
 This average view hides several important aspects of users' activity dynamics. Previous work has looked into behavior relative to the user creation time. It has been shown that edge creation time in a social network relative to the user creation follows an exponential distribution \cite{Tomkins2008}. User lifetime, however, does not follow a exponential distribution and some types of user content generation follow a stretched exponential distribution \cite{Guo2009}. In Figure~\ref{fig:overall_posts}b, we show a different view that emphasizes the trajectory over a user's lifespan.  Here, we scale the x-axis not by clock time, as in the left figure, but by time since the user's first post: ``1'' on the x-axis refers to one year since the user's account first post, and so on.
 
+\looseness=-1
 One caution about interpreting the graphs that are relative to the user's start time is that the amount of data available rapidly decreases over time as users leave the community, meaning that values toward the right side of an individual data series are more subject to individual variation.  A tempting conclusion at this point is that the longer a user survives, the more posts they make over time.  This conclusion, however, is incorrect; we will present a more nuanced description of what is happening informed by cohort-based analyses.
 
 \subsection{New cohorts do not catch up}
@@ -26,13 +29,14 @@ One caution about interpreting the graphs that are relative to the user's start 
 \label{fig:avr_posts_per_user_over_time_cohorts}
 \end{figure*}
 
+\looseness=-1
 Figure~\ref{fig:overall_posts}b suggests that older users are more active than newer ones, raising the question of whether newer users
-will eventually follow in older users' footsteps.  Analyzing users' behavior by cohort is a reasonable way to address this question.  
+will eventually follow in older users' footsteps.  Analyzing users' behavior by cohort is a reasonable way to address this question.
 
 Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}a shows our first attempt at this analysis.  This Figure already shows a significant cohort effect: users from later cohorts appear to level off at a significantly lower posting average than users from earlier cohorts.  It suggests that newer users probably will not ever be as active on average as older ones.
 
-However, Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}a also has an awkward anomaly, the rapid rise in the average number of posts during each cohort's first calendar year, especially in December.  
-Combing cohort segmentation with user-referential analysis, as in Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}b, helps smooth out this anomaly and aligns cohorts with each other.  Doing this alignment makes clear that differences between earlier and later cohorts are apparent early on.
+\looseness=-1
+However, Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}a also has an awkward anomaly, the rapid rise in the average number of posts during each cohort's first calendar year, especially in December. Combing cohort segmentation with user-referential analysis, as in Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}b, helps smooth out this anomaly and aligns cohorts with each other.  Doing this alignment makes clear that differences between earlier and later cohorts are apparent early on.
 
 \subsection{Does tenure predict activity, or vice versa?}
 
@@ -48,6 +52,7 @@ Combing cohort segmentation with user-referential analysis, as in Figure~\ref{fi
 \end{figure*}
 
 %% DC 15: Calling this out was really nice; very subtle.
+\looseness=-1
 These graphs still support the tempting conclusion that users become more active the longer they exist in Reddit, and they do not explain the very rapid increase in posting activity in the first few months.  An alternative hypothesis, inspired by the ``Wikipedians are Born, not Made'' paper \cite{Panciera2009}, is that individual users come in with different posting propensities, and the rise over time is not that individual users become more active but that low-activity users leave the system.  To examine this, we further segment each cohort by the number of years they were active in the system, as defined by the difference between their first and last post times.
  
 Figure~\ref{fig:avr_posts_per_user_for_surviving_year} shows this analysis for the 2010, 2011 and 2012 cohorts\footnote{We only show these figures for the sake of saving space, but the same trends are observed in the other cohorts.}.  Across all cohorts and yearly survival sub-cohorts, users who leave earlier come in with a lower initial posting rate.  Thus, the rise in average posts per active user is driven by the fact that users who have high posting averages throughout their lifespan are the ones who are more likely to survive.  As the less active users leave the system, the average per active user increases.  In other words, the correct interpretation of Figure~\ref{fig:overall_posts}b isn't that longer-lived users post more.  It actually is that users who post more---right from the beginning---live longer. 
