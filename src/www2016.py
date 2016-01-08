@@ -442,7 +442,7 @@ def main():
         u_time as Time_in_user_referential,
         integer(u_time_active/(365.25*24*3600)) as year,
         sum(body_size)/count(*) as Average_comment_length,
-    from [{0}.comments_meta], [{0}.submissions_meta]
+    from [{0}.comments_meta]
     where
         u_year = {1}
     group each by year, Time_in_user_referential

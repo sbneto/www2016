@@ -1,5 +1,3 @@
-__author__ = 'Samuel'
-
 import numpy as np
 import ujson as json
 import uuid
@@ -7,6 +5,9 @@ import uuid
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from oauth2client.client import GoogleCredentials
+
+__author__ = 'Samuel'
+
 
 NUMPY_CONVERSIONS = {int: ('i8', int),
                      float: ('f8', float),
