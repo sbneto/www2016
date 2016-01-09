@@ -1,9 +1,7 @@
 \section{Data: Reddit as a community}
 
-
-%% DC 15: The citations here, just to give exmples of work that asks these questions in various ways.
-%% Sam 17: Missing ``kinds of things'' citations.
-In this paper, we explore how cohort based analysis can give us deeper insights into three common questions about online communities: how active are users \cite{Scellato2011,Hughes2009,Java2007,Levy1984}, how much do they contribute \cite{Scellato2011,Gruhl2004,Guo2009}, and what kinds of work do they engage in \cite{Welser2011,Choi2010,Panciera2009}?  We do this in the context of Reddit, beginning with a brief overview of both Reddit and the dataset that we use in this paper, focusing on aspects that directly impact our analyses\footnote{There is more to say about Reddit itself (see \url{https://www.Reddit.com/about/ }).}.
+%% Sam 8: Adding previous reddit research
+In this paper, we explore how cohort based analysis can give us deeper insights into three common questions about online communities: how active are users \cite{Scellato2011,Hughes2009,Java2007,Levy1984}, how much do they contribute \cite{Scellato2011,Gruhl2004,Guo2009}, and what kinds of work do they engage in \cite{Welser2011,Choi2010,Panciera2009}?  We do this in the context of Reddit, a community that has been studied by many researchers in the past \cite{Gilbert2013,Stoddard2015,Bergstrom2011,Tan2015}. We begin with a brief overview of both Reddit and the dataset that we use in this paper, focusing on aspects that directly impact our analyses\footnote{There is more to say about Reddit itself (see \url{https://www.Reddit.com/about/ }).}.
 
 
 \subsection{What is Reddit, briefly}
@@ -15,15 +13,12 @@ In this paper, we explore how cohort based analysis can give us deeper insights 
 \label{fig:reddit}
 \end{figure}
 
-%% DC 10: Will want a couple of legible screenshots here to help illustrate.
-%% DC 15: Ideally we would get these numbers as of the end of the dataset to be more consistent.
-Reddit is one of the largest sharing and discussion communities on the Web.  According to Alexa, as of late 2015 Reddit is in the top 15 sites in the U.S. and the top 35 in the world in terms of monthly unique visitors.  It consists of a large number of subreddits (853,000 as of June 21st, 2015\footnote{\url{http://www.Redditblog.com/2015/06/happy-10th-birthday-to-us-celebrating.html }for more numbers on Reddit size.}), each of which focuses on a particular purpose.  Many subreddits are primarily about sharing web content from other sites: in ``Pics'', ``News'', ``Funny'', ``Gaming', and many other communities, users (``Redditors'') make ``submissions'' of links posted at other sites that they think are interesting.  In other subreddits, Redditors primarily write text-based ``self-posts'': ``AskReddit'', ``IAmA'', ``ShowerThoughts'' are places where people can ask questions and share stories of their own lives.  Generically, we will refer to submissions and text posts as ``submissions''.  
+Reddit is one of the largest sharing and discussion communities on the Web.  According to Alexa, as of late 2015 Reddit is in the top 15 sites in the U.S. and the top 35 in the world in terms of monthly unique visitors.  It consists of a large number of subreddits (853,000 as of June 21st, 2015\footnote{\url{http://www.redditblog.com/2015/06/happy-10th-birthday-to-us-celebrating.html }for more numbers on Reddit size.}), each of which focuses on a particular purpose.  Many subreddits are primarily about sharing web content from other sites: in ``Pics'', ``News'', ``Funny'', ``Gaming', and many other communities, users (``Redditors'') make ``submissions'' of links posted at other sites that they think are interesting.  In other subreddits, Redditors primarily write text-based ``self-posts'': ``AskReddit'', ``IAmA'', ``ShowerThoughts'' are places where people can ask questions and share stories of their own lives.  Generically, we will refer to submissions and text posts as ``submissions''.  
 
 \looseness=-1
 Each post can be imagined as the root of a threaded comment tree; in addition to submitting, Redditors can make comments, and vote on both submissions and comments.  Votes are used both to sort comments within a submission and submissions within a subreddit, and also form the basis of ``karma'', a reputation system that essentially tracks how often people upvote a given Redditor's comments and submitted links. We can observe these elements in Figure~\ref{fig:reddit}. Redditors can also create subreddits and volunteer to moderate them.
 
-We choose Reddit as our target community for a number of reasons.  It has existed since 2005, meaning that there has been ample time for the community to evolve and for differences in user cohorts to appear.  Second, it is one of the most popular online communities, allowing different types of contributions---comments and original submissions---across many different subreddits.%being composed of a number of diverse subreddits allows us to explore questions of how communities diverge over time.  
-Third, Reddit data are publicly available through an API.
+We choose Reddit as our target community for a number of reasons.  It has existed since 2005, meaning that there has been ample time for the community to evolve and for differences in user cohorts to appear.  Second, it is one of the most popular online communities, allowing different types of contributions---comments and original submissions---across many different subreddits. Third, Reddit data are publicly available through an API.
 
 \subsection{The dataset}
 
@@ -44,15 +39,9 @@ We focus on submissions and comments in the dataset because they have timestamps
 
 \looseness=-1
 To analyze the data, we used Google BigQuery\footnote{\url{https://cloud.google.com/bigquery/}.}, a big data processing tool.
-% that, at the time of writing this paper, provided free processing for up to 1TB of data for users with a Google account.  
 Redditor \textit{fhoffa} imported the comments into BigQuery and made them publicly available\footnote{See \url{https://www.Reddit.com/r/bigquery/comments/3cej2b/17_billion_Reddit_comments_loaded_on_bigquery/}.}.  We uploaded the submission data ourselves using Google's SDK.
-% \footnote{Bigquery tools were still part of the alpha code in the SDK by the time.}.
 
-
-%% Sam 17: I don't think there is such a thing as ``bot'' names conventions
-For the analysis in the paper, we did light preprocessing to filter out posts by deleted users, posts with no creation time, and posts by authors with
-% names that follow Reddit's conventions for auto-posting bots. 
-bot-like names\footnote{Ending with ``\_bot'' or ``Bot''; or containing ``transcriber'' or ``automoderator''.}.
+For the analysis in the paper, we did light preprocessing to filter out posts by deleted users, posts with no creation time, and posts by authors with bot-like names\footnote{Ending with ``\_bot'' or ``Bot''; or containing ``transcriber'' or ``automoderator''.}.
 
 We also considered only comment data from October 2007 until December 2014 in order to have a matching period for comments and submissions. After this process, we had a total of 1.17 billion comments and 114 million submissions.
 
@@ -60,6 +49,7 @@ We also considered only comment data from October 2007 until December 2014 in or
 
 Here we present an overview of the dataset that shows Reddit's overall growth.  Figure~\ref{fig:cumulative}a presents the cumulative number of user accounts and subreddits created as of the last day of every month. After an initial extremely rapid expansion from 2008--2009, both the number of users and subreddits have grown exponentially.  As of the end of 2014, about 16.2 million distinct users have made at least one post and 327 thousand subreddits received at least one post based on our data.
 
+%% Sam 8: There was a problem in my query for the active users, I was counting less than I should. I replaced the text with the right numbers, but they might not be considered ``and order of magnitude less'' now, more like 5x less
 However, as with many other online sites, most users \cite{Scellato2011,Hughes2009,Java2007} and communities \cite{Arguello2006} do not stay active. We define as an ``\textbf{active user}'' one that made at least one post in the month in question. Similarly, an ``\textbf{active subreddit}'' is one that received at least one post in the month. In December 2014, about 2.7 million users and 66 thousand subreddits were active, both an order of magnitude less than the cumulative numbers. Figure~\ref{fig:cumulative}b shows the monthly number of active users and subreddits.
 
 Our interest in this paper is not so much whether users survive as it is about the behavior of active users.  Thus, 
@@ -77,7 +67,6 @@ in general our analysis will look only at active users and subreddits in each mo
 
 We define the ``\textbf{user's creation time}'' as the time of the first post made by that user.  Throughout this paper, we will use the notion of user cohorts, which will consist of users created in the same calendar year.
 
-%% DC 15: This is not super-clear, but it is closer.
 In many cases, we will look at the evolution of these cohorts. Since users can be created at any time during their cohort year, and our dataset ends in 2014, 
 we are likely to have a variation on the data available for each user of up to one year, even though they are in the same cohort.  To deal with this, some of our cohorted analyses will consider only the overlapping time window for which we collect data for all users in a cohort.   This means that we are normally not going to include the 2014 cohort in our analyses.
 

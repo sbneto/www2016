@@ -1,5 +1,3 @@
-%% DC 15: Worked to beef this up and try to integrate stuff in the "future work" section. 
-
 \section{Discussion}
 
 In this section we discuss some of the processes that might explain our observations, and how they connect to other literature.  We're not arguing here that we know the answers; instead, we see these as interesting avenues for future work.  
@@ -19,7 +17,7 @@ We also observed that overall, comment lengths are getting shorter over time.
 
 One hypothesis is that users are being shaped by an ``initial value problem''. We can imagine that users as they join the network, tend to produce content according to the norms of what they see \cite{Kooti2010, Danescu-niculescu-mizil2013}.  The observed behavior of the comments length for the users in Reddit is a initial drop, followed by steady increase as the user survives. If the starting point for the initial drops are taken as the average of the network, that is what is observed by the user in the network, the initial drop would place each cohort starting at lower levels than the previous one.  Figure~\ref{fig:comment_length}a presents some support this hypothesis: the initial month of each cohort year, which consists of data only from users who joined in that month, is quite close to the overall line from the prior month.  
 
-Another hypothesis advanced by community members\footnote{See \url{https://www.reddit.com/r/TheoryOfReddit/comments/1a7aoj/retracing_the_evolution_of_reddit_through_post/  }.} is that reddit's karma system favors shorter comments.  That is, people can get more upvotes for a given amount of effort by writing more, shorter comments.  This could be directly measured even with the available data, and might be the start of a very interesting line of future work that tries to model strategic posting and attention distribution behavior in Reddit. 
+Another hypothesis advanced by community members\footnote{See \url{https://www.reddit.com/r/TheoryOfReddit/comments/1a7aoj/retracing_the_evolution_of_reddit_through_post/  }.} is that Reddit's karma system favors shorter comments.  That is, people can get more upvotes for a given amount of effort by writing more, shorter comments.  This could be directly measured even with the available data, and might be the start of a very interesting line of future work that tries to model strategic posting and attention distribution behavior in Reddit. 
 
 \subsection{Why do comments per submission increase?}
 
@@ -28,15 +26,18 @@ We also saw that comments per submission increase over time for surviving users,
 One process hypothesis is that this is because early in Reddit's life, there simply weren't as many submissions to comment on, meaning that people who wanted to be active contributors more or less had to submit in order to do so. 
 As the community grew, more content became available, making information seeking more valuable---and perhaps increasing the value and ease of commenting. 
 
-This question of ease and value might be more general, and tie to our earlier observations about self-selection and karma accumulation.  Most users in social networks are known to be lurkers: users that only seek information and passively observe, not engaging and contributing to the network \cite{Rafaeli2004, Nonnecke2000}.  Consumption is valuable and easy, and in reddit, some contributions are easier than others: reading is easier than voting; voting is easier than commenting; commenting is easier than submitting.  Only users for whom finding and submitting comment is relatively easy or relatively valuable are likely to be frequent submitters or ``power users'' \cite{Panciera2009, Kittur2007}---and we suspect such users are more likely to be ones who found Reddit earlier on and stuck with it when it was relatively small.
+This question of ease and value might be more general, and tie to our earlier observations about self-selection and karma accumulation.  Most users in social networks are known to be lurkers: users that only seek information and passively observe, not engaging and contributing to the network \cite{Rafaeli2004, Nonnecke2000}.  Consumption is valuable and easy, and in Reddit, some contributions are easier than others: reading is easier than voting; voting is easier than commenting; commenting is easier than submitting.  Only users for whom finding and submitting comment is relatively easy or relatively valuable are likely to be frequent submitters or ``power users'' \cite{Panciera2009, Kittur2007}---and we suspect such users are more likely to be ones who found Reddit earlier on and stuck with it when it was relatively small.
 
 \subsection{Limitations and Future Work}
 
 In this paper we focused our attention on behavior attributable to specific users, which in this dataset meant submissions and comments.  As with many analysis that focus on visible behavior, this means we miss important phenomena.  In particular, we discount lurkers despite their known importance as audience members \cite{Nonnecke2003} and potential future contributors \cite{Ridings2006}.  Many lurkers likely vote, and thus lurking may be even more important in a context like Reddit where votes affect content visibility and provide explicit markers of attention and reputation.  
 
-However, the dataset does not have information on individual voters or timestamps, just the aggregate number of votes a post had received at the time of the crawl, making it impossible to effectively treat them as activity measures and ways to understand the behavior of those who voted.  The existing voting data might be much more useful, however, in addressing questions that involve predicting a given user's future behavior based on whether and how other users respond to a user's early contributions \cite{Joyce2006,Sarkar2012}
+However, the dataset does not have information on individual voters or timestamps, just the aggregate number of votes a post had received at the time of the crawl, making it impossible to effectively treat them as activity measures and ways to understand the behavior of those who voted.  The existing voting data might be much more useful, however, in addressing questions that involve predicting a given user's future behavior based on whether and how other users respond to a user's early contributions \cite{Joyce2006,Sarkar2012}.
 
 Another blind spot that focusing on visible behavior can induce is our emphasis on active users.  This is a reasonable view of the community that focuses on what is happening, but our results should all be interpreted in the context of ``given the set of active users at any given time''.  Applying these results to questions that require considering all users would be a mistake.  
+
+%% Sam 8: Added consideration about multi-user/account and deanonyzation
+One of our assumptions was that one account is associated with one user. This might not be the case, as more than one user can share the same account \cite{Lampinen2014} or one user can have multiple accounts that are userd regularly or simply thrown away \cite{Bergstrom2011}. While it is not clear what is the impact of such behavior in our analyses, it raises the question of whether these users-accounts' associations can be de-anonymized.
 
 We did, implicitly, consider survival in the analyses that broke cohort down by survival time; we see careful thinking about what it means to ``survive'' in a community as an interesting problem in its own right.  Potentially, users' ``breaks'' from the network can influence both our results and other analyses that assume users depart on their last visible day of activity. 
 Focusing on activity also fails to account for actual deletion in many contexts.  In Reddit, activity from users is marked with a username of ``[deleted]'' (which we were able to ignore after realizing that one author had millions of comments!), but in some contexts, such as Wikipedia articles that are deleted, edit behavior on those articles do not show up in many data dumps.
@@ -46,39 +47,17 @@ These questions of how to define active users and dead users and distinguishing 
 
 \section{Conclusions}
 
-This work highlights the importance of taking time into consideration when analyzing users' evolution in social networks. We do so by cohorting the users based on their creation year. Although simple, this approach provides evidence of significant differences between methods that account for time with methods that do simple overall analyses.  We also analyze the evolution of users and communities from a shifted time referential: considering the time of an action in relation to the user creation date. This also reveals unexpected phenomena that we would otherwise not notice.
+This work highlights the importance of taking time into consideration when analyzing users' evolution in social networks. We do so by cohorting the users based on their creation year. Although simple, this approach provides evidence of significant differences between methods that account for time with methods that do simple overall analyzes.  We also analyze the evolution of users and communities from a shifted time referential: considering the time of an action in relation to the user creation date. This also reveals unexpected phenomena that we would otherwise not notice.
 
 From the user perspective, we found that user posting activity for surviving Reddit users is actually significantly higher than a naive average would suggest, that older users who survive are considerably more active than younger survivors, and that these newer users are unlikely to catch up.   Controlling for survival, we also found that users have a stable level of posting activity over time (with slightly decreasing patterns) and the percentage of surviving but low-activity users is increasing in the younger cohorts.  
 
 Similarly, we analyzed user effort based on average comment length. We found that, while the overall average in Reddit seems to decrease, users actually write longer comments as they survive, no matter when they joined.  Still, later cohorts of users that joined the network are writing smaller comments; their greater number leads to this version of Simpson's paradox, where where the overall average decreases while the series for each individual cohort increases. 
 
-%% DC 15: Restate this in slightly more general terms if you can.
 Finally, we analyze the type of activities users engage, differentiating comments and submissions. 
 We found that users with a higher comments per submission ratio are more likely to survive longer in the network. More than that, this behavior changes as the users survive---particularly for the early cohorts. Users change their comments per submissions patterns, and their main mechanism to do so seems to be replacing their submitting by commenting behavior, since their posting activity remains stable.
-%We observe that users from 2009, 10 and 11 are the main commenters in Reddit and that cohorts from 2010 onwards have a very similar evolution. 2008 and 09 cohorts, however, changed significantly their behavior as the network evolved.  
 We also discussed a possible explanation for this observation based on commenting being partially an information seeking task with an associated effort between lurking and submitting. This made it less likely in early Reddit, in which content was not as available as in later years.
 
+%% Sam 8: Added one important take-away message in my opinion
+An important observation that we made is that the overall evolution of users' behavior in a network is driven by three factors: actual changes in users' behavior over time, users joining the network and users leaving the network. Failing to account for different demographics joining and leaving the network can lead to wrong conclusions, as we have seen.
+
 Both our and work and its limitations suggest fruitful directions for better understanding of users' evolution in both Reddit and online communities in general, directions we hope inspire other work in this area.  
-
-
-
-%% Sam 15: Section gone
-%\subsection{Why the bias to 2008?}
-%
-% Sam 14: Still have to work on this one.
-%Were we expecting different results? Defaults? Core consolidation?
-%These observations allow us to conclude that, in the case of Reddit, there are key subreddits that were created in 2008 that are the main focus of attention of all the users, although this is decreasing as new users join the network. Our hypothesis would not hold true in this case. This, however, might not hold true for other social networks, in which the communities or the content at the time at which users join the network might be their main focus of attention, highlighting again the importance of performing a cohort based analysis.
-
-
-%% DC 15: I now actually don't believe this hypothesis, given that more new users stick around.  It _might_ be made part of a 3B hypothesis related to the one above, but I think we have enough that we can leave this off. 
-% A fourth argument is based on cumulative advantage, status, and attention-seeking: surviving users from earlier cohorts might be more capable of producing content that gets attention from other users.  This would lead to them getting more comments and votes for their content, and people who get positive attention are more likely to return and contribute \cite{Halfaker2009, Choi2010, Sarkar2012}.  
-
-%% DC 15: I wouldn't mind if you resurrect this section, but I feel like we've got plenty here now. 
-%Although many observations were made regarding Reddit, the main goal of this paper is not to study Reddit in depth. Therefore, many observations still remain without an explanation. Being aware that latter cohort users decrease the size of their comments and tend post less allow us to question the nature and motivation of these users.  Are users commenting less because newer users they are less interested into engaging with other user or are they simply ``lazier'' and writing is becoming less attractive for the newer generations? If it is a matter of writing being a less preferred method of communication, could Reddit improve its users' interactions providing alternative ways to post media, such as pictures, audio and video? These are some questions that we can ask and needs further investigation of the data, and might evolve into new models of how user attention, effort and interaction in social networks are shifting through time.
-
-
-%When we consider the evolution of the number of comments per submission, we observe that surviving users in earlier cohorts have lower ratios than later ones. Just as lurkers are the majority in the community and are attracted to it in search of information, we can imagine a set of users that are in the community in search of content and are willing to engage in commenting, but don't have the drive of a ``power contributor'' that make submissions and brings new content into the network. 
-
-
-% This could be in part driven by attempts to nurture new subreddits.  Reddit also added a feature in 2008 that allowed people to create their own subreddits; after creating a subreddit, a natural goal is to make it appear active through frequent submissions, and until it reaches a critical mass of submissions, there is little to comment on.  (This second hypothesis assumes that subreddit creation is less frequent or less successful over time; this would be an interesting question to explore.)
- 
