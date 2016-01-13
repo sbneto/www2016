@@ -16,6 +16,7 @@ This average view hides several important aspects of users' activity dynamics. P
 To address these characteristics, Figure~\ref{fig:overall_posts}b shows a different view that emphasizes the trajectory over a user's lifespan. We scale the x-axis not by clock time, as in Figure~\ref{fig:overall_posts}a, but by time since the user's first post: ``1'' on the x-axis refers to one year since the user's account first post, and so on. We call this the \textbf{time in the user referential}. One caution about interpreting graphs with time in the user referential is that the amount of data available rapidly decreases over time as users leave the community, meaning that values toward the right side of an individual data series are more subject to individual variation.  
 
 %% Sam 11: Treating the misinterpretation as a hypothesis
+%% Sam 12: The point of highlighting this as hypothesis is to point out at the end all the possible mistakes.
 The evidence at this point supports the tempting hypothesis is that the longer a user survives, the more posts they make over time (\textbf{H1}).  This hypothesis, however, is incorrect; we will present a more nuanced description of what is happening informed by cohort-based analyses.
 
 \subsection{New cohorts do not catch up}
@@ -28,10 +29,11 @@ The evidence at this point supports the tempting hypothesis is that the longer a
 \label{fig:avr_posts_per_user_over_time_cohorts}
 \end{figure*}
 
-Figure~\ref{fig:overall_posts}b suggests that older users are more active than newer ones, raising the question of whether newer users
-will eventually follow in older users' footsteps.  Analyzing users' behavior by cohort is a reasonable way to address it.
+%% Sam 12: Adding the first research question here because we start cohorting here, and that is the main strategy of the paper.
+Figure~\ref{fig:overall_posts}b suggests that older users are more active than newer ones, raising the question (\textbf{RQ1}): will new users
+eventually follow in older users' footsteps?  Analyzing users' behavior by cohort is a reasonable way to address it.
 
-Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}a shows a first attempt at this analysis.  We can already observe a significant cohort effect: users from later cohorts appear to level off at significantly lower posting averages than users from earlier ones.  It suggests that newer users likely will never be as active as older ones on average.
+Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}a shows a first attempt at this analysis.  We can already observe a significant cohort effect: users from later cohorts appear to level off at significantly lower posting averages than users from earlier ones.  It suggests that newer users likely will never be as active as older ones on average. It also shows that surviving users are significantly more active than a naive average would suggest.
 
 However, Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}a also has an awkward anomaly: a rapid rise in the average number of posts during each cohort's first calendar year, especially in December. Combining cohort segmentation with user-referential analysis, as in Figure~\ref{fig:avr_posts_per_user_over_time_cohorts}b, helps smooth out this anomaly and aligns cohorts with each other.  Doing this alignment makes clear that differences between earlier and later cohorts are apparent early on.
 
@@ -70,12 +72,14 @@ Combining Figure~\ref{fig:avr_posts_per_user_for_surviving_year}'s insight that 
 \label{fig:comment_length}
 \end{figure*}
 
-Activity as measured by the average number of posts per user is one proxy for user effort.  Comment length can also be considered as a proxy for user effort in the network.  Users that type more put more of their time in the network, contribute with more content, and might create stronger ties with the community. Thus, we investigate how comment length has changed in the community over time, both overall and by cohort. 
+%% Sam 12: Including the work in this section as a broad research question.
+Activity as measured by the average number of posts per user is one proxy for user effort.  Comment length can also be considered as a proxy for user effort in the network.  Users that type more put more of their time in the network, contribute with more content, and might create stronger ties with the community. Thus, we put forward the following question (\textbf{RQ2}): how does comment length changed in the community over time, both overall and by cohort?
 
 \subsection{Comment length drops over time}
 
 %% Sam 11: Adding hypothesis tags. Later on to mention all the possible misleading hypothesis that we can come up with not considering cohorts and time
-Figure~\ref{fig:comment_length}a shows the overall comment length in Reddit over time (the black line) and the overall length per cohort. 
+%% Sam 12: The point of highlighting this as hypothesis is to point out at the end all the possible mistakes.
+Figure~\ref{fig:comment_length}a shows the overall comment length in Reddit over time (the darker line) and the overall length per cohort. 
 Based on the downwards tendency of the overall comment length in Figure~\ref{fig:comment_length}a, one might hypothesize that users' commitment to the network is decreasing over time (\textbf{H3}), or that there is some community-wide norm toward shorter commenting (\textbf{H4}). 
 
 However, this might not be the best way to interpret this information. Figure~\ref{fig:comment_length}b shows the comment length per cohort in the user referential time. An important observation here is that younger users start from a lower baseline comment length than older ones. Considering the fact that recent Reddit has experienced exponential growth, the weight when evaluating the overall average for Figures \ref{fig:comment_length}a and \ref{fig:comment_length}b is shifted towards the comment length for the ever-growing younger generation as the years go by; this younger generation brings down the average since their average is lower.
@@ -129,7 +133,7 @@ As with the posting per user, we can not say if the increase in the curves seen 
 
 \section{Kinds of contributions}
 
-One common question from the literature is what sorts of activities users engage in, for instance, to categorize users into roles they play in the community\cite{Welser2011}.
+One common question from the literature is what sorts of activities users engage in, for instance, to categorize users into roles they play in the community\cite{Welser2011}. As with comments length, we propose the following research quetion (\textbf{RQ3}): how does users' activities changed in the community over time, both overall and by cohort?
 
 \subsection{Over time, responsiveness increases}
 Consider the case of Usenet: people who never start threads and only respond play the role of answerer, while there are other roles that include fostering discussion \cite{Welser2007}. These might naturally map onto people who primarily comment and who primarily submit in Reddit, respectively.  While submissions can be considered new content that an author generates, a comment can be considered as a contribution to an existing content from another author.
