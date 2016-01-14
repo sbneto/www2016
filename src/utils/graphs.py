@@ -32,11 +32,18 @@ def formated_plot(plot_function, data, labels, axes, loc, normalize, show, **kwa
             norm = np.max(data_y[data_sets == s])
         else:
             norm = 1
+
+        if 'linestyle' in kwargs:
+            style = kwargs['linestyle'][i % len(kwargs['linestyle'])]
+        else:
+            style = 'solid'
+
         y_plot = data_y[data_sets == s]/norm
         i += 1
         plot_function(x_plot,
                       y_plot,
                       color=cm(int(256*(len(sets) - i)/len(sets))),
+                      linestyle=style,
                       **get_kwargs(kwargs, 'width', 'linewidth'))
 
     plt.xlabel(labels[0].replace('_', ' '), fontsize=kwargs['x_label_size'])

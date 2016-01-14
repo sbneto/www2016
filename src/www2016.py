@@ -207,6 +207,9 @@ def main():
                              show=False,
                              linewidth=3,
                              legend_size=15,
+                             y_min=10,
+                             y_max=20000000,
+                             linestyle=['--', '-'],
                              filename='../images/cumulative_users_subreddits.eps')
 
     # 2
@@ -236,6 +239,9 @@ def main():
                   show=False,
                   linewidth=3,
                   legend_size=15,
+                  y_min=10,
+                  y_max=20000000,
+                  linestyle=['--', '-'],
                   filename='../images/active_users_subreddits.eps')
 
     ##########################################################################
@@ -259,8 +265,9 @@ def main():
                   query,
                   legend=False,
                   show=False,
-                  y_min=0.0,
                   linewidth=3,
+                  y_min=0,
+                  y_max=31,
                   filename='../images/avr_posts_per_user_over_time_total.eps')
 
     # 4
@@ -281,8 +288,9 @@ def main():
                   query,
                   legend=False,
                   show=False,
-                  y_min=0.0,
                   linewidth=3,
+                  y_min=0,
+                  y_max=31,
                   filename='../images/avr_posts_per_user_user_ref_total.eps')
 
     # 5
@@ -312,8 +320,10 @@ def main():
                   query,
                   legend_size=15,
                   show=False,
-                  y_min=0.0,
+                  y_min=0,
+                  y_max=32,
                   linewidth=3,
+                  linestyle=['-', ':', '--', '-', ':', '--', '-'],
                   filename='../images/avr_posts_per_user_over_time_cohorts.eps')
 
     # 6
@@ -339,8 +349,10 @@ def main():
                   loc='lower right',
                   legend_size=15,
                   show=False,
-                  y_min=0.0,
+                  y_min=0,
+                  y_max=32,
                   linewidth=3,
+                  linestyle=['-', ':', '--', '-', ':', '--', '-'],
                   filename='../images/avr_posts_per_user_cohorts.eps')
 
     # 7
@@ -369,7 +381,9 @@ def main():
                       y_label_size=24,
                       tick_size=24,
                       legend_size=20,
-                      y_min=0.0,
+                      y_min=0,
+                      y_max=32,
+                      linestyle=['-', ':', '--', '-', ':', '--', '-'],
                       filename='../images/avr_posts_per_user_for_surviving_year_for_{}.eps'.format(year))
 
     ##########################################################################
@@ -406,6 +420,9 @@ def main():
                   legend_size=15,
                   show=False,
                   linewidth=3,
+                  y_min=158,
+                  y_max=242,
+                  linestyle=['-', ':', '--', '-', ':', '--', '-'],
                   filename='../images/avr_comment_size_over_time_cohorts.eps')
 
     # 9
@@ -432,6 +449,9 @@ def main():
                   legend_size=15,
                   show=False,
                   linewidth=3,
+                  y_min=158,
+                  y_max=242,
+                  linestyle=['-', ':', '--', '-', ':', '--', '-'],
                   filename='../images/avr_comment_size_cohorts.eps')
 
     # 10
@@ -460,6 +480,9 @@ def main():
                       y_label_size=24,
                       tick_size=24,
                       legend_size=20,
+                      y_min=158,
+                      y_max=230,
+                      linestyle=['-', ':', '--', '-', ':', '--', '-'],
                       filename='../images/avr_comment_length_for_surviving_year_for_{}.eps'.format(year))
 
     ##########################################################################
@@ -496,9 +519,11 @@ def main():
                   query,
                   ('linear', 'linear'),
                   show=False,
-                  y_min=0.0,
+                  y_min=0,
+                  y_max=19,
                   linewidth=3,
                   legend_size=15,
+                  linestyle=['-', ':', '--', '-', ':', '--', '-'],
                   filename='../images/comments_per_submissions_over_time_cohorts.eps')
 
     # 12
@@ -524,9 +549,11 @@ def main():
                   ('linear', 'linear'),
                   loc='lower right',
                   show=False,
-                  y_min=0.0,
+                  y_min=0,
+                  y_max=19,
                   linewidth=3,
                   legend_size=15,
+                  linestyle=['-', ':', '--', '-', ':', '--', '-'],
                   filename='../images/comments_per_submissions_cohorts.eps')
 
     # 13
@@ -555,7 +582,9 @@ def main():
                       y_label_size=30,
                       tick_size=28,
                       legend_size=24,
-                      y_min=0.0,
+                      y_min=0,
+                      y_max=20,
+                      linestyle=['-', ':', '--', '-', ':', '--', '-'],
                       filename='../images/comments_per_submissions_for_surviving_year_for_{}.eps'.format(year))
 
 
