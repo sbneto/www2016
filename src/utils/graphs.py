@@ -1,9 +1,16 @@
+import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import numpy as np
 
-
 __author__ = 'Samuel'
+
+
+# Necessary to produce only Type 1 fonts, can be remove otherwise
+# To run with these, latex binaries, dvipng and Ghostscript MUST be in your PATH
+# http://matplotlib.org/users/usetex.html
+matplotlib.rcParams['ps.useafm'] = True
+matplotlib.rcParams['text.usetex'] = True
 
 
 def get_kwargs(kwargs, *args):

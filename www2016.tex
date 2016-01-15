@@ -48,6 +48,7 @@
 
 \documentclass{sig-alternate}
 
+
 \usepackage{cite}
 \usepackage{float}
 \usepackage{setspace}
@@ -67,18 +68,20 @@
 \usepackage{keyval,xparse}
 
 \interfootnotelinepenalty=10000 %do not break footnotes
+\clubpenalty=10000
+\widowpenalty=10000
 
 %\linepenalty=10000
 %\tolerance=200
 %\fontdimen4\font=1.0\fontdimen4\font
 
+\permission{Copyright is held by the International World Wide Web Conference Committee (IW3C2). IW3C2 reserves the right to provide a hyperlink to the author's site if the Material is used in electronic media.}
+\conferenceinfo{WWW 2016,}{April 11--15, 2016, Montr\'eal, Qu\'ebec, Canada.} 
+\copyrightetc{ACM \the\acmcopyr}
+\crdata{978-1-4503-4143-1/16/04. \\
+Include the http://DOI string/url }
+
 \begin{document}
-%
-% --- Author Metadata here ---
-\conferenceinfo{WWW}{'16 Montr\'eal, Canada}
-%\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
-%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
-% --- End of Author Metadata ---
 
 \title{Evolution of effort and activity in online communities from a cohort perspective}
 
@@ -180,8 +183,8 @@ Online communities provide a fertile ground for analyzing people's behavior and 
 \end{abstract}
 
 \keywords{user behavior; cohorts; computational social science; Reddit; temporal}
-\category{H.0}{Information Systems}{GENERAL}
-\category{J.4}{SOCIAL AND BEHAVIORAL SCIENCES}{Sociology}
+%\category{H.0}{Information Systems}{GENERAL}
+%\category{J.4}{SOCIAL AND BEHAVIORAL SCIENCES}{Sociology}
 %\terms{Human Factors}
 
 \input{macros}
