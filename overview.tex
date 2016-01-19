@@ -5,19 +5,19 @@
 \subsection{What is Reddit, briefly}
 
 %% Sam 11: Improving the caption
-%\begin{figure}[!tb]
-%\centering
-%\includegraphics[width=0.45\textwidth,natwidth=964,natheight=823]{./images/reddit.png}
-%\caption{Reddit interface when visualizing a submission. This is Patrick Stewart's ``AmA'' (ask me anything) in ``IAmA'' (I am a), a submission where he answers users' questions in the comments. We can see the most upvoted comment and Patrick's answer right below.}
-%\label{fig:reddit}
-%\end{figure}
+\begin{figure}[!tb]
+\centering
+\includegraphics[width=0.45\textwidth,natwidth=964,natheight=823]{./images/reddit.png}
+\caption{Reddit interface when visualizing a submission. This is Patrick Stewart's ``AmA'' (ask me anything) in ``IAmA'' (I am a), a submission where he answers users' questions in the comments. We can see the most upvoted comment and Patrick's answer right below.}
+\label{fig:reddit}
+\end{figure}
 
-Reddit is one of the largest sharing and discussion communities on the Web.  According to Alexa, as of late 2015 Reddit is in the top 15 sites in the U.S. and the top 35 in the world in terms of monthly unique visitors.  It consists of a large number of subreddits (853,000 as of June 21st, 2015\footnote{\url{http://www.redditblog.com/2015/06/happy-10th-birthday-to-us-celebrating.html } provides more statistics about Reddit.}), each of which focuses on a particular purpose.  Many subreddits are primarily about sharing web content from other sites: in ``Pics'', ``News'', ``Funny'', ``Gaming'', and many other communities, users (``Redditors'') make ``submissions'' of links posted at other sites that they think are interesting.  In other subreddits, Redditors primarily write text-based ``self-posts'': ``AskReddit'', ``IAmA'', and ``ShowerThoughts'' are places where people can ask questions and share stories of their own lives.  Generically, we will refer to submissions and text posts as ``submissions''.  
+Reddit is one of the largest sharing and discussion communities on the Web.  According to Alexa, as of late 2015 Reddit is in the top 15 sites in the U.S. and the top 35 in the world in terms of monthly unique visitors.  It consists of a large number of subreddits (853,000 as of June 21st, 2015\footnote{\cite{RedditStatistics} provides more statistics about Reddit.}), each of which focuses on a particular purpose.  Many subreddits are primarily about sharing web content from other sites: in ``Pics'', ``News'', ``Funny'', ``Gaming'', and many other communities, users (``Redditors'') make ``submissions'' of links posted at other sites that they think are interesting.  In other subreddits, Redditors primarily write text-based ``self-posts'': ``AskReddit'', ``IAmA'', and ``ShowerThoughts'' are places where people can ask questions and share stories of their own lives.  Generically, we will refer to submissions and text posts as ``submissions''.  
 
 Each submission can be imagined as the root of a threaded comment tree, in which Redditors can comment on submissions or each other's comments.  Redditors can also vote on both submissions and comments; these votes affect the order in which submissions and comments are displayed and also form the basis of ``karma'', a reputation system that tracks how often people upvote a given Redditor's comments and submissions. We can observe these elements in Figure~\ref{fig:reddit}. 
 %% DC 14: Not so relevant here, so cutting. Redditors can also create subreddits and volunteer to moderate them.
 
-We choose Reddit as our target community for a number of reasons.  It has existed since 2005, meaning that there has been ample time for the community to evolve and for differences in user cohorts to appear.  Second, it is one of the most popular online communities, allowing different types of contributions---comments and original submissions---across many different subreddits.  Third, a number of Reddit users believe that it is, in fact, getting worse over time\footnote{e.g., XXX pointer to page about this}. Finally, Reddit data are publicly available through an API.
+We choose Reddit as our target community for a number of reasons.  It has existed since 2005, meaning that there has been ample time for the community to evolve and for differences in user cohorts to appear.  Second, it is one of the most popular online communities, allowing different types of contributions---comments and original submissions---across many different subreddits.  Third, a number of Reddit users believe that it is, in fact, getting worse over time\footnote{e.g., \cite{RedditWorse1,RedditWorse2,RedditWorse3,RedditWorse4,RedditWorse5,RedditWorse6}}. Finally, Reddit data are publicly available through an API.
 
 \subsection{The dataset}
 
@@ -29,7 +29,7 @@ We choose Reddit as our target community for a number of reasons.  It has existe
 \label{fig:cumulative}
 \end{figure*}
 
-Redditor \textit{Stuck\_In\_The\_Matrix} used Reddit's API to compile a dataset of almost every publicly available comment\footnote{Available in \url{https://www.Reddit.com/r/datasets/comments/3bxlg7/i_have_every_publicly_available_Reddit_comment }.} from October 2007 until May 2015.  The dataset is composed of 1.65 billion comments, although due to API call failures, about 350,000 comments are unavailable.  He also compiled a submissions dataset for the period of October 2007 until December 2014 (made available for us upon request) containing a total of 114 million submissions.  These datasets contain the JSON data objects returned by Reddit's API for comments and submissions\footnote{A full description of the JSON objects is available at \url{https://github.com/Reddit/Reddit/wiki/JSON }.}; for our purposes, the main items of interest were the UTC creation date, the username, the subreddit, and for comments, the comment text.
+Redditor \textit{Stuck\_In\_The\_Matrix} used Reddit's API to compile a dataset of almost every publicly available comment\footnote{Available in \cite{RedditDataset1}.} from October 2007 until May 2015.  The dataset is composed of 1.65 billion comments, although due to API call failures, about 350,000 comments are unavailable.  He also compiled a submissions dataset for the period of October 2007 until December 2014 (made available for us upon request) containing a total of 114 million submissions.  These datasets contain the JSON data objects returned by Reddit's API for comments and submissions\footnote{A full description of the JSON objects is available at \cite{RedditAPI}.}; for our purposes, the main items of interest were the UTC creation date, the username, the subreddit, and for comments, the comment text.
 
 \looseness=-1
 We focus on submissions and comments in the dataset because they have timestamps and can be tied to specific users and subreddits, allowing us to perform time-based analyses.   In some analyses, we look only at comments; in some, we combine comments and submissions, calling them \textbf{``posts''}.  We would also like to have looked at voting behavior as a measure of user activity\footnote{This would also give us more insight than usual into lurkers' behavior; we'll return to this in the discussion.}, but individual votes with timestamps and usernames are not available through the API, only the aggregate number of votes that posts receive.
@@ -37,8 +37,8 @@ We focus on submissions and comments in the dataset because they have timestamps
 \subsection{Preprocessing the dataset}
 
 \looseness=-1
-To analyze the data, we used Google BigQuery\footnote{\url{https://cloud.google.com/bigquery/}.}, a big data processing tool.
-Redditor \textit{fhoffa} imported the comments into BigQuery and made them publicly available\footnote{See \url{https://www.Reddit.com/r/bigquery/comments/3cej2b/17_billion_Reddit_comments_loaded_on_bigquery/}.}.  We uploaded the submission data ourselves using Google's SDK.
+To analyze the data, we used Google BigQuery\footnote{See \cite{BigQuery}.}, a big data processing tool.
+Redditor \textit{fhoffa} imported the comments into BigQuery and made them publicly available\footnote{See \cite{RedditDataset2}.}.  We uploaded the submission data ourselves using Google's SDK.
 
 For the analysis in the paper, we did light preprocessing to filter out posts by deleted users, posts with no creation time, and posts by authors with bot-like names\footnote{Ending with ``\_bot'' or ``Bot''; or containing ``transcriber'' or ``automoderator''.}.
 %% DC 14: Would like to at least informally be able to address the critique that this doesn't capture all bot activity and excludes some legit users by giving a feel for the scope of the problem.
