@@ -8,5 +8,6 @@
 *.bbl
 *.aux
 *.orig
+*.out
 images_old/*
 src/.idea/*
